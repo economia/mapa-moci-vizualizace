@@ -52,19 +52,30 @@
       return it.staff;
     }).enter().append("rect");
     z1$.attr('width', x.rangeBand());
-    z1$.attr('y', function(person, index, parentIndex){
-      if (normalized) {
-        return y(index / data[parentIndex].size);
-      } else {
-        return y(index + (maxSize - data[parentIndex].size));
-      }
+    z1$.each(function(person, index, parentIndex){
+      return person.y = (function(){
+        switch (normalized) {
+        case true:
+          return y(index / data[parentIndex].size);
+        case false:
+          return y(index + (maxSize - data[parentIndex].size));
+        }
+      }());
+    });
+    z1$.attr('y', function(person){
+      return person.y;
     });
     z1$.attr('height', function(person, index, parentIndex){
-      if (normalized) {
-        return y((index + 1) / data[parentIndex].size) - y(index / data[parentIndex].size);
-      } else {
-        return y((index + 1) + (maxSize - data[parentIndex].size)) - y(index + (maxSize - data[parentIndex].size));
-      }
+      var nextPersonY, that;
+      nextPersonY = (function(){
+        switch (false) {
+        case !(that = data[parentIndex].staff[index + 1]):
+          return that.y;
+        default:
+          return height;
+        }
+      }());
+      return nextPersonY - person.y;
     });
     z1$.on('mouseover', function(person){
       var content;

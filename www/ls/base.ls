@@ -40,16 +40,16 @@ window.init = (data) ->
         .data -> it.staff
         .enter!append "rect"
             ..attr \width x.rangeBand!
-            ..attr \y (person, index, parentIndex) ->
-                if normalized
-                    y index / data[parentIndex].size
-                else
-                    y index + (maxSize - data[parentIndex].size)
+            ..each (person, index, parentIndex) ->
+                person.y = switch normalized
+                | yes => y index / data[parentIndex].size
+                | no  => y index + (maxSize - data[parentIndex].size)
+            ..attr \y (person) -> person.y
             ..attr \height (person, index, parentIndex) ->
-                if normalized
-                    (y (index + 1) / data[parentIndex].size) - (y index / data[parentIndex].size)
-                else
-                    (y (index + 1) + (maxSize - data[parentIndex].size)) - (y index + (maxSize - data[parentIndex].size))
+                nextPersonY = switch
+                    | data[parentIndex].staff[index+1] => that.y
+                    | otherwise                        => height
+                nextPersonY - person.y
             ..on \mouseover (person) ->
                 content =
                     | person.17
