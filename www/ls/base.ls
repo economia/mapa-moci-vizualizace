@@ -64,8 +64,8 @@ window.init = (data) ->
                 tooltip.display content
             ..on \mouseout ->
                 tooltip.hide!
-            ..style \fill (person) ->
-                | person.17 => \#98abc5
-                | otherwise => \#6b486b
+            ..attr \class (person) ->
+                | person.17 => "new"
+                | otherwise => "old"
 
 

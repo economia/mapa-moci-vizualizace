@@ -81,12 +81,12 @@
     z1$.on('mouseout', function(){
       return tooltip.hide();
     });
-    z1$.style('fill', function(person){
+    z1$.attr('class', function(person){
       switch (false) {
       case !person[17]:
-        return '#98abc5';
+        return "new";
       default:
-        return '#6b486b';
+        return "old";
       }
     });
     return z1$;
