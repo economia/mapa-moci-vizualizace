@@ -2,7 +2,7 @@
   var tooltip;
   tooltip = new Tooltip();
   window.init = function(data){
-    var margin, width, height, x, color, x$, svg, y$, drawing, res$, department, staff, size, maxSize, notNormalizedPersonHeight, y, departments, z$, departmentBar, z1$, rectangles, normalized, z2$;
+    var margin, width, height, x, color, x$, svg, y$, drawing, res$, department, staff, size, maxSize, notNormalizedPersonHeight, y, departments, z$, departmentBar, z1$, rectangles, redraw, lastNormalized;
     margin = {
       top: 20,
       right: 100,
@@ -71,38 +71,40 @@
         return "old";
       }
     });
-    normalized = false;
-    if (normalized) {
-      y.domain([0, 1]);
-    } else {
-      y.domain([0, maxSize]);
-    }
-    z2$ = rectangles;
-    z2$.each(function(person, index, parentIndex){
-      return person.y = (function(){
-        switch (normalized) {
-        case true:
-          return y(index / data[parentIndex].size);
-        case false:
-          return y(index + (maxSize - data[parentIndex].size));
-        }
-      }());
-    });
-    z2$.attr('y', function(person){
-      return person.y;
-    });
-    z2$.attr('height', function(person, index, parentIndex){
-      var nextPersonY, that;
-      nextPersonY = (function(){
-        switch (false) {
-        case !(that = data[parentIndex].staff[index + 1]):
-          return that.y;
-        default:
-          return height;
-        }
-      }());
-      return nextPersonY - person.y;
-    });
-    return z2$;
+    redraw = function(normalized){
+      if (normalized) {
+        y.domain([0, 1]);
+      } else {
+        y.domain([0, maxSize]);
+      }
+      rectangles.each(function(person, index, parentIndex){
+        return person.y = (function(){
+          switch (normalized) {
+          case true:
+            return y(index / data[parentIndex].size);
+          case false:
+            return y(index + (maxSize - data[parentIndex].size));
+          }
+        }());
+      });
+      return rectangles.transition().duration(500).delay(function(person, index, parentIndex){
+        return parentIndex * 20;
+      }).attr('y', function(person){
+        return person.y;
+      }).attr('height', function(person, index, parentIndex){
+        var nextPersonY, that;
+        nextPersonY = (function(){
+          switch (false) {
+          case !(that = data[parentIndex].staff[index + 1]):
+            return that.y;
+          default:
+            return height;
+          }
+        }());
+        return nextPersonY - person.y;
+      });
+    };
+    lastNormalized = false;
+    return redraw(lastNormalized);
   };
 }).call(this);

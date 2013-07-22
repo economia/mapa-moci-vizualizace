@@ -55,21 +55,31 @@ window.init = (data) ->
                 | person.17 => "new"
                 | otherwise => "old"
 
-    normalized = no
-    if normalized
-        y.domain [0 1]
-    else
-        y.domain [0 maxSize]
-    rectangles
-        ..each (person, index, parentIndex) ->
+
+    redraw = (normalized) ->
+        if normalized
+            y.domain [0 1]
+        else
+            y.domain [0 maxSize]
+        rectangles.each (person, index, parentIndex) ->
             person.y = switch normalized
             | yes => y index / data[parentIndex].size
             | no  => y index + (maxSize - data[parentIndex].size)
-        ..attr \y (person) -> person.y
-        ..attr \height (person, index, parentIndex) ->
-            nextPersonY = switch
-                | data[parentIndex].staff[index+1] => that.y
-                | otherwise                        => height
-            nextPersonY - person.y
+        rectangles
+            .transition!
+            .duration 500
+            .delay (person, index, parentIndex) -> parentIndex * 20
+            .attr \y (person) -> person.y
+            .attr \height (person, index, parentIndex) ->
+                nextPersonY = switch
+                    | data[parentIndex].staff[index+1] => that.y
+                    | otherwise                        => height
+                nextPersonY - person.y
+    lastNormalized = no
+    redraw lastNormalized
+    # <~ setInterval _, 2000
+    # console.log lastNormalized
+    # lastNormalized := !lastNormalized
+    # redraw lastNormalized
 
 
