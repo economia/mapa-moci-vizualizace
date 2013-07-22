@@ -9,7 +9,7 @@ window.init = (data) ->
     x = d3.scale.ordinal!rangeRoundBands [0, width], 0.01
 
     color = d3.scale.ordinal!range ['#98abc5' '#8a89a6' '#7b6888' '#6b486b' '#a05d56' '#d0743c' '#ff8c00' ] * 2
-    normalized = yes
+    normalized = no
 
     svg = d3.select "body" .append "svg"
         ..attr \width width + margin.left + margin.right
@@ -43,7 +43,7 @@ window.init = (data) ->
                 if normalized
                     y index / data[parentIndex].size
                 else
-                    y maxSize - index
+                    y index + (maxSize - data[parentIndex].size)
             ..attr \height (person, index, parentIndex) ->
                 if normalized
                     (height / data[parentIndex].size) + 1

@@ -11,7 +11,7 @@
     height = 500 - margin.top - margin.bottom;
     x = d3.scale.ordinal().rangeRoundBands([0, width], 0.01);
     color = d3.scale.ordinal().range(['#98abc5', '#8a89a6', '#7b6888', '#6b486b', '#a05d56', '#d0743c', '#ff8c00', '#98abc5', '#8a89a6', '#7b6888', '#6b486b', '#a05d56', '#d0743c', '#ff8c00']);
-    normalized = true;
+    normalized = false;
     x$ = svg = d3.select("body").append("svg");
     x$.attr('width', width + margin.left + margin.right);
     x$.attr('height', height + margin.top + margin.bottom);
@@ -54,7 +54,7 @@
       if (normalized) {
         return y(index / data[parentIndex].size);
       } else {
-        return y(maxSize - index);
+        return y(index + (maxSize - data[parentIndex].size));
       }
     });
     z1$.attr('height', function(person, index, parentIndex){
