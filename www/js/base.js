@@ -68,7 +68,14 @@
     });
     z1$.on('mouseover', function(person){
       var content;
-      content = person[6] + " " + person[7] + " " + person[8] + " " + person[9];
+      content = (function(){
+        switch (false) {
+        case !person[17]:
+          return "<h3>Puvodne: </h3>\n<p class='from'>" + person[6] + " " + person[7] + " " + person[8] + " " + person[9] + "</p>\n<h3>Nastupce: </h3>\n<p class='to'>" + person[14] + " " + person[15] + " " + person[16] + " " + person[17] + "</p>";
+        default:
+          return "<span class='only'>" + person[6] + " " + person[7] + " " + person[8] + " " + person[9] + "</span>";
+        }
+      }());
       return tooltip.display(content);
     });
     z1$.on('mouseout', function(){

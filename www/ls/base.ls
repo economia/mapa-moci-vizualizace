@@ -51,7 +51,16 @@ window.init = (data) ->
                 else
                     notNormalizedPersonHeight + 1
             ..on \mouseover (person) ->
-                content = "#{person.6} #{person.7} #{person.8} #{person.9}"
+                content =
+                    | person.17
+                        """
+                        <h3>Puvodne: </h3>
+                        <p class='from'>#{person.6} #{person.7} #{person.8} #{person.9}</p>
+                        <h3>Nastupce: </h3>
+                        <p class='to'>#{person.14} #{person.15} #{person.16} #{person.17}</p>
+                        """
+                    | otherwise
+                        "<span class='only'>#{person.6} #{person.7} #{person.8} #{person.9}</span>"
                 tooltip.display content
             ..on \mouseout ->
                 tooltip.hide!
