@@ -2,7 +2,7 @@
   var tooltip;
   tooltip = new Tooltip();
   window.init = function(data){
-    var margin, width, height, x, color, normalized, x$, svg, y$, drawing, res$, department, staff, size, maxSize, notNormalizedPersonHeight, y, departments, z$, departmentBar, z1$;
+    var margin, width, height, x, color, x$, svg, y$, drawing, res$, department, staff, size, maxSize, notNormalizedPersonHeight, y, departments, z$, departmentBar, z1$, rectangles, normalized, z2$;
     margin = {
       top: 20,
       right: 100,
@@ -13,7 +13,6 @@
     height = 500 - margin.top - margin.bottom;
     x = d3.scale.ordinal().rangeRoundBands([0, width], 0.01);
     color = d3.scale.ordinal().range(['#98abc5', '#8a89a6', '#7b6888', '#6b486b', '#a05d56', '#d0743c', '#ff8c00', '#98abc5', '#8a89a6', '#7b6888', '#6b486b', '#a05d56', '#d0743c', '#ff8c00']);
-    normalized = false;
     x$ = svg = d3.select("body").append("svg");
     x$.attr('width', width + margin.left + margin.right);
     x$.attr('height', height + margin.top + margin.bottom);
@@ -35,9 +34,6 @@
     }));
     notNormalizedPersonHeight = height / maxSize;
     y = d3.scale.linear().rangeRound([0, height]);
-    if (!normalized) {
-      y.domain([0, maxSize]);
-    }
     departments = data.map(function(it){
       return it.department;
     });
@@ -48,35 +44,10 @@
     z$.attr('transform', function(it){
       return "translate(" + x(it.department) + ", 0)";
     });
-    z1$ = departmentBar.selectAll("rect").data(function(it){
+    z1$ = rectangles = departmentBar.selectAll("rect").data(function(it){
       return it.staff;
     }).enter().append("rect");
     z1$.attr('width', x.rangeBand());
-    z1$.each(function(person, index, parentIndex){
-      return person.y = (function(){
-        switch (normalized) {
-        case true:
-          return y(index / data[parentIndex].size);
-        case false:
-          return y(index + (maxSize - data[parentIndex].size));
-        }
-      }());
-    });
-    z1$.attr('y', function(person){
-      return person.y;
-    });
-    z1$.attr('height', function(person, index, parentIndex){
-      var nextPersonY, that;
-      nextPersonY = (function(){
-        switch (false) {
-        case !(that = data[parentIndex].staff[index + 1]):
-          return that.y;
-        default:
-          return height;
-        }
-      }());
-      return nextPersonY - person.y;
-    });
     z1$.on('mouseover', function(person){
       var content;
       content = (function(){
@@ -100,6 +71,38 @@
         return "old";
       }
     });
-    return z1$;
+    normalized = false;
+    if (normalized) {
+      y.domain([0, 1]);
+    } else {
+      y.domain([0, maxSize]);
+    }
+    z2$ = rectangles;
+    z2$.each(function(person, index, parentIndex){
+      return person.y = (function(){
+        switch (normalized) {
+        case true:
+          return y(index / data[parentIndex].size);
+        case false:
+          return y(index + (maxSize - data[parentIndex].size));
+        }
+      }());
+    });
+    z2$.attr('y', function(person){
+      return person.y;
+    });
+    z2$.attr('height', function(person, index, parentIndex){
+      var nextPersonY, that;
+      nextPersonY = (function(){
+        switch (false) {
+        case !(that = data[parentIndex].staff[index + 1]):
+          return that.y;
+        default:
+          return height;
+        }
+      }());
+      return nextPersonY - person.y;
+    });
+    return z2$;
   };
 }).call(this);

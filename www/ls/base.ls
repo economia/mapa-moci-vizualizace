@@ -10,7 +10,6 @@ window.init = (data) ->
     x = d3.scale.ordinal!rangeRoundBands [0, width], 0.01
 
     color = d3.scale.ordinal!range ['#98abc5' '#8a89a6' '#7b6888' '#6b486b' '#a05d56' '#d0743c' '#ff8c00' ] * 2
-    normalized = no
 
     svg = d3.select "body" .append "svg"
         ..attr \width width + margin.left + margin.right
@@ -24,8 +23,6 @@ window.init = (data) ->
     maxSize = Math.max ...data.map (.size)
     notNormalizedPersonHeight = height / maxSize
     y = d3.scale.linear!rangeRound [0 height]
-    if not normalized
-        y.domain [0 maxSize]
 
     departments = data.map (.department)
     color.domain departments
@@ -36,20 +33,10 @@ window.init = (data) ->
             ..attr \class \department
             ..attr \transform -> "translate(#{x it.department}, 0)"
 
-    departmentBar.selectAll "rect"
+    rectangles = departmentBar.selectAll "rect"
         .data -> it.staff
         .enter!append "rect"
             ..attr \width x.rangeBand!
-            ..each (person, index, parentIndex) ->
-                person.y = switch normalized
-                | yes => y index / data[parentIndex].size
-                | no  => y index + (maxSize - data[parentIndex].size)
-            ..attr \y (person) -> person.y
-            ..attr \height (person, index, parentIndex) ->
-                nextPersonY = switch
-                    | data[parentIndex].staff[index+1] => that.y
-                    | otherwise                        => height
-                nextPersonY - person.y
             ..on \mouseover (person) ->
                 content =
                     | person.17
@@ -67,5 +54,22 @@ window.init = (data) ->
             ..attr \class (person) ->
                 | person.17 => "new"
                 | otherwise => "old"
+
+    normalized = no
+    if normalized
+        y.domain [0 1]
+    else
+        y.domain [0 maxSize]
+    rectangles
+        ..each (person, index, parentIndex) ->
+            person.y = switch normalized
+            | yes => y index / data[parentIndex].size
+            | no  => y index + (maxSize - data[parentIndex].size)
+        ..attr \y (person) -> person.y
+        ..attr \height (person, index, parentIndex) ->
+            nextPersonY = switch
+                | data[parentIndex].staff[index+1] => that.y
+                | otherwise                        => height
+            nextPersonY - person.y
 
 
