@@ -1,4 +1,6 @@
 (function(){
+  var tooltip;
+  tooltip = new Tooltip();
   window.init = function(data){
     var margin, width, height, x, color, normalized, x$, svg, y$, drawing, res$, department, staff, size, maxSize, notNormalizedPersonHeight, y, departments, z$, departmentBar, z1$;
     margin = {
@@ -64,8 +66,13 @@
         return notNormalizedPersonHeight + 1;
       }
     });
-    z1$.attr('title', function(person){
-      return person[6] + " " + person[7] + " " + person[8] + " " + person[9];
+    z1$.on('mouseover', function(person){
+      var content;
+      content = person[6] + " " + person[7] + " " + person[8] + " " + person[9];
+      return tooltip.display(content);
+    });
+    z1$.on('mouseout', function(){
+      return tooltip.hide();
     });
     z1$.style('fill', function(person){
       switch (false) {

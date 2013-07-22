@@ -1,3 +1,4 @@
+tooltip = new Tooltip!
 window.init = (data) ->
     margin =
         top: 20
@@ -49,9 +50,12 @@ window.init = (data) ->
                     (height / data[parentIndex].size) + 1
                 else
                     notNormalizedPersonHeight + 1
-            ..attr \title (person) -> "#{person.6} #{person.7} #{person.8} #{person.9}"
+            ..on \mouseover (person) ->
+                content = "#{person.6} #{person.7} #{person.8} #{person.9}"
+                tooltip.display content
+            ..on \mouseout ->
+                tooltip.hide!
             ..style \fill (person) ->
-
                 | person.17 => \#98abc5
                 | otherwise => \#6b486b
 

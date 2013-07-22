@@ -1,0 +1,14 @@
+.tooltip {
+  position: absolute;
+  border: 1px solid #000;
+  border-radius: 3px;
+  max-width: 270px;
+  background-color: #fff;
+  padding: 5px 10px;
+  margin-top: -20px;
+  margin-left: -12px;
+  box-shadow: #444 0px 0px 5px;
+}
+.tooltip p:only-child {
+  margin: 0px;
+}
