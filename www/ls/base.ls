@@ -6,9 +6,10 @@ window.init = (data) ->
         left: 40
     width = 960 - margin.left - margin.right
     height = 500 - margin.top - margin.bottom
-    x = d3.scale.ordinal!rangeRoundBands [0, width], 0.1
-    y = d3.scale.linear!rangeRound [0, height]
+    x = d3.scale.ordinal!rangeRoundBands [0, width], 0.01
+
     color = d3.scale.ordinal!range ['#98abc5' '#8a89a6' '#7b6888' '#6b486b' '#a05d56' '#d0743c' '#ff8c00' ] * 2
+    normalized = yes
 
     svg = d3.select "body" .append "svg"
         ..attr \width width + margin.left + margin.right
@@ -17,12 +18,14 @@ window.init = (data) ->
         ..attr \transform "translate(#{margin.left}, #{margin.top})"
 
     data = for department, staff of data
-        # lidi.forEach (clovek) ->
-        #     console.log clovek[17]
-        # staff.length = 20
         size = staff.length
         {department, staff, size}
-    console.log data
+    maxSize = Math.max ...data.map (.size)
+    notNormalizedPersonHeight = height / maxSize
+    y = d3.scale.linear!rangeRound [0 height]
+    if not normalized
+        y.domain [0 maxSize]
+
     departments = data.map (.department)
     color.domain departments
     x.domain departments
@@ -37,9 +40,19 @@ window.init = (data) ->
         .enter!append "rect"
             ..attr \width x.rangeBand!
             ..attr \y (person, index, parentIndex) ->
-                y index / data[parentIndex].size
+                if normalized
+                    y index / data[parentIndex].size
+                else
+                    y maxSize - index
             ..attr \height (person, index, parentIndex) ->
-                (height / data[parentIndex].size)
-            ..style \fill \red
+                if normalized
+                    (height / data[parentIndex].size) + 1
+                else
+                    notNormalizedPersonHeight + 1
+            ..attr \title (person) -> "#{person.6} #{person.7} #{person.8} #{person.9}"
+            ..style \fill (person) ->
+
+                | person.17 => \#98abc5
+                | otherwise => \#6b486b
 
 
