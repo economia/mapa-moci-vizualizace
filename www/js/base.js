@@ -61,9 +61,9 @@
     });
     z1$.attr('height', function(person, index, parentIndex){
       if (normalized) {
-        return height / data[parentIndex].size + 1;
+        return y((index + 1) / data[parentIndex].size) - y(index / data[parentIndex].size);
       } else {
-        return notNormalizedPersonHeight + 1;
+        return y((index + 1) + (maxSize - data[parentIndex].size)) - y(index + (maxSize - data[parentIndex].size));
       }
     });
     z1$.on('mouseover', function(person){

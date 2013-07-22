@@ -47,9 +47,9 @@ window.init = (data) ->
                     y index + (maxSize - data[parentIndex].size)
             ..attr \height (person, index, parentIndex) ->
                 if normalized
-                    (height / data[parentIndex].size) + 1
+                    (y (index + 1) / data[parentIndex].size) - (y index / data[parentIndex].size)
                 else
-                    notNormalizedPersonHeight + 1
+                    (y (index + 1) + (maxSize - data[parentIndex].size)) - (y index + (maxSize - data[parentIndex].size))
             ..on \mouseover (person) ->
                 content =
                     | person.17
