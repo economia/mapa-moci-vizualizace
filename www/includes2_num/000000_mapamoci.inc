@@ -26,8 +26,8 @@
         <meta property="og:type" content="article" />
         <meta property="og:url" content="http://ihned.cz/mapamoci" />
         <meta property="og:title" content="Mapa moci" />
-        <meta property="og:image" content="http://img.ihned.cz/attachment.php/480/49040480/QlbfL84gq1F9u2KwecHmhUTSP3VdC5pJ/FireShot_Screen_Capture_069_-_Zemanova_vl_da_I_IHNED_cz_-_ihned_cz_zemanovavlada.jpg" />
-        <meta property="og:description" content="----TODO-----" />
+        <meta property="og:image" content="http://ihned.cz/img/mapamoci/fallback.png" />
+        <meta property="og:description" content="Server IHNED.cz pøipravil pøehlednou mapu zmìn, které provedli ministøi nové vlády Jiøího Rusnoka za 14 dní od svého jmenování." />
         <link href="/css/mapamoci/screen.css" rel="stylesheet" type="text/css" />
     </head>
     <body bgcolor="white">
