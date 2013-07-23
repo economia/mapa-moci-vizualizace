@@ -23,7 +23,7 @@
     }());
   };
   window.init = function(data){
-    var margin, width, height, x, color, x$, svg, y$, drawing, res$, department, staff, size, maxSize, notNormalizedPersonHeight, y, departments, z$, departmentBar, z1$, rectangles, xAxis, z2$, z3$, yAxis, drawYAxis;
+    var margin, width, height, x, color, x$, svg, y$, drawing, res$, department, staff, size, maxSize, notNormalizedPersonHeight, y, departments, z$, departmentBar, z1$, rectangles, xAxis, z2$, z3$, yAxis, drawYAxis, hideYAxis;
     margin = {
       top: 20,
       right: 100,
@@ -111,6 +111,8 @@
       }
       if (sortMethod === 'changed') {
         drawYAxis(normalized);
+      } else {
+        hideYAxis();
       }
       data.forEach(function(it){
         var sortFunction;
@@ -160,6 +162,7 @@
     z3$.attr('transform', "translate(" + width + ", 0)");
     drawYAxis = function(normalized){
       var yAxisTicks;
+      yAxis.transition().duration(500).attr('opacity', 1);
       yAxisTicks = d3.svg.axis().orient('right').scale(y).tickFormat(function(it){
         if (normalized) {
           return (100 - it * 100) + "%";
@@ -168,6 +171,9 @@
         }
       });
       return yAxis.call(yAxisTicks);
+    };
+    hideYAxis = function(){
+      return yAxis.transition().duration(500).attr('opacity', 0);
     };
     redraw(true);
     return bindActions();

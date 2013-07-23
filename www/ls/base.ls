@@ -86,7 +86,7 @@ window.init = (data) ->
             y.domain [0 1]
         else
             y.domain [0 maxSize]
-        if sortMethod is \changed then drawYAxis normalized
+        if sortMethod is \changed then drawYAxis normalized else hideYAxis!
         data.forEach ->
             sortFunction = switch sortMethod
                 | 'changed'    => orderByChanged
@@ -114,6 +114,10 @@ window.init = (data) ->
     yAxis = drawing.append "g"
         ..attr \transform "translate(#{width}, 0)"
     drawYAxis = (normalized) ->
+        yAxis
+            .transition!
+            .duration 500
+            .attr \opacity 1
         yAxisTicks = d3.svg.axis!
             .orient \right
             .scale y
@@ -123,6 +127,12 @@ window.init = (data) ->
                 else
                     y.domain!.1 - it
         yAxis.call yAxisTicks
+
+    hideYAxis = ->
+        yAxis
+            .transition!
+            .duration 500
+            .attr \opacity 0
 
 
 
