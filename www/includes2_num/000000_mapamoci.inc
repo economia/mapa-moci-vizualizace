@@ -62,14 +62,14 @@
                 </ul>
                 <p id="autori"><em>autor: Matìj Smlsal, Michal Kalina, foto: archiv HN, ÈTK</em></p>
                 <div class="social-bottom-detail">
-                    <div class="fb-bottom"><div id="fb-root"></div><script src="http://connect.facebook.net/cs_CZ/all.js#appId=218617268163634&amp;xfbml=1"></script><fb:like href="http://ihned.cz/zemanovavlada" send="false" layout="box_count" width="90" show_faces="false" action="recommend" font="arial"></fb:like></div>
-                    <div class="tw-bottom"><a href="http://twitter.com/share" class="twitter-share-button" data-count="vertical" data-via="iHNed_zpravy" data-url="http://ihned.cz/zemanovavlada">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+                    <div class="fb-bottom"><div id="fb-root"></div><script src="http://connect.facebook.net/cs_CZ/all.js#appId=218617268163634&amp;xfbml=1"></script><fb:like href="http://ihned.cz/mapamoci" send="false" layout="box_count" width="90" show_faces="false" action="recommend" font="arial"></fb:like></div>
+                    <div class="tw-bottom"><a href="http://twitter.com/share" class="twitter-share-button" data-count="vertical" data-via="iHNed_zpravy" data-url="http://ihned.cz/mapamoci">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
                     </div>
                     <div class="one-plus-bottom">
-                        <g:plusone size="tall" href="http://ihned.cz/zemanovavlada"></g:plusone>
+                        <g:plusone size="tall" href="http://ihned.cz/mapamoci"></g:plusone>
                     </div>
 
-                    <div class="addthis_toolbox addthis_32x32_style addthis_default_style" addthis:url="http://ihned.cz/zemanovavlada">
+                    <div class="addthis_toolbox addthis_32x32_style addthis_default_style" addthis:url="http://ihned.cz/mapamoci">
                         <a class="addthis_button_print" title="Print"></a>
                         <a class="addthis_button_email" title="Poslat e-mailem"></a>
                         <a class="addthis_button_compact" title="Sdílet - další služby"></a>
