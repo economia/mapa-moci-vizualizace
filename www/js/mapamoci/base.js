@@ -76,7 +76,7 @@
       content += (function(){
         switch (false) {
         case !isPersonChanged(person):
-          return "<h3>Pùvodnì: </h3>\n<p class='from'>" + person[6] + " " + person[7] + " " + person[8] + " " + person[9] + " (" + person[11] + ")</p>\n<h3>Nástupce: </h3>\n<p class='to'>" + person[14] + " " + person[15] + " " + person[16] + " " + person[17] + " (" + person[19] + ")</p>";
+          return "<h3>PÅ¯vodnÄ›: </h3>\n<p class='from'>" + person[6] + " " + person[7] + " " + person[8] + " " + person[9] + " (" + person[11] + ")</p>\n<h3>NÃ¡stupce: </h3>\n<p class='to'>" + person[14] + " " + person[15] + " " + person[16] + " " + person[17] + " (" + person[19] + ")</p>";
         default:
           return "<span class='only'>" + person[6] + " " + person[7] + " " + person[8] + " " + person[9] + "</span>";
         }
@@ -209,6 +209,9 @@
     return $(document).on('click', '.selector li', function(){
       var $ele;
       $ele = $(this);
+      $.scrollTo($ele, {
+        duration: 200
+      });
       if ($ele.hasClass('active')) {
         return;
       }

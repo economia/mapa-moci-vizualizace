@@ -162,6 +162,7 @@ orderByImportance = (personA, personB) ->
 bindActions = ->
     $ document .on \click '.selector li' ->
         $ele = $ @
+        $.scrollTo $ele, duration:200
         return if $ele.hasClass \active
         $ele.parent!.find "li" .removeClass 'active'
         $ele.addClass 'active'
