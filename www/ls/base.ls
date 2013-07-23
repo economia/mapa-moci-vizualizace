@@ -61,6 +61,7 @@ window.init = (data) ->
                         """
                     | otherwise
                         "<span class='only'>#{person.6} #{person.7} #{person.8} #{person.9}</span>"
+                content += person.slice 0, 6 .join "-"
                 tooltip.display content
             ..on \mouseout ->
                 tooltip.hide!
@@ -109,7 +110,7 @@ isPersonChanged = (person) ->
 orderByChanged = (personA, personB) ->
     a = if isPersonChanged personA then 1 else 0
     b = if isPersonChanged personB then 1 else 0
-    b - a
+    a - b
 
 orderByOriginal = (personA, personB) ->
     personA.originalIndex - personB.originalIndex

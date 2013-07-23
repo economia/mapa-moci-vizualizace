@@ -80,6 +80,7 @@
           return "<span class='only'>" + person[6] + " " + person[7] + " " + person[8] + " " + person[9] + "</span>";
         }
       }());
+      content += person.slice(0, 6).join("-");
       return tooltip.display(content);
     });
     z1$.on('mouseout', function(){
@@ -153,7 +154,7 @@
     var a, b;
     a = isPersonChanged(personA) ? 1 : 0;
     b = isPersonChanged(personB) ? 1 : 0;
-    return b - a;
+    return a - b;
   };
   orderByOriginal = function(personA, personB){
     return personA.originalIndex - personB.originalIndex;
