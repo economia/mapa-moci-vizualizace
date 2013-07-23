@@ -90,6 +90,10 @@ svg .department rect.new:hover {
 svg .yAxis .domain {
   display: none;
 }
+#main > h1,
+#main > p {
+  margin-left: 13px;
+}
 .selector li {
   cursor: pointer;
 }
