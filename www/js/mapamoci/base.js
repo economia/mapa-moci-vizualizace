@@ -34,7 +34,7 @@
     height = 500 - margin.top - margin.bottom;
     x = d3.scale.ordinal().rangeRoundBands([0, width], 0.01);
     color = d3.scale.ordinal().range(['#98abc5', '#8a89a6', '#7b6888', '#6b486b', '#a05d56', '#d0743c', '#ff8c00', '#98abc5', '#8a89a6', '#7b6888', '#6b486b', '#a05d56', '#d0743c', '#ff8c00']);
-    x$ = svg = d3.select("body").append("svg");
+    x$ = svg = d3.select('#content').append("svg");
     x$.attr('width', width + margin.left + margin.right);
     x$.attr('height', height + margin.top + margin.bottom);
     y$ = drawing = svg.append("g");

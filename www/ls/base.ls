@@ -22,7 +22,7 @@ window.init = (data) ->
 
     color = d3.scale.ordinal!range ['#98abc5' '#8a89a6' '#7b6888' '#6b486b' '#a05d56' '#d0743c' '#ff8c00' ] * 2
 
-    svg = d3.select "body" .append "svg"
+    svg = d3.select '#content' .append "svg"
         ..attr \width width + margin.left + margin.right
         ..attr \height height + margin.top + margin.bottom
     drawing = svg.append "g"
