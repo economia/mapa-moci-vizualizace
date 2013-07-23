@@ -1,14 +1,4 @@
 tooltip = new Tooltip!
-annotatePerson = (person, index) ->
-    person.originalIndex = index
-    person.positionImportance = switch
-    | person.0  => 0
-    | person.1  => 1
-    | person.2  => 2
-    | person.3  => 3
-    | person.4  => 4
-    | person.5  => 5
-    | otherwise => 6
 
 window.init = (data) ->
     margin =
@@ -138,6 +128,16 @@ window.init = (data) ->
     redraw yes
     bindActions!
 
+annotatePerson = (person, index) ->
+    person.originalIndex = index
+    person.positionImportance = switch
+    | person.0  => 0
+    | person.1  => 1
+    | person.2  => 2
+    | person.3  => 3
+    | person.4  => 4
+    | person.5  => 5
+    | otherwise => 6
 
 
 isPersonChanged = (person) ->

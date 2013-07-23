@@ -1,27 +1,6 @@
 (function(){
   var tooltip, annotatePerson, isPersonChanged, getPersonPosition, orderByChanged, orderByOriginal, orderByImportance, bindActions, onSelectionChanged;
   tooltip = new Tooltip();
-  annotatePerson = function(person, index){
-    person.originalIndex = index;
-    return person.positionImportance = (function(){
-      switch (false) {
-      case !person[0]:
-        return 0;
-      case !person[1]:
-        return 1;
-      case !person[2]:
-        return 2;
-      case !person[3]:
-        return 3;
-      case !person[4]:
-        return 4;
-      case !person[5]:
-        return 5;
-      default:
-        return 6;
-      }
-    }());
-  };
   window.init = function(data){
     var margin, width, height, x, color, x$, svg, y$, drawing, res$, department, staff, size, maxSize, notNormalizedPersonHeight, y, departments, z$, departmentBar, z1$, rectangles, xAxis, z2$, z3$, yAxis, drawYAxis, hideYAxis;
     margin = {
@@ -178,6 +157,27 @@
     };
     redraw(true);
     return bindActions();
+  };
+  annotatePerson = function(person, index){
+    person.originalIndex = index;
+    return person.positionImportance = (function(){
+      switch (false) {
+      case !person[0]:
+        return 0;
+      case !person[1]:
+        return 1;
+      case !person[2]:
+        return 2;
+      case !person[3]:
+        return 3;
+      case !person[4]:
+        return 4;
+      case !person[5]:
+        return 5;
+      default:
+        return 6;
+      }
+    }());
   };
   isPersonChanged = function(person){
     return !!person[16];
