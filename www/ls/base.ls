@@ -12,10 +12,10 @@ annotatePerson = (person, index) ->
 
 window.init = (data) ->
     margin =
-        top: 20
-        right: 100
+        top: 10
+        right: 60
         bottom: 90
-        left: 40
+        left: 10
     width = 960 - margin.left - margin.right
     height = 500 - margin.top - margin.bottom
     x = d3.scale.ordinal!rangeRoundBands [0, width], 0.01
@@ -55,9 +55,9 @@ window.init = (data) ->
                 content +=
                     | isPersonChanged person
                         """
-                        <h3>Puvodne: </h3>
+                        <h3>Původně: </h3>
                         <p class='from'>#{person.6} #{person.7} #{person.8} #{person.9} (#{person.11})</p>
-                        <h3>Nastupce: </h3>
+                        <h3>Nástupce: </h3>
                         <p class='to'>#{person.14} #{person.15} #{person.16} #{person.17} (#{person.19})</p>
                         """
                     | otherwise
