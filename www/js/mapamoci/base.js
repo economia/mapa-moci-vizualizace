@@ -160,7 +160,7 @@
     hideYAxis = function(){
       return yAxis.transition().duration(500).attr('opacity', 0);
     };
-    redraw(true);
+    redraw(true, 'changed');
     return bindActions();
   };
   annotatePerson = function(person, index){

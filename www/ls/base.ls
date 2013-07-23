@@ -127,7 +127,7 @@ window.init = (data) ->
             .duration 500
             .attr \opacity 0
 
-    redraw yes
+    redraw yes \changed
     bindActions!
 
 annotatePerson = (person, index) ->

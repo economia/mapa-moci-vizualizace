@@ -57,9 +57,9 @@
 
                 <div id='content' class="incapable">
                     <ul id="sortSelector" class="selector">
-                        <li class="active" data-content="original">Podle organizaèní struktury</li>
+                        <li data-content="changed" class="active">Podle vymìnìnosti</li>
+                        <li data-content="original">Podle organizaèní struktury</li>
                         <li data-content="importance">Podle dùležitosti</li>
-                        <li data-content="changed">Podle vymìnìnosti</li>
                     </ul>
                     <dl id="legend">
                         <dt class="old">svìtle modrá</dt>
