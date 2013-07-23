@@ -1,17 +1,20 @@
 @import Tooltip
+@import colors
 .tooltip
     h3
         font-size 1.1em
         margin 0px
     p
         margin 0px
+oldColor = HNBlue
+newColor = HNPink
 svg
     .department
         rect.old
-            fill #6b486b
+            fill oldColor
             &:hover
-                outline 2px solid rgba(lighten(#6b486b, 50%), 0.8)
+                outline 2px solid rgba(lighten(oldColor, 50%), 0.8)
         rect.new
-            fill #98abc5
+            fill newColor
             &:hover
-                outline 2px solid rgba(darken(#98abc5, 50%), 0.7)
+                outline 2px solid rgba(darken(newColor, 50%), 0.7)

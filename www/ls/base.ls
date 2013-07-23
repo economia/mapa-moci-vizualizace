@@ -39,7 +39,7 @@ window.init = (data) ->
             ..attr \width x.rangeBand!
             ..on \mouseover (person) ->
                 content =
-                    | person.17
+                    | person.16
                         """
                         <h3>Puvodne: </h3>
                         <p class='from'>#{person.6} #{person.7} #{person.8} #{person.9}</p>
@@ -52,7 +52,7 @@ window.init = (data) ->
             ..on \mouseout ->
                 tooltip.hide!
             ..attr \class (person) ->
-                | person.17 => "new"
+                | person.16 => "new"
                 | otherwise => "old"
 
 
@@ -75,9 +75,9 @@ window.init = (data) ->
                     | data[parentIndex].staff[index+1] => that.y
                     | otherwise                        => height
                 nextPersonY - person.y
-    lastNormalized = no
+    lastNormalized = yes
     redraw lastNormalized
-    # <~ setInterval _, 2000
+    # <~ setInterval _, 5000
     # console.log lastNormalized
     # lastNormalized := !lastNormalized
     # redraw lastNormalized

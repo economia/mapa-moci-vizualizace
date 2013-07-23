@@ -52,7 +52,7 @@
       var content;
       content = (function(){
         switch (false) {
-        case !person[17]:
+        case !person[16]:
           return "<h3>Puvodne: </h3>\n<p class='from'>" + person[6] + " " + person[7] + " " + person[8] + " " + person[9] + "</p>\n<h3>Nastupce: </h3>\n<p class='to'>" + person[14] + " " + person[15] + " " + person[16] + " " + person[17] + "</p>";
         default:
           return "<span class='only'>" + person[6] + " " + person[7] + " " + person[8] + " " + person[9] + "</span>";
@@ -65,7 +65,7 @@
     });
     z1$.attr('class', function(person){
       switch (false) {
-      case !person[17]:
+      case !person[16]:
         return "new";
       default:
         return "old";
@@ -104,7 +104,7 @@
         return nextPersonY - person.y;
       });
     };
-    lastNormalized = false;
+    lastNormalized = true;
     return redraw(lastNormalized);
   };
 }).call(this);
