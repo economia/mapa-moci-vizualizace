@@ -167,9 +167,9 @@ bindActions = ->
         $ele.parent!.find "li" .removeClass 'active'
         $ele.addClass 'active'
         onSelectionChanged!
+
 onSelectionChanged = ->
     sort = $ '#sortSelector li.active' .data \content
-    display = $ '#displaySelector li.active' .data \content
-    normalized = display == "normalized"
+    normalized = yes
     redraw normalized, sort
 
