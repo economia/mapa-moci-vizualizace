@@ -27,7 +27,7 @@
     margin = {
       top: 20,
       right: 100,
-      bottom: 30,
+      bottom: 90,
       left: 40
     };
     width = 960 - margin.left - margin.right;
@@ -99,10 +99,10 @@
     z2$.text(function(it){
       return it.department;
     });
-    z2$.attr('y', height + 15);
-    z2$.attr('x', function(it){
-      return x(it.department);
+    z2$.attr('transform', function(it){
+      return "translate(" + (x(it.department) + x.rangeBand() / 2) + ", " + (height + 15) + "),rotate(-45)";
     });
+    z2$.attr('text-anchor', 'end');
     window.redraw = function(normalized, sortMethod){
       if (normalized) {
         y.domain([0, 1]);

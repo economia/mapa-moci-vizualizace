@@ -14,7 +14,7 @@ window.init = (data) ->
     margin =
         top: 20
         right: 100
-        bottom: 30
+        bottom: 90
         left: 40
     width = 960 - margin.left - margin.right
     height = 500 - margin.top - margin.bottom
@@ -74,8 +74,10 @@ window.init = (data) ->
         .data data
         .enter!append "text"
             ..text (.department)
-            ..attr \y height + 15
-            ..attr \x -> x it.department
+            ..attr \transform ->
+                "translate(#{x(it.department) + x.rangeBand! / 2}, #{height + 15}),
+                rotate(-45)"
+            ..attr \text-anchor \end
 
 
 
