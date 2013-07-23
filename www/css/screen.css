@@ -20,16 +20,16 @@
   margin: 0px;
 }
 svg .department rect.old {
-  fill: #85bee6;
+  fill: #aad1ee;
 }
 svg .department rect.old:hover {
-  outline: 2px solid rgba(231,242,250,0.5);
+  outline: 2px solid rgba(14,45,68,0.5);
 }
 svg .department rect.new {
   fill: #1f6597;
 }
 svg .department rect.new:hover {
-  outline: 2px solid rgba(6,20,30,0.5);
+  outline: 2px solid rgba(201,226,244,0.5);
 }
 .selector li {
   cursor: pointer;
