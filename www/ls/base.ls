@@ -1,4 +1,8 @@
 tooltip = new Tooltip!
+annotatePerson = (person, index) ->
+    person.originalIndex = index
+
+
 window.init = (data) ->
     margin =
         top: 20
@@ -19,8 +23,7 @@ window.init = (data) ->
 
     data = for department, staff of data
         size = staff.length
-        staff.forEach (person, index) ->
-            person.originalIndex = index
+        staff.forEach annotatePerson
         {department, staff, size}
 
     maxSize = Math.max ...data.map (.size)

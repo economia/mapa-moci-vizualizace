@@ -1,6 +1,9 @@
 (function(){
-  var tooltip, isPersonChanged, orderByChanged, orderByOriginal;
+  var tooltip, annotatePerson, isPersonChanged, orderByChanged, orderByOriginal;
   tooltip = new Tooltip();
+  annotatePerson = function(person, index){
+    return person.originalIndex = index;
+  };
   window.init = function(data){
     var margin, width, height, x, color, x$, svg, y$, drawing, res$, department, staff, size, maxSize, notNormalizedPersonHeight, y, departments, z$, departmentBar, z1$, rectangles, redraw;
     margin = {
@@ -22,7 +25,7 @@
     for (department in data) {
       staff = data[department];
       size = staff.length;
-      staff.forEach(fn$);
+      staff.forEach(annotatePerson);
       res$.push({
         department: department,
         staff: staff,
@@ -121,9 +124,6 @@
       });
     };
     return redraw(true);
-    function fn$(person, index){
-      return person.originalIndex = index;
-    }
   };
   isPersonChanged = function(person){
     return !!person[16];
