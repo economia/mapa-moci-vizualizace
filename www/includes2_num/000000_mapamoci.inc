@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>Mapa moci | IHNED.cz</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
         <meta http-equiv="content-type" content="text/html; charset=win-1250" />
         <meta http-equiv="content-language" content="cs" />
         <meta http-equiv="expires" content="0" />
@@ -48,15 +49,16 @@
                 </div>
                 <h1>Mapa moci</h1>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, tempora, dignissimos, deserunt, blanditiis quam tempore harum eos officia error sed repellendus quod dolor cumque! Sit dolorum ad minus quos quis incidunt earum nobis impedit voluptates inventore. Nobis, animi, itaque quis nam nisi temporibus nostrum cupiditate cumque omnis ab earum hic.</p>
+
+                <div id="placeholder">
+
+                </div>
+
                 <div id='content'>
                     <ul id="sortSelector" class="selector">
                         <li class="active" data-content="original">Podle organizaèní struktury</li>
                         <li data-content="importance">Podle dùležitosti</li>
                         <li data-content="changed">Podle vymìnìnosti</li>
-                    </ul>
-                    <ul id="displaySelector" class="selector">
-                        <li class="active" data-content="normalized">Normalizované</li>
-                        <li data-content="absolute">Absolutní</li>
                     </ul>
                 </div>
 
