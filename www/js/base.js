@@ -23,7 +23,7 @@
     }());
   };
   window.init = function(data){
-    var margin, width, height, x, color, x$, svg, y$, drawing, res$, department, staff, size, maxSize, notNormalizedPersonHeight, y, departments, z$, departmentBar, z1$, rectangles;
+    var margin, width, height, x, color, x$, svg, y$, drawing, res$, department, staff, size, maxSize, notNormalizedPersonHeight, y, departments, z$, departmentBar, z1$, rectangles, xAxis, z2$;
     margin = {
       top: 20,
       right: 100,
@@ -93,6 +93,15 @@
       default:
         return "old";
       }
+    });
+    xAxis = drawing.append("g");
+    z2$ = departmentBar = xAxis.selectAll("text").data(data).enter().append("text");
+    z2$.text(function(it){
+      return it.department;
+    });
+    z2$.attr('y', height + 15);
+    z2$.attr('x', function(it){
+      return x(it.department);
     });
     window.redraw = function(normalized, sortMethod){
       if (normalized) {

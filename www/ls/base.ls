@@ -69,6 +69,15 @@ window.init = (data) ->
                 | isPersonChanged person => "new"
                 | otherwise => "old"
 
+    xAxis = drawing.append "g"
+    departmentBar = xAxis.selectAll "text"
+        .data data
+        .enter!append "text"
+            ..text (.department)
+            ..attr \y height + 15
+            ..attr \x -> x it.department
+
+
 
     window.redraw = (normalized, sortMethod) ->
         if normalized
