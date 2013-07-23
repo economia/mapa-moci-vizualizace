@@ -2,12 +2,14 @@
   var tooltip, capableBrowser, annotatePerson, isPersonChanged, getPersonPosition, orderByChanged, orderByOriginal, orderByImportance, bindActions, onSelectionChanged;
   tooltip = new Tooltip();
   capableBrowser = Modernizr.inlinesvg;
+  if (capableBrowser) {
+    $('#content, #fallback').removeClass('incapable');
+  }
   window.init = function(data){
     var margin, width, height, x, color, x$, svg, y$, drawing, res$, department, staff, size, maxSize, notNormalizedPersonHeight, y, departments, z$, departmentBar, z1$, rectangles, xAxis, z2$, z3$, yAxis, drawYAxis, hideYAxis;
     if (!capableBrowser) {
       return;
     }
-    $('#content, #fallback').removeClass('incapable');
     margin = {
       top: 10,
       right: 60,

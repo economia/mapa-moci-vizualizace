@@ -1,8 +1,8 @@
 tooltip = new Tooltip!
 capableBrowser = Modernizr.inlinesvg
+if capableBrowser then $ '#content, #fallback' .removeClass 'incapable'
 window.init = (data) ->
     return if not capableBrowser
-    $ '#content, #fallback' .removeClass 'incapable'
     margin =
         top: 10
         right: 60
