@@ -186,6 +186,9 @@
     return $(document).on('click', '.selector li', function(){
       var $ele;
       $ele = $(this);
+      if ($ele.hasClass('active')) {
+        return;
+      }
       $ele.parent().find("li").removeClass('active');
       $ele.addClass('active');
       return onSelectionChanged();
