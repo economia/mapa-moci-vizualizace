@@ -86,6 +86,7 @@ window.init = (data) ->
             y.domain [0 1]
         else
             y.domain [0 maxSize]
+        if sortMethod is \changed then drawYAxis normalized
         data.forEach ->
             sortFunction = switch sortMethod
                 | 'changed'    => orderByChanged
@@ -110,9 +111,24 @@ window.init = (data) ->
                     | person.next => that.y
                     | otherwise   => height
                 nextPersonY - person.y
+    yAxis = drawing.append "g"
+        ..attr \transform "translate(#{width}, 0)"
+    drawYAxis = (normalized) ->
+        yAxisTicks = d3.svg.axis!
+            .orient \right
+            .scale y
+            .tickFormat ->
+                if normalized
+                    "#{100 - it * 100}%"
+                else
+                    y.domain!.1 - it
+        yAxis.call yAxisTicks
+
+
 
     redraw yes
     bindActions!
+
 
 
 isPersonChanged = (person) ->

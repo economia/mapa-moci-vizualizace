@@ -23,7 +23,7 @@
     }());
   };
   window.init = function(data){
-    var margin, width, height, x, color, x$, svg, y$, drawing, res$, department, staff, size, maxSize, notNormalizedPersonHeight, y, departments, z$, departmentBar, z1$, rectangles, xAxis, z2$;
+    var margin, width, height, x, color, x$, svg, y$, drawing, res$, department, staff, size, maxSize, notNormalizedPersonHeight, y, departments, z$, departmentBar, z1$, rectangles, xAxis, z2$, z3$, yAxis, drawYAxis;
     margin = {
       top: 20,
       right: 100,
@@ -109,6 +109,9 @@
       } else {
         y.domain([0, maxSize]);
       }
+      if (sortMethod === 'changed') {
+        drawYAxis(normalized);
+      }
       data.forEach(function(it){
         var sortFunction;
         sortFunction = (function(){
@@ -152,6 +155,19 @@
         }());
         return nextPersonY - person.y;
       });
+    };
+    z3$ = yAxis = drawing.append("g");
+    z3$.attr('transform', "translate(" + width + ", 0)");
+    drawYAxis = function(normalized){
+      var yAxisTicks;
+      yAxisTicks = d3.svg.axis().orient('right').scale(y).tickFormat(function(it){
+        if (normalized) {
+          return (100 - it * 100) + "%";
+        } else {
+          return y.domain()[1] - it;
+        }
+      });
+      return yAxis.call(yAxisTicks);
     };
     redraw(true);
     return bindActions();
