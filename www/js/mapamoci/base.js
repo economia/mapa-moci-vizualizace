@@ -199,10 +199,14 @@
     return results$;
   };
   orderByChanged = function(personA, personB){
-    var a, b;
+    var a, b, that;
     a = isPersonChanged(personA) ? 1 : 0;
     b = isPersonChanged(personB) ? 1 : 0;
-    return a - b;
+    if (that = a - b) {
+      return that;
+    } else {
+      return (-1) * orderByImportance(personA, personB);
+    }
   };
   orderByOriginal = function(personA, personB){
     return personA.originalIndex - personB.originalIndex;

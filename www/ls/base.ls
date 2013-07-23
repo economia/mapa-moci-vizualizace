@@ -153,7 +153,11 @@ getPersonPosition = (person) ->
 orderByChanged = (personA, personB) ->
     a = if isPersonChanged personA then 1 else 0
     b = if isPersonChanged personB then 1 else 0
-    a - b
+    if a - b
+        that
+    else
+        (-1) * orderByImportance personA, personB
+
 
 orderByOriginal = (personA, personB) ->
     personA.originalIndex - personB.originalIndex
