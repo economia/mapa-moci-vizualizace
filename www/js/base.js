@@ -2,7 +2,25 @@
   var tooltip, annotatePerson, isPersonChanged, orderByChanged, orderByOriginal;
   tooltip = new Tooltip();
   annotatePerson = function(person, index){
-    return person.originalIndex = index;
+    person.originalIndex = index;
+    return person.positionImportance = (function(){
+      switch (false) {
+      case !person[0]:
+        return 0;
+      case !person[1]:
+        return 1;
+      case !person[2]:
+        return 2;
+      case !person[3]:
+        return 3;
+      case !person[4]:
+        return 4;
+      case !person[5]:
+        return 5;
+      default:
+        return 6;
+      }
+    }());
   };
   window.init = function(data){
     var margin, width, height, x, color, x$, svg, y$, drawing, res$, department, staff, size, maxSize, notNormalizedPersonHeight, y, departments, z$, departmentBar, z1$, rectangles, redraw;
