@@ -39,12 +39,12 @@ window.init = (data) ->
             ..attr \width x.rangeBand!
             ..on \mouseover (person) ->
                 content =
-                    | person.16
+                    | isPersonChanged person
                         """
                         <h3>Puvodne: </h3>
-                        <p class='from'>#{person.6} #{person.7} #{person.8} #{person.9}</p>
+                        <p class='from'>#{person.6} #{person.7} #{person.8} #{person.9} (#{person.11})</p>
                         <h3>Nastupce: </h3>
-                        <p class='to'>#{person.14} #{person.15} #{person.16} #{person.17}</p>
+                        <p class='to'>#{person.14} #{person.15} #{person.16} #{person.17} (#{person.19})</p>
                         """
                     | otherwise
                         "<span class='only'>#{person.6} #{person.7} #{person.8} #{person.9}</span>"
@@ -52,7 +52,7 @@ window.init = (data) ->
             ..on \mouseout ->
                 tooltip.hide!
             ..attr \class (person) ->
-                | person.16 => "new"
+                | isPersonChanged person => "new"
                 | otherwise => "old"
 
 
@@ -83,3 +83,5 @@ window.init = (data) ->
     # redraw lastNormalized
 
 
+isPersonChanged = (person) ->
+    !!person.16
