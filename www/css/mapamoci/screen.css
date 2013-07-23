@@ -142,4 +142,5 @@ svg .yAxis .domain {
 }
 #content .selector li.active {
   background: #85bee6;
+  color: #fff;
 }
