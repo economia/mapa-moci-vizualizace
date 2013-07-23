@@ -1,5 +1,5 @@
 (function(){
-  var tooltip, annotatePerson, isPersonChanged, orderByChanged, orderByOriginal;
+  var tooltip, annotatePerson, isPersonChanged, orderByChanged, orderByOriginal, orderByImportance;
   tooltip = new Tooltip();
   annotatePerson = function(person, index){
     person.originalIndex = index;
@@ -105,6 +105,8 @@
           switch (sortMethod) {
           case 'changed':
             return orderByChanged;
+          case 'importance':
+            return orderByImportance;
           default:
             return orderByOriginal;
           }
@@ -154,5 +156,8 @@
   };
   orderByOriginal = function(personA, personB){
     return personA.originalIndex - personB.originalIndex;
+  };
+  orderByImportance = function(personA, personB){
+    return personA.positionImportance - personB.positionImportance;
   };
 }).call(this);

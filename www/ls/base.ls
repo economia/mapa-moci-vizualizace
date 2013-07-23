@@ -76,8 +76,9 @@ window.init = (data) ->
             y.domain [0 maxSize]
         data.forEach ->
             sortFunction = switch sortMethod
-                | 'changed' => orderByChanged
-                | otherwise => orderByOriginal
+                | 'changed'    => orderByChanged
+                | 'importance' => orderByImportance
+                | otherwise    => orderByOriginal
             it.staff.sort sortFunction
             it.staff.forEach (person, index) ->
                 person.next = it.staff[index + 1]
@@ -111,3 +112,6 @@ orderByChanged = (personA, personB) ->
 
 orderByOriginal = (personA, personB) ->
     personA.originalIndex - personB.originalIndex
+
+orderByImportance = (personA, personB) ->
+    personA.positionImportance - personB.positionImportance
