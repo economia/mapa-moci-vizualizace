@@ -95,19 +95,19 @@ svg .yAxis .domain {
   margin-left: 13px;
 }
 #content {
-  margin-top: 20px;
+  margin-top: 30px;
   position: relative;
   padding-top: 50px;
 }
 #content .selector {
   position: absolute;
   top: 0px;
-  left: -8px;
+  left: -9px;
   list-style: none;
 }
 #content .selector#displaySelector {
   left: auto;
-  right: 105px;
+  right: 104px;
 }
 #content .selector li {
   cursor: pointer;
