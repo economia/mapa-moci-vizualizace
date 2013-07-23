@@ -48,7 +48,7 @@
                     <a href="http://ihned.cz/">Zavøít vizualizaci a vrátit se zpìt</a>
                 </div>
                 <h1>Mapa moci</h1>
-                <p>Server IHNED.cz pøipravil pøehlednou mapu zmìn, které provedli ministøi nové vlády Jiøího Rusnoka za 14 dní od svého jmenování. Zahrnuje každou pozici od námìstkù po vedoucí jednotlivých odborù napøíè resorty, na tøech z nich ještì ministøi nikoho nevymìnili. Vizualizace zobrazuje údaje platné 23. èervence v 16 hodin. S dalšími obmìnami ji budeme prùbìžnì aktualizovat.\</p>
+                <p>Server IHNED.cz pøipravil pøehlednou mapu zmìn, které provedli ministøi nové vlády Jiøího Rusnoka za 14 dní od svého jmenování. Zahrnuje každou pozici od námìstkù po vedoucí jednotlivých odborù napøíè resorty, na tøech z nich ještì ministøi nikoho nevymìnili. Vizualizace zobrazuje údaje platné 23. èervence v 16 hodin. S dalšími obmìnami ji budeme prùbìžnì aktualizovat.</p>
 
                 <div id="placeholder">
 
