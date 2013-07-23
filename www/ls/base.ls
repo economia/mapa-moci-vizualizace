@@ -40,7 +40,7 @@ window.init = (data) ->
     departments = data.map (.department)
     color.domain departments
     x.domain departments
-    departmentBar = svg.selectAll ".department"
+    departmentBar = drawing.selectAll ".department"
         .data data
         .enter!append "g"
             ..attr \class \department

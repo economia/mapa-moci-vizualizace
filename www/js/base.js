@@ -61,7 +61,7 @@
     });
     color.domain(departments);
     x.domain(departments);
-    z$ = departmentBar = svg.selectAll(".department").data(data).enter().append("g");
+    z$ = departmentBar = drawing.selectAll(".department").data(data).enter().append("g");
     z$.attr('class', 'department');
     z$.attr('transform', function(it){
       return "translate(" + x(it.department) + ", 0)";
