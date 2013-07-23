@@ -59,13 +59,16 @@ window.init = (data) ->
                 | otherwise => "old"
 
 
-    redraw = (normalized, sorted) ->
+    redraw = (normalized, sortMethod) ->
         if normalized
             y.domain [0 1]
         else
             y.domain [0 maxSize]
         data.forEach ->
-            it.staff.sort orderByOriginal
+            sortFunction = switch sortMethod
+                | 'changed' => orderByChanged
+                | otherwise => orderByOriginal
+            it.staff.sort sortFunction
             it.staff.forEach (person, index) ->
                 person.next = it.staff[index + 1]
 

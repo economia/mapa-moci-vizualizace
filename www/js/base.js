@@ -72,14 +72,23 @@
         return "old";
       }
     });
-    redraw = function(normalized, sorted){
+    redraw = function(normalized, sortMethod){
       if (normalized) {
         y.domain([0, 1]);
       } else {
         y.domain([0, maxSize]);
       }
       data.forEach(function(it){
-        it.staff.sort(orderByOriginal);
+        var sortFunction;
+        sortFunction = (function(){
+          switch (sortMethod) {
+          case 'changed':
+            return orderByChanged;
+          default:
+            return orderByOriginal;
+          }
+        }());
+        it.staff.sort(sortFunction);
         return it.staff.forEach(function(person, index){
           return person.next = it.staff[index + 1];
         });
