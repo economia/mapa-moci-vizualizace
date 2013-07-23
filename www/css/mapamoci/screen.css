@@ -144,3 +144,31 @@ svg .yAxis .domain {
   background: #85bee6;
   color: #fff;
 }
+#content #legend {
+  position: absolute;
+  top: 0px;
+  right: 105px;
+  margin: 0px;
+}
+#content #legend dt {
+  float: right;
+  clear: right;
+  overflow: hidden;
+  height: 15px;
+  width: 60px;
+  border: 1px solid #115;
+  margin-bottom: 10px;
+}
+#content #legend dt.old {
+  background: #aad1ee;
+  color: #aad1ee;
+}
+#content #legend dt.new {
+  background: #1f6597;
+  color: #1f6597;
+}
+#content #legend dd {
+  float: right;
+  margin-left: 0px;
+  margin-right: 10px;
+}

@@ -61,6 +61,12 @@
                         <li data-content="importance">Podle dùležitosti</li>
                         <li data-content="changed">Podle vymìnìnosti</li>
                     </ul>
+                    <dl id="legend">
+                        <dt class="old">svìtle modrá</dt>
+                        <dd class="old">Pùvodní pracovníci</dd>
+                        <dt class="new">tmavì modrá</dt>
+                        <dd class="new">Vymìnìní pracovníci</dd>
+                    </dl>
                 </div>
 
                 <p id="autori"><em>Autoøi grafiky: Jakub Wittka, Lucie Kuèerová, Jan Koudela</em></p>
