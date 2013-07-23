@@ -1,5 +1,5 @@
 (function(){
-  var tooltip, annotatePerson, isPersonChanged, orderByChanged, orderByOriginal, orderByImportance;
+  var tooltip, annotatePerson, isPersonChanged, orderByChanged, orderByOriginal, orderByImportance, bindActions, onSelectionChanged;
   tooltip = new Tooltip();
   annotatePerson = function(person, index){
     person.originalIndex = index;
@@ -23,7 +23,7 @@
     }());
   };
   window.init = function(data){
-    var margin, width, height, x, color, x$, svg, y$, drawing, res$, department, staff, size, maxSize, notNormalizedPersonHeight, y, departments, z$, departmentBar, z1$, rectangles, redraw;
+    var margin, width, height, x, color, x$, svg, y$, drawing, res$, department, staff, size, maxSize, notNormalizedPersonHeight, y, departments, z$, departmentBar, z1$, rectangles;
     margin = {
       top: 20,
       right: 100,
@@ -93,7 +93,7 @@
         return "old";
       }
     });
-    redraw = function(normalized, sortMethod){
+    window.redraw = function(normalized, sortMethod){
       if (normalized) {
         y.domain([0, 1]);
       } else {
@@ -143,7 +143,8 @@
         return nextPersonY - person.y;
       });
     };
-    return redraw(true);
+    redraw(true);
+    return bindActions();
   };
   isPersonChanged = function(person){
     return !!person[16];
@@ -159,5 +160,21 @@
   };
   orderByImportance = function(personA, personB){
     return personA.positionImportance - personB.positionImportance;
+  };
+  bindActions = function(){
+    return $(document).on('click', '.selector li', function(){
+      var $ele;
+      $ele = $(this);
+      $ele.parent().find("li").removeClass('active');
+      $ele.addClass('active');
+      return onSelectionChanged();
+    });
+  };
+  onSelectionChanged = function(){
+    var sort, display, normalized;
+    sort = $('#sortSelector li.active').data('content');
+    display = $('#displaySelector li.active').data('content');
+    normalized = display === "normalized";
+    return redraw(normalized, sort);
   };
 }).call(this);

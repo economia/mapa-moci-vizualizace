@@ -69,7 +69,7 @@ window.init = (data) ->
                 | otherwise => "old"
 
 
-    redraw = (normalized, sortMethod) ->
+    window.redraw = (normalized, sortMethod) ->
         if normalized
             y.domain [0 1]
         else
@@ -100,6 +100,7 @@ window.init = (data) ->
                 nextPersonY - person.y
 
     redraw yes
+    bindActions!
 
 
 isPersonChanged = (person) ->
@@ -115,3 +116,15 @@ orderByOriginal = (personA, personB) ->
 
 orderByImportance = (personA, personB) ->
     personA.positionImportance - personB.positionImportance
+
+bindActions = ->
+    $ document .on \click '.selector li' ->
+        $ele = $ @
+        $ele.parent!.find "li" .removeClass 'active'
+        $ele.addClass 'active'
+        onSelectionChanged!
+onSelectionChanged = ->
+    sort = $ '#sortSelector li.active' .data \content
+    display = $ '#displaySelector li.active' .data \content
+    normalized = display == "normalized"
+    redraw normalized, sort
