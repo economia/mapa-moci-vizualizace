@@ -23,11 +23,11 @@ svg .department rect.old {
   fill: #85bee6;
 }
 svg .department rect.old:hover {
-  outline: 2px solid rgba(194,223,243,0.8);
+  outline: 2px solid rgba(231,242,250,0.5);
 }
 svg .department rect.new {
   fill: #1f6597;
 }
 svg .department rect.new:hover {
-  outline: 2px solid rgba(16,50,76,0.7);
+  outline: 2px solid rgba(6,20,30,0.5);
 }
