@@ -117,6 +117,7 @@ svg .yAxis .domain {
 }
 #content {
   margin-top: 30px;
+  margin-bottom: 5px;
   position: relative;
   padding-top: 50px;
 }

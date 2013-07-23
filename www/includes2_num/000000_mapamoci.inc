@@ -68,8 +68,8 @@
                         <dd class="new">Vymìnìní pracovníci</dd>
                     </dl>
                 </div>
-                <p>Zapomnìli jsme na nìjakého námìstka èi vedoucího odboru? <a href="https://docs.google.com/a/economia.cz/forms/d/1ZnDynmfyh__TZZqMMzT1jHwDdCt4cnaQdgO1IYTfeu8/viewform">Napište nám</a>, my údaje aktualizujeme</p>
-                <p id="autori"><em>Autoøi grafiky: Jakub Wittka, Lucie Kuèerová, Jan Koudela</em></p>
+                <p>Zapomnìli jsme na nìjakého námìstka èi vedoucího odboru? <a href="https://docs.google.com/a/economia.cz/forms/d/1ZnDynmfyh__TZZqMMzT1jHwDdCt4cnaQdgO1IYTfeu8/viewform">Napište nám</a>, my údaje aktualizujeme.</p>
+                <p id="autori"><em>Autoøi: Jakub Wittka, Lucie Kuèerová, Jan Koudela</em></p>
                 <div class="social-bottom-detail">
                     <div class="fb-bottom"><div id="fb-root"></div><script src="http://connect.facebook.net/cs_CZ/all.js#appId=218617268163634&amp;xfbml=1"></script><fb:like href="http://ihned.cz/mapamoci" send="false" layout="box_count" width="90" show_faces="false" action="recommend" font="arial"></fb:like></div>
                     <div class="tw-bottom"><a href="http://twitter.com/share" class="twitter-share-button" data-count="vertical" data-via="iHNed_zpravy" data-url="http://ihned.cz/mapamoci">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
