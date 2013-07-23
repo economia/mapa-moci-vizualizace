@@ -51,7 +51,8 @@ window.init = (data) ->
         .enter!append "rect"
             ..attr \width x.rangeBand!
             ..on \mouseover (person) ->
-                content =
+                content = "<h2>#{getPersonPosition person}</h2>"
+                content +=
                     | isPersonChanged person
                         """
                         <h3>Puvodne: </h3>
@@ -61,7 +62,6 @@ window.init = (data) ->
                         """
                     | otherwise
                         "<span class='only'>#{person.6} #{person.7} #{person.8} #{person.9}</span>"
-                content += person.slice 0, 6 .join "-"
                 tooltip.display content
             ..on \mouseout ->
                 tooltip.hide!
@@ -118,6 +118,11 @@ window.init = (data) ->
 isPersonChanged = (person) ->
     !!person.16
 
+getPersonPosition = (person) ->
+    position = null
+    for i in [0 to 5]
+        if person[i] then position = that
+
 orderByChanged = (personA, personB) ->
     a = if isPersonChanged personA then 1 else 0
     b = if isPersonChanged personB then 1 else 0
@@ -140,3 +145,4 @@ onSelectionChanged = ->
     display = $ '#displaySelector li.active' .data \content
     normalized = display == "normalized"
     redraw normalized, sort
+

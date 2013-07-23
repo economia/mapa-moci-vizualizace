@@ -1,5 +1,5 @@
 (function(){
-  var tooltip, annotatePerson, isPersonChanged, orderByChanged, orderByOriginal, orderByImportance, bindActions, onSelectionChanged;
+  var tooltip, annotatePerson, isPersonChanged, getPersonPosition, orderByChanged, orderByOriginal, orderByImportance, bindActions, onSelectionChanged;
   tooltip = new Tooltip();
   annotatePerson = function(person, index){
     person.originalIndex = index;
@@ -72,7 +72,8 @@
     z1$.attr('width', x.rangeBand());
     z1$.on('mouseover', function(person){
       var content;
-      content = (function(){
+      content = "<h2>" + getPersonPosition(person) + "</h2>";
+      content += (function(){
         switch (false) {
         case !isPersonChanged(person):
           return "<h3>Puvodne: </h3>\n<p class='from'>" + person[6] + " " + person[7] + " " + person[8] + " " + person[9] + " (" + person[11] + ")</p>\n<h3>Nastupce: </h3>\n<p class='to'>" + person[14] + " " + person[15] + " " + person[16] + " " + person[17] + " (" + person[19] + ")</p>";
@@ -80,7 +81,6 @@
           return "<span class='only'>" + person[6] + " " + person[7] + " " + person[8] + " " + person[9] + "</span>";
         }
       }());
-      content += person.slice(0, 6).join("-");
       return tooltip.display(content);
     });
     z1$.on('mouseout', function(){
@@ -158,6 +158,17 @@
   };
   isPersonChanged = function(person){
     return !!person[16];
+  };
+  getPersonPosition = function(person){
+    var position, i$, ref$, len$, i, that, results$ = [];
+    position = null;
+    for (i$ = 0, len$ = (ref$ = [0, 1, 2, 3, 4, 5]).length; i$ < len$; ++i$) {
+      i = ref$[i$];
+      if (that = person[i]) {
+        results$.push(position = that);
+      }
+    }
+    return results$;
   };
   orderByChanged = function(personA, personB){
     var a, b;
