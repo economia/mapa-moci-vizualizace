@@ -110,7 +110,7 @@ window.init = (data) ->
                 nextPersonY = switch
                     | person.next => that.y
                     | otherwise   => height
-                nextPersonY - person.y
+                nextPersonY - person.y + 1
     yAxis = drawing.append "g"
         ..attr \transform "translate(#{width}, 0)"
         ..attr \class \yAxis

@@ -155,7 +155,7 @@
             return height;
           }
         }());
-        return nextPersonY - person.y;
+        return nextPersonY - person.y + 1;
       });
     };
     z3$ = yAxis = drawing.append("g");
