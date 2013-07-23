@@ -48,7 +48,7 @@
                     <a href="http://ihned.cz/">Zavøít vizualizaci a vrátit se zpìt</a>
                 </div>
                 <h1>Mapa moci</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, tempora, dignissimos, deserunt, blanditiis quam tempore harum eos officia error sed repellendus quod dolor cumque! Sit dolorum ad minus quos quis incidunt earum nobis impedit voluptates inventore. Nobis, animi, itaque quis nam nisi temporibus nostrum cupiditate cumque omnis ab earum hic.</p>
+                <p>Server IHNED.cz pøipravil pøehlednou mapu zmìn, které provedli ministøi nové vlády Jiøího Rusnoka za 14 dní od svého jmenování. Zahrnuje každou pozici od námìstkù po vedoucí jednotlivých odborù napøíè resorty, na tøech z nich ještì ministøi nikoho nevymìnili. Vizualizace zobrazuje údaje platné 23. èervence v 16 hodin. S dalšími obmìnami ji budeme prùbìžnì aktualizovat.\</p>
 
                 <div id="placeholder">
 
