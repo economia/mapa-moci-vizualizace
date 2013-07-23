@@ -113,6 +113,7 @@ window.init = (data) ->
                 nextPersonY - person.y
     yAxis = drawing.append "g"
         ..attr \transform "translate(#{width}, 0)"
+        ..attr \class \yAxis
     drawYAxis = (normalized) ->
         yAxis
             .transition!
@@ -133,8 +134,6 @@ window.init = (data) ->
             .transition!
             .duration 500
             .attr \opacity 0
-
-
 
     redraw yes
     bindActions!

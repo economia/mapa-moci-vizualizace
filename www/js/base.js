@@ -160,6 +160,7 @@
     };
     z3$ = yAxis = drawing.append("g");
     z3$.attr('transform', "translate(" + width + ", 0)");
+    z3$.attr('class', 'yAxis');
     drawYAxis = function(normalized){
       var yAxisTicks;
       yAxis.transition().duration(500).attr('opacity', 1);

@@ -35,6 +35,9 @@ svg .department rect.new {
 svg .department rect.new:hover {
   outline: 2px solid rgba(201,226,244,0.5);
 }
+svg .yAxis .domain {
+  display: none;
+}
 .selector li {
   cursor: pointer;
 }
