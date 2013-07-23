@@ -50,11 +50,12 @@
                 <h1>Mapa moci</h1>
                 <p>Server IHNED.cz pøipravil pøehlednou mapu zmìn, které provedli ministøi nové vlády Jiøího Rusnoka za 14 dní od svého jmenování. Zahrnuje každou pozici od námìstkù po vedoucí jednotlivých odborù napøíè resorty, na tøech z nich ještì ministøi nikoho nevymìnili. Vizualizace zobrazuje údaje platné 23. èervence v 16 hodin. S dalšími obmìnami ji budeme prùbìžnì aktualizovat.</p>
 
-                <div id="placeholder">
-
+                <div id="fallback" class="incapable">
+                    <p>Váš prohlížeè je bohužel zastaralý a nepodporuje interaktivní vizualizace. Doporuèujeme jej aktualizovat, nebo si <a href="http://www.browserchoice.eu/">stáhnout jiný</a>. Mezitím bude aplikace pracovat pouze v omezeném režimu.</p>
+                    <img src="/img/mapamoci/fallback.png" alt="Vizualizace množství lidí, kteøí byli vymìnìni na jednotlivých ministerstvech" />
                 </div>
 
-                <div id='content'>
+                <div id='content' class="incapable">
                     <ul id="sortSelector" class="selector">
                         <li class="active" data-content="original">Podle organizaèní struktury</li>
                         <li data-content="importance">Podle dùležitosti</li>

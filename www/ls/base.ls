@@ -1,7 +1,8 @@
 tooltip = new Tooltip!
 capableBrowser = Modernizr.inlinesvg
 window.init = (data) ->
-    return displayPlaceholder! if not capableBrowser
+    return if not capableBrowser
+    $ '#content, #fallback' .removeClass 'incapable'
     margin =
         top: 10
         right: 60
@@ -128,9 +129,6 @@ window.init = (data) ->
 
     redraw yes
     bindActions!
-
-displayPlaceholder = ->
-    $ '#content, #placeholder' .addClass 'incapable'
 
 annotatePerson = (person, index) ->
     person.originalIndex = index

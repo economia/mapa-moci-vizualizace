@@ -1,12 +1,13 @@
 (function(){
-  var tooltip, capableBrowser, displayPlaceholder, annotatePerson, isPersonChanged, getPersonPosition, orderByChanged, orderByOriginal, orderByImportance, bindActions, onSelectionChanged;
+  var tooltip, capableBrowser, annotatePerson, isPersonChanged, getPersonPosition, orderByChanged, orderByOriginal, orderByImportance, bindActions, onSelectionChanged;
   tooltip = new Tooltip();
   capableBrowser = Modernizr.inlinesvg;
   window.init = function(data){
     var margin, width, height, x, color, x$, svg, y$, drawing, res$, department, staff, size, maxSize, notNormalizedPersonHeight, y, departments, z$, departmentBar, z1$, rectangles, xAxis, z2$, z3$, yAxis, drawYAxis, hideYAxis;
     if (!capableBrowser) {
-      return displayPlaceholder();
+      return;
     }
+    $('#content, #fallback').removeClass('incapable');
     margin = {
       top: 10,
       right: 60,
@@ -161,9 +162,6 @@
     };
     redraw(true);
     return bindActions();
-  };
-  displayPlaceholder = function(){
-    return $('#content, #placeholder').addClass('incapable');
   };
   annotatePerson = function(person, index){
     person.originalIndex = index;
