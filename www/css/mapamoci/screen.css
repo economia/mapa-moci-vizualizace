@@ -94,12 +94,29 @@ svg .yAxis .domain {
 #main > p {
   margin-left: 13px;
 }
-.selector li {
-  cursor: pointer;
-}
-.selector li.active {
-  color: #f00;
-}
 #content {
   margin-top: 20px;
+  position: relative;
+  padding-top: 50px;
+}
+#content .selector {
+  position: absolute;
+  top: 0px;
+  left: -8px;
+  list-style: none;
+}
+#content .selector#displaySelector {
+  left: auto;
+  right: 105px;
+}
+#content .selector li {
+  cursor: pointer;
+  float: left;
+  border: 1px solid #eee;
+  padding: 7px 12px;
+  background: #fff;
+  color: #000;
+}
+#content .selector li.active {
+  background: #85bee6;
 }

@@ -49,17 +49,17 @@
                 <h1>Mapa moci</h1>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, tempora, dignissimos, deserunt, blanditiis quam tempore harum eos officia error sed repellendus quod dolor cumque! Sit dolorum ad minus quos quis incidunt earum nobis impedit voluptates inventore. Nobis, animi, itaque quis nam nisi temporibus nostrum cupiditate cumque omnis ab earum hic.</p>
                 <div id='content'>
-
+                    <ul id="sortSelector" class="selector">
+                        <li class="active" data-content="original">Podle organizaèní struktury</li>
+                        <li data-content="importance">Podle dùležitosti</li>
+                        <li data-content="changed">Podle vymìnìnosti</li>
+                    </ul>
+                    <ul id="displaySelector" class="selector">
+                        <li class="active" data-content="normalized">Normalizované</li>
+                        <li data-content="absolute">Absolutní</li>
+                    </ul>
                 </div>
-                <ul id="sortSelector" class="selector">
-                    <li class="active" data-content="original">Podle organizaèní struktury</li>
-                    <li data-content="importance">Podle dùležitosti</li>
-                    <li data-content="changed">Podle vymìnìnosti</li>
-                </ul>
-                <ul id="displaySelector" class="selector">
-                    <li class="active" data-content="normalized">Normalizované</li>
-                    <li data-content="absolute">Absolutní</li>
-                </ul>
+
                 <p id="autori"><em>autor: Matìj Smlsal, Michal Kalina, foto: archiv HN, ÈTK</em></p>
                 <div class="social-bottom-detail">
                     <div class="fb-bottom"><div id="fb-root"></div><script src="http://connect.facebook.net/cs_CZ/all.js#appId=218617268163634&amp;xfbml=1"></script><fb:like href="http://ihned.cz/mapamoci" send="false" layout="box_count" width="90" show_faces="false" action="recommend" font="arial"></fb:like></div>

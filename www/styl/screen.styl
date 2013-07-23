@@ -29,10 +29,25 @@ svg
     > h1
     > p
         margin-left 13px
-.selector
-    li
-        cursor pointer
-        &.active
-            color red
+
 #content
     margin-top 20px
+    position relative
+    padding-top 50px
+    .selector
+        position absolute
+        top 0px
+        left -8px
+        &#displaySelector
+            left auto
+            right 105px
+        list-style none
+        li
+            cursor pointer
+            float left
+            border 1px solid #eee
+            padding 7px 12px
+            background white
+            color black
+            &.active
+                background HNBlue
