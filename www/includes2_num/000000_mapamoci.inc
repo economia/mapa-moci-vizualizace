@@ -51,7 +51,7 @@
                 <p>Server IHNED.cz pøipravil pøehlednou mapu zmìn, které provedli ministøi nové vlády Jiøího Rusnoka za 14 dní od svého jmenování. Zahrnuje každou pozici od námìstkù po vedoucí jednotlivých odborù napøíè resorty, na tøech z nich ještì ministøi nikoho nevymìnili. Vizualizace zobrazuje údaje platné 23. èervence v 16 hodin. S dalšími obmìnami ji budeme prùbìžnì aktualizovat.</p>
 
                 <div id="fallback" class="incapable">
-                    <p>Váš prohlížeè je bohužel zastaralý a nepodporuje interaktivní vizualizace. Doporuèujeme jej aktualizovat, nebo si <a href="http://www.browserchoice.eu/">stáhnout jiný</a>. Mezitím bude aplikace pracovat pouze v omezeném režimu.</p>
+                    <p>Váš prohlížeè je bohužel zastaralý a nepodporuje interaktivní vizualizace. Doporuèujeme jej aktualizovat, <a href="http://www.browserchoice.eu/">stáhnout jiný</a> nebo použít <a href="http://www.google.com/chromeframe">Google Chrome Frame</a>. Mezitím bude aplikace pracovat pouze v omezeném režimu.</p>
                     <img src="/img/mapamoci/fallback.png" alt="Vizualizace množství lidí, kteøí byli vymìnìni na jednotlivých ministerstvech" />
                 </div>
 
