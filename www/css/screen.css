@@ -26,8 +26,8 @@ svg .department rect.old:hover {
   outline: 2px solid rgba(194,223,243,0.8);
 }
 svg .department rect.new {
-  fill: #e2007a;
+  fill: #1f6597;
 }
 svg .department rect.new:hover {
-  outline: 2px solid rgba(113,0,61,0.7);
+  outline: 2px solid rgba(16,50,76,0.7);
 }
