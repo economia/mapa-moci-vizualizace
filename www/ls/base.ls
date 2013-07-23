@@ -19,7 +19,10 @@ window.init = (data) ->
 
     data = for department, staff of data
         size = staff.length
+        staff.forEach (person, index) ->
+            person.originalIndex = index
         {department, staff, size}
+
     maxSize = Math.max ...data.map (.size)
     notNormalizedPersonHeight = height / maxSize
     y = d3.scale.linear!rangeRound [0 height]
@@ -56,32 +59,42 @@ window.init = (data) ->
                 | otherwise => "old"
 
 
-    redraw = (normalized) ->
+    redraw = (normalized, sorted) ->
         if normalized
             y.domain [0 1]
         else
             y.domain [0 maxSize]
-        rectangles.each (person, index, parentIndex) ->
-            person.y = switch normalized
-            | yes => y index / data[parentIndex].size
-            | no  => y index + (maxSize - data[parentIndex].size)
+        data.forEach ->
+            it.staff.sort orderByOriginal
+            it.staff.forEach (person, index) ->
+                person.next = it.staff[index + 1]
+
         rectangles
+            .each (person, index, parentIndex) ->
+                index = data[parentIndex].staff.indexOf person
+                person.y = switch normalized
+                | yes => y index / data[parentIndex].size
+                | no  => y index + (maxSize - data[parentIndex].size)
             .transition!
             .duration 500
             .delay (person, index, parentIndex) -> parentIndex * 20
             .attr \y (person) -> person.y
             .attr \height (person, index, parentIndex) ->
                 nextPersonY = switch
-                    | data[parentIndex].staff[index+1] => that.y
-                    | otherwise                        => height
+                    | person.next => that.y
+                    | otherwise   => height
                 nextPersonY - person.y
-    lastNormalized = yes
-    redraw lastNormalized
-    # <~ setInterval _, 5000
-    # console.log lastNormalized
-    # lastNormalized := !lastNormalized
-    # redraw lastNormalized
+
+    redraw yes
 
 
 isPersonChanged = (person) ->
     !!person.16
+
+orderByChanged = (personA, personB) ->
+    a = if isPersonChanged personA then 1 else 0
+    b = if isPersonChanged personB then 1 else 0
+    b - a
+
+orderByOriginal = (personA, personB) ->
+    personA.originalIndex - personB.originalIndex

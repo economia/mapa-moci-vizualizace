@@ -1,8 +1,8 @@
 (function(){
-  var tooltip;
+  var tooltip, isPersonChanged, orderByChanged, orderByOriginal;
   tooltip = new Tooltip();
   window.init = function(data){
-    var margin, width, height, x, color, x$, svg, y$, drawing, res$, department, staff, size, maxSize, notNormalizedPersonHeight, y, departments, z$, departmentBar, z1$, rectangles, redraw, lastNormalized;
+    var margin, width, height, x, color, x$, svg, y$, drawing, res$, department, staff, size, maxSize, notNormalizedPersonHeight, y, departments, z$, departmentBar, z1$, rectangles, redraw;
     margin = {
       top: 20,
       right: 100,
@@ -22,6 +22,7 @@
     for (department in data) {
       staff = data[department];
       size = staff.length;
+      staff.forEach(fn$);
       res$.push({
         department: department,
         staff: staff,
@@ -52,8 +53,8 @@
       var content;
       content = (function(){
         switch (false) {
-        case !person[16]:
-          return "<h3>Puvodne: </h3>\n<p class='from'>" + person[6] + " " + person[7] + " " + person[8] + " " + person[9] + "</p>\n<h3>Nastupce: </h3>\n<p class='to'>" + person[14] + " " + person[15] + " " + person[16] + " " + person[17] + "</p>";
+        case !isPersonChanged(person):
+          return "<h3>Puvodne: </h3>\n<p class='from'>" + person[6] + " " + person[7] + " " + person[8] + " " + person[9] + " (" + person[11] + ")</p>\n<h3>Nastupce: </h3>\n<p class='to'>" + person[14] + " " + person[15] + " " + person[16] + " " + person[17] + " (" + person[19] + ")</p>";
         default:
           return "<span class='only'>" + person[6] + " " + person[7] + " " + person[8] + " " + person[9] + "</span>";
         }
@@ -65,19 +66,26 @@
     });
     z1$.attr('class', function(person){
       switch (false) {
-      case !person[16]:
+      case !isPersonChanged(person):
         return "new";
       default:
         return "old";
       }
     });
-    redraw = function(normalized){
+    redraw = function(normalized, sorted){
       if (normalized) {
         y.domain([0, 1]);
       } else {
         y.domain([0, maxSize]);
       }
-      rectangles.each(function(person, index, parentIndex){
+      data.forEach(function(it){
+        it.staff.sort(orderByOriginal);
+        return it.staff.forEach(function(person, index){
+          return person.next = it.staff[index + 1];
+        });
+      });
+      return rectangles.each(function(person, index, parentIndex){
+        index = data[parentIndex].staff.indexOf(person);
         return person.y = (function(){
           switch (normalized) {
           case true:
@@ -86,8 +94,7 @@
             return y(index + (maxSize - data[parentIndex].size));
           }
         }());
-      });
-      return rectangles.transition().duration(500).delay(function(person, index, parentIndex){
+      }).transition().duration(500).delay(function(person, index, parentIndex){
         return parentIndex * 20;
       }).attr('y', function(person){
         return person.y;
@@ -95,7 +102,7 @@
         var nextPersonY, that;
         nextPersonY = (function(){
           switch (false) {
-          case !(that = data[parentIndex].staff[index + 1]):
+          case !(that = person.next):
             return that.y;
           default:
             return height;
@@ -104,7 +111,21 @@
         return nextPersonY - person.y;
       });
     };
-    lastNormalized = true;
-    return redraw(lastNormalized);
+    return redraw(true);
+    function fn$(person, index){
+      return person.originalIndex = index;
+    }
+  };
+  isPersonChanged = function(person){
+    return !!person[16];
+  };
+  orderByChanged = function(personA, personB){
+    var a, b;
+    a = isPersonChanged(personA) ? 1 : 0;
+    b = isPersonChanged(personB) ? 1 : 0;
+    return b - a;
+  };
+  orderByOriginal = function(personA, personB){
+    return personA.originalIndex - personB.originalIndex;
   };
 }).call(this);
