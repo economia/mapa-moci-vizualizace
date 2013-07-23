@@ -17,11 +17,11 @@ svg
         rect.old
             fill oldColor
             &:hover
-                outline 2px solid rgba(darken(oldColor, 80%), 0.5)
+                fill darken(oldColor, 20%)
         rect.new
             fill newColor
             &:hover
-                outline 2px solid rgba(lighten(newColor, 80%), 0.5)
+                fill lighten(newColor, 20%)
     .yAxis
         .domain
             display none
