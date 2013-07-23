@@ -100,3 +100,6 @@ svg .yAxis .domain {
 .selector li.active {
   color: #f00;
 }
+#content {
+  margin-top: 20px;
+}
