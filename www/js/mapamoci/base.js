@@ -64,12 +64,20 @@
     }).enter().append("rect");
     z2$.attr('width', x.rangeBand());
     z2$.on('mouseover', function(person){
-      var content;
+      var content, fromString, toString;
       content = "<h2>" + getPersonPosition(person) + "</h2>";
       content += (function(){
         switch (false) {
         case !isPersonChanged(person):
-          return "<h3>Pùvodnì: </h3>\n<p class='from'>" + person[6] + " " + person[7] + " " + person[8] + " " + person[9] + " (" + person[11] + ")</p>\n<h3>Nástupce: </h3>\n<p class='to'>" + person[14] + " " + person[15] + " " + person[16] + " " + person[17] + " (" + person[19] + ")</p>";
+          fromString = person[6] + " " + person[7] + " " + person[8] + " " + person[9];
+          if (person[11]) {
+            fromString += "(" + person[11] + ")";
+          }
+          toString = person[14] + " " + person[15] + " " + person[16] + " " + person[17];
+          if (person[19]) {
+            toString += "(" + person[19] + ")";
+          }
+          return "<h3>Pùvodnì: </h3>\n<p class='from'>" + fromString + "</p>\n<h3>Nástupce: </h3>\n<p class='to'>" + toString + "</p>";
         default:
           return "<span class='only'>" + person[6] + " " + person[7] + " " + person[8] + " " + person[9] + "</span>";
         }

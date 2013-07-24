@@ -53,11 +53,15 @@ window.init = (data) ->
                 content = "<h2>#{getPersonPosition person}</h2>"
                 content +=
                     | isPersonChanged person
+                        fromString = "#{person.6} #{person.7} #{person.8} #{person.9}"
+                        if person.11 then fromString += "(#{person.11})"
+                        toString = "#{person.14} #{person.15} #{person.16} #{person.17}"
+                        if person.19 then toString += "(#{person.19})"
                         """
                         <h3>Původně: </h3>
-                        <p class='from'>#{person.6} #{person.7} #{person.8} #{person.9} (#{person.11})</p>
+                        <p class='from'>#fromString</p>
                         <h3>Nástupce: </h3>
-                        <p class='to'>#{person.14} #{person.15} #{person.16} #{person.17} (#{person.19})</p>
+                        <p class='to'>#toString</p>
                         """
                     | otherwise
                         "<span class='only'>#{person.6} #{person.7} #{person.8} #{person.9}</span>"
