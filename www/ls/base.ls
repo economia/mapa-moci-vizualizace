@@ -190,9 +190,8 @@ bindActions = ->
         $ele.parent!.find "li" .removeClass 'active'
         $ele.addClass 'active'
         onSelectionChanged!
-    $ document .on \click \.backFromGallery ->
-        console.log history
-        if history.length
+    $ document .on \click \.backFromGallery (evt) ->
+        if history.length > 1
             history.back!
         else
             window.location = $ @ .find \a .attr \href

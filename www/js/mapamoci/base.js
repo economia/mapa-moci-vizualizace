@@ -251,10 +251,9 @@
       $ele.addClass('active');
       return onSelectionChanged();
     });
-    return $(document).on('click', '.backFromGallery', function(){
+    return $(document).on('click', '.backFromGallery', function(evt){
       var x$;
-      console.log(history);
-      if (history.length) {
+      if (history.length > 1) {
         history.back();
       } else {
         window.location = $(this).find('a').attr('href');
