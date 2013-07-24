@@ -222,7 +222,7 @@
     return personA.positionImportance - personB.positionImportance;
   };
   bindActions = function(){
-    return $(document).on('click', '.selector li', function(evt){
+    $(document).on('click', '.selector li', function(evt){
       var $ele;
       evt.preventDefault();
       $ele = $(this);
@@ -235,6 +235,19 @@
       $ele.parent().find("li").removeClass('active');
       $ele.addClass('active');
       return onSelectionChanged();
+    });
+    return $(document).on('click', '.backFromGallery', function(){
+      var x$;
+      console.log(history);
+      if (history.length) {
+        history.back();
+      } else {
+        window.location = $(this).find('a').attr('href');
+      }
+      x$ = evt;
+      x$.preventDefault();
+      x$.stopPropagation();
+      return x$;
     });
   };
   onSelectionChanged = function(){

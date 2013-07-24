@@ -179,6 +179,15 @@ bindActions = ->
         $ele.parent!.find "li" .removeClass 'active'
         $ele.addClass 'active'
         onSelectionChanged!
+    $ document .on \click \.backFromGallery ->
+        console.log history
+        if history.length
+            history.back!
+        else
+            window.location = $ @ .find \a .attr \href
+        evt
+            ..preventDefault!
+            ..stopPropagation!
 
 onSelectionChanged = ->
     sort = $ '#sortSelector li.active' .data \content
