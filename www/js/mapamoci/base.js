@@ -6,7 +6,7 @@
     $('#content, #fallback').removeClass('incapable');
   }
   window.init = function(data){
-    var margin, width, height, x, color, x$, svg, y$, drawing, res$, department, staff, size, maxSize, notNormalizedPersonHeight, y, departments, z$, departmentBar, z1$, rectangles, xAxis, z2$, z3$, yAxis, drawYAxis, hideYAxis;
+    var margin, width, height, x, color, x$, svg, y$, drawing, res$, department, staff, size, maxSize, notNormalizedPersonHeight, y, departments, z$, z1$, departmentBar, z2$, rectangles, xAxis, z3$, z4$, yAxis, drawYAxis, hideYAxis;
     if (!capableBrowser) {
       return;
     }
@@ -47,32 +47,37 @@
     });
     color.domain(departments);
     x.domain(departments);
-    z$ = departmentBar = drawing.selectAll(".department").data(data).enter().append("g");
-    z$.attr('class', 'department');
-    z$.attr('transform', function(it){
+    z$ = drawing.append("rect");
+    z$.attr('class', 'rasterBackground');
+    z$.attr('x', 4);
+    z$.attr('width', width - 9);
+    z$.attr('height', height);
+    z1$ = departmentBar = drawing.selectAll(".department").data(data).enter().append("g");
+    z1$.attr('class', 'department');
+    z1$.attr('transform', function(it){
       return "translate(" + x(it.department) + ", 0)";
     });
-    z1$ = rectangles = departmentBar.selectAll("rect").data(function(it){
+    z2$ = rectangles = departmentBar.selectAll("rect").data(function(it){
       return it.staff;
     }).enter().append("rect");
-    z1$.attr('width', x.rangeBand());
-    z1$.on('mouseover', function(person){
+    z2$.attr('width', x.rangeBand());
+    z2$.on('mouseover', function(person){
       var content;
       content = "<h2>" + getPersonPosition(person) + "</h2>";
       content += (function(){
         switch (false) {
         case !isPersonChanged(person):
-          return "<h3>Pùvodnì: </h3>\n<p class='from'>" + person[6] + " " + person[7] + " " + person[8] + " " + person[9] + " (" + person[11] + ")</p>\n<h3>Nástupce: </h3>\n<p class='to'>" + person[14] + " " + person[15] + " " + person[16] + " " + person[17] + " (" + person[19] + ")</p>";
+          return "<h3>PÅ¯vodnÄ›: </h3>\n<p class='from'>" + person[6] + " " + person[7] + " " + person[8] + " " + person[9] + " (" + person[11] + ")</p>\n<h3>NÃ¡stupce: </h3>\n<p class='to'>" + person[14] + " " + person[15] + " " + person[16] + " " + person[17] + " (" + person[19] + ")</p>";
         default:
           return "<span class='only'>" + person[6] + " " + person[7] + " " + person[8] + " " + person[9] + "</span>";
         }
       }());
       return tooltip.display(content);
     });
-    z1$.on('mouseout', function(){
+    z2$.on('mouseout', function(){
       return tooltip.hide();
     });
-    z1$.attr('class', function(person){
+    z2$.attr('class', function(person){
       switch (false) {
       case !isPersonChanged(person):
         return "new";
@@ -81,14 +86,14 @@
       }
     });
     xAxis = drawing.append("g");
-    z2$ = departmentBar = xAxis.selectAll("text").data(data).enter().append("text");
-    z2$.text(function(it){
+    z3$ = departmentBar = xAxis.selectAll("text").data(data).enter().append("text");
+    z3$.text(function(it){
       return it.department;
     });
-    z2$.attr('transform', function(it){
+    z3$.attr('transform', function(it){
       return "translate(" + (x(it.department) + x.rangeBand() / 2) + ", " + (height + 15) + "),rotate(-45)";
     });
-    z2$.attr('text-anchor', 'end');
+    z3$.attr('text-anchor', 'end');
     window.redraw = function(normalized, sortMethod){
       if (normalized) {
         y.domain([0, 1]);
@@ -141,12 +146,12 @@
             return height;
           }
         }());
-        return nextPersonY - person.y + 1;
+        return nextPersonY - person.y - 0.5;
       });
     };
-    z3$ = yAxis = drawing.append("g");
-    z3$.attr('transform', "translate(" + width + ", 0)");
-    z3$.attr('class', 'yAxis');
+    z4$ = yAxis = drawing.append("g");
+    z4$.attr('transform', "translate(" + width + ", 0)");
+    z4$.attr('class', 'yAxis');
     drawYAxis = function(normalized){
       var yAxisTicks;
       yAxis.transition().duration(500).attr('opacity', 1);

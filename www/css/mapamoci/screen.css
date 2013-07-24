@@ -83,6 +83,9 @@
 .tooltip p {
   margin: 0px;
 }
+svg .rasterBackground {
+  fill: #9dcbeb;
+}
 svg .department rect.old {
   fill: #aad1ee;
 }

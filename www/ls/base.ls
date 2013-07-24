@@ -32,6 +32,11 @@ window.init = (data) ->
     departments = data.map (.department)
     color.domain departments
     x.domain departments
+    drawing.append "rect"
+        ..attr \class \rasterBackground
+        ..attr \x 4
+        ..attr \width width - 9
+        ..attr \height height
     departmentBar = drawing.selectAll ".department"
         .data data
         .enter!append "g"
@@ -102,7 +107,7 @@ window.init = (data) ->
                 nextPersonY = switch
                     | person.next => that.y
                     | otherwise   => height
-                nextPersonY - person.y + 1
+                nextPersonY - person.y - 0.5
     yAxis = drawing.append "g"
         ..attr \transform "translate(#{width}, 0)"
         ..attr \class \yAxis
