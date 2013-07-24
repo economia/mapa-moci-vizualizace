@@ -1,4 +1,6 @@
 tooltip = new Tooltip!
+perElementTooltip = new Tooltip
+    ..watchElements!
 capableBrowser = Modernizr.inlinesvg
 if capableBrowser then $ '#content, #fallback' .removeClass 'incapable'
 window.init = (data) ->

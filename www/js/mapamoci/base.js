@@ -1,6 +1,8 @@
 (function(){
-  var tooltip, capableBrowser, annotatePerson, isPersonChanged, getPersonPosition, orderByChanged, orderByOriginal, orderByImportance, bindActions, onSelectionChanged;
+  var tooltip, x$, perElementTooltip, capableBrowser, annotatePerson, isPersonChanged, getPersonPosition, orderByChanged, orderByOriginal, orderByImportance, bindActions, onSelectionChanged;
   tooltip = new Tooltip();
+  x$ = perElementTooltip = new Tooltip;
+  x$.watchElements();
   capableBrowser = Modernizr.inlinesvg;
   if (capableBrowser) {
     $('#content, #fallback').removeClass('incapable');

@@ -57,9 +57,9 @@
 
                 <div id='content' class="incapable">
                     <ul id="sortSelector" class="selector">
-                        <li data-content="changed" class="active">Podle poètu výmìn</li>
-                        <li data-content="importance">Podle významu pozic</li>
-                        <li data-content="original">Podle odborù ministerstev</li>
+                        <li data-tooltip="Pod touto záložkou pøehlednì zjistíte, na kterém ministerstvu se vymìnilo nejvíce lidí. Èím vyšší je tmavý sloupec, tím více zmìn na postech námìstkù, øeditelù a vedoucích probìhlo. Kurzorem ve sloupcích najdete konkrétní jména." data-content="changed" class="active">Podle poètu výmìn</li>
+                        <li data-tooltip="Graf ukazuje, v jak vysokých patrech svých úøadù už ministøi sáhli ke zmìnám. Èím výše jsou tmavá pole, tím jsou novì obsazené posty významnìjší – od námìstkù, pøes øeditele celých sekcí, po vedoucí jednotlivých odborù." data-content="importance">Podle významu pozic</li>
+                        <li data-tooltip="Tento graf je seøazen podle jednotlivých sekcí ministerstev. Podle tmavých polí zjistíte, ve kterých sekcích a pod nì spadajících odborech se událo nejvíce zmìn." data-content="original">Podle odborù ministerstev</li>
                     </ul>
                     <dl id="legend">
                         <dt class="old">svìtle modrá</dt>
