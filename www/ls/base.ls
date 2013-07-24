@@ -5,7 +5,7 @@ window.init = (data) ->
     return if not capableBrowser
     margin =
         top: 10
-        right: 60
+        right: 90
         bottom: 90
         left: 10
     width = 960 - margin.left - margin.right
@@ -83,7 +83,10 @@ window.init = (data) ->
             y.domain [0 1]
         else
             y.domain [0 maxSize]
-        if sortMethod is \changed then drawYAxis normalized else hideYAxis!
+        if sortMethod in <[ changed importance ]>
+            drawYAxis normalized, sortMethod
+        else
+            hideYAxis!
         data.forEach ->
             sortFunction = switch sortMethod
                 | 'changed'    => orderByChanged
@@ -111,7 +114,7 @@ window.init = (data) ->
     yAxis = drawing.append "g"
         ..attr \transform "translate(#{width}, 0)"
         ..attr \class \yAxis
-    drawYAxis = (normalized) ->
+    drawYAxis = (normalized, sortMethod) ->
         yAxis
             .transition!
             .duration 500
@@ -120,10 +123,18 @@ window.init = (data) ->
             .orient \right
             .scale y
             .tickFormat ->
-                if normalized
-                    "#{100 - it * 100}%"
+                if sortMethod is \importance
+                    switch it
+                    | 0   => "Ministři"
+                    | 0.2 => "Náměstci"
+                    | 0.4 => "Odbory"
+                    | 0.9 => "Nižší mgmt."
+                    | _   => ""
                 else
-                    y.domain!.1 - it
+                    if normalized
+                        "#{100 - it * 100}%"
+                    else
+                        y.domain!.1 - it
         yAxis.call yAxisTicks
 
     hideYAxis = ->

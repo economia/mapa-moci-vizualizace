@@ -12,7 +12,7 @@
     }
     margin = {
       top: 10,
-      right: 60,
+      right: 90,
       bottom: 90,
       left: 10
     };
@@ -67,7 +67,7 @@
       content += (function(){
         switch (false) {
         case !isPersonChanged(person):
-          return "<h3>PÅ¯vodnÄ›: </h3>\n<p class='from'>" + person[6] + " " + person[7] + " " + person[8] + " " + person[9] + " (" + person[11] + ")</p>\n<h3>NÃ¡stupce: </h3>\n<p class='to'>" + person[14] + " " + person[15] + " " + person[16] + " " + person[17] + " (" + person[19] + ")</p>";
+          return "<h3>Pùvodnì: </h3>\n<p class='from'>" + person[6] + " " + person[7] + " " + person[8] + " " + person[9] + " (" + person[11] + ")</p>\n<h3>Nástupce: </h3>\n<p class='to'>" + person[14] + " " + person[15] + " " + person[16] + " " + person[17] + " (" + person[19] + ")</p>";
         default:
           return "<span class='only'>" + person[6] + " " + person[7] + " " + person[8] + " " + person[9] + "</span>";
         }
@@ -100,8 +100,8 @@
       } else {
         y.domain([0, maxSize]);
       }
-      if (sortMethod === 'changed') {
-        drawYAxis(normalized);
+      if (sortMethod == 'changed' || sortMethod == 'importance') {
+        drawYAxis(normalized, sortMethod);
       } else {
         hideYAxis();
       }
@@ -152,14 +152,29 @@
     z4$ = yAxis = drawing.append("g");
     z4$.attr('transform', "translate(" + width + ", 0)");
     z4$.attr('class', 'yAxis');
-    drawYAxis = function(normalized){
+    drawYAxis = function(normalized, sortMethod){
       var yAxisTicks;
       yAxis.transition().duration(500).attr('opacity', 1);
       yAxisTicks = d3.svg.axis().orient('right').scale(y).tickFormat(function(it){
-        if (normalized) {
-          return (100 - it * 100) + "%";
+        if (sortMethod === 'importance') {
+          switch (it) {
+          case 0:
+            return "Ministøi";
+          case 0.2:
+            return "Námìstci";
+          case 0.4:
+            return "Odbory";
+          case 0.9:
+            return "Nižší mgmt.";
+          default:
+            return "";
+          }
         } else {
-          return y.domain()[1] - it;
+          if (normalized) {
+            return (100 - it * 100) + "%";
+          } else {
+            return y.domain()[1] - it;
+          }
         }
       });
       return yAxis.call(yAxisTicks);
