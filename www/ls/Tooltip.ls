@@ -4,6 +4,12 @@ window.Tooltip = class Tooltip
         @createElement!
         $ document .bind \mousemove @onMouseMove
 
+    watchElements: ->
+        $ document .on \mouseover "[data-tooltip]" ({currentTarget}:evt) ~>
+            @display "<p>#{$ currentTarget .data 'tooltip'}</p>"
+
+        $ document .on \mouseout "[data-tooltip]" @~hide
+
     display: ($content, mouseEvent) ->
         @$element.empty!
         @$element
@@ -54,4 +60,3 @@ window.Tooltip = class Tooltip
     onMouseMove: (evt) ~>
         @lastMousePosition = [evt.pageX, evt.pageY, evt.clientX, evt.clientY]
         if @mouseBound then @reposition @lastMousePosition
-

@@ -13,6 +13,15 @@
       this.createElement();
       $(document).bind('mousemove', this.onMouseMove);
     }
+    prototype.watchElements = function(){
+      var this$ = this;
+      $(document).on('mouseover', "[data-tooltip]", function(evt){
+        var currentTarget;
+        currentTarget = evt.currentTarget;
+        return this$.display("<p>" + $(currentTarget).data('tooltip') + "</p>");
+      });
+      return $(document).on('mouseout', "[data-tooltip]", bind$(this, 'hide'));
+    };
     prototype.display = function($content, mouseEvent){
       var x$;
       this.$element.empty();
