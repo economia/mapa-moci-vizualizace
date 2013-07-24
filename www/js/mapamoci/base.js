@@ -222,8 +222,9 @@
     return personA.positionImportance - personB.positionImportance;
   };
   bindActions = function(){
-    return $(document).on('click', '.selector li', function(){
+    return $(document).on('click', '.selector li', function(evt){
       var $ele;
+      evt.preventDefault();
       $ele = $(this);
       $.scrollTo($ele, {
         duration: 200

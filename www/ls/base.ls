@@ -171,7 +171,8 @@ orderByImportance = (personA, personB) ->
     personA.positionImportance - personB.positionImportance
 
 bindActions = ->
-    $ document .on \click '.selector li' ->
+    $ document .on \click '.selector li' (evt) ->
+        evt.preventDefault!
         $ele = $ @
         $.scrollTo $ele, duration:200
         return if $ele.hasClass \active
