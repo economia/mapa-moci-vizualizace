@@ -174,8 +174,6 @@
             return "Námìstci";
           case 0.4:
             return "Odbory";
-          case 0.9:
-            return "Niší mgmt.";
           default:
             return "";
           }

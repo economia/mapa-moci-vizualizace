@@ -134,7 +134,6 @@ window.init = (data) ->
                     | 0   => "Ministři"
                     | 0.2 => "Náměstci"
                     | 0.4 => "Odbory"
-                    | 0.9 => "Nižší mgmt."
                     | _   => ""
                 else
                     if normalized
