@@ -192,7 +192,7 @@
         <script src="http://service.ihned.cz/js/jquery.scrollTo.js"></script>
         <script src="/js/mapamoci/Tooltip.js" type="text/javascript"></script>
         <script src="/js/mapamoci/base.js" type="text/javascript"></script>
-        <script src="http://service.ihned.cz/spreadsheet/bigfilter.php?key=0AtY6fMYiLLJNdE8tNDVIdTNDTDFaZlBVQ0JfUW1uOGc&amp;numsheets=14&amp;nocols=1&amp;cb=init&amp;forcecache=1"></script>
+        <script src="http://service.ihned.cz/spreadsheet/bigfilter.php?key=0AtY6fMYiLLJNdEVIOHQtNEdFNTlFdGZMYzFNY3pVbmc&amp;numsheets=14&amp;nocols=1&amp;cb=init&amp;forcecache=1"></script>
         <!-- (C)2000-2013 Gemius SA - gemiusAudience / ihned.cz / Politika-ostatni -->
         <script type="text/javascript">
         <!--//--><![CDATA[//><!--

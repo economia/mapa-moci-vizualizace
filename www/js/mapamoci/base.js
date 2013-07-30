@@ -8,7 +8,7 @@
     $('#content, #fallback').removeClass('incapable');
   }
   window.init = function(data){
-    var margin, width, height, x, color, x$, svg, y$, drawing, res$, department, staff, size, maxSize, notNormalizedPersonHeight, y, departments, z$, z1$, departmentBar, z2$, rectangles, xAxis, z3$, z4$, yAxis, drawYAxis, hideYAxis;
+    var margin, width, height, x, x$, svg, y$, drawing, res$, department, staff, size, maxSize, notNormalizedPersonHeight, y, departments, z$, z1$, departmentBar, z2$, rectangles, xAxis, z3$, z4$, yAxis, drawYAxis, hideYAxis;
     if (!capableBrowser) {
       return;
     }
@@ -21,7 +21,6 @@
     width = 960 - margin.left - margin.right;
     height = 500 - margin.top - margin.bottom;
     x = d3.scale.ordinal().rangeRoundBands([0, width], 0.01);
-    color = d3.scale.ordinal().range(['#98abc5', '#8a89a6', '#7b6888', '#6b486b', '#a05d56', '#d0743c', '#ff8c00', '#98abc5', '#8a89a6', '#7b6888', '#6b486b', '#a05d56', '#d0743c', '#ff8c00']);
     x$ = svg = d3.select('#content').append("svg");
     x$.attr('width', width + margin.left + margin.right);
     x$.attr('height', height + margin.top + margin.bottom);
@@ -30,8 +29,12 @@
     res$ = [];
     for (department in data) {
       staff = data[department];
+      if ("Pl%E1n" === escape(department) || department === '') {
+        continue;
+      }
       size = staff.length;
       staff.forEach(annotatePerson);
+      staff.forEach(fn$);
       res$.push({
         department: department,
         staff: staff,
@@ -47,7 +50,6 @@
     departments = data.map(function(it){
       return it.department;
     });
-    color.domain(departments);
     x.domain(departments);
     z$ = drawing.append("rect");
     z$.attr('class', 'rasterBackground');
@@ -77,7 +79,7 @@
           if (person[19]) {
             toString += "(" + person[19] + ")";
           }
-          return "<h3>Pùvodnì: </h3>\n<p class='from'>" + fromString + "</p>\n<h3>Nástupce: </h3>\n<p class='to'>" + toString + "</p>";
+          return "<h3>PÅ¯vodnÄ›: </h3>\n<p class='from'>" + fromString + "</p>\n<h3>NÃ¡stupce: </h3>\n<p class='to'>" + toString + "</p>";
         default:
           return "<span class='only'>" + person[6] + " " + person[7] + " " + person[8] + " " + person[9] + "</span>";
         }
@@ -169,9 +171,9 @@
         if (sortMethod === 'importance') {
           switch (it) {
           case 0:
-            return "Ministøi";
+            return "MinistÅ™i";
           case 0.2:
-            return "Námìstci";
+            return "NÃ¡mÄ›stci";
           case 0.4:
             return "Odbory";
           default:
@@ -192,6 +194,9 @@
     };
     redraw(true, 'changed');
     return bindActions();
+    function fn$(it){
+      return normalizePerson(it, department);
+    }
   };
   annotatePerson = function(person, index){
     person.originalIndex = index;

@@ -1,0 +1,823 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"soc",
+				"socket"
+			],
+			[
+				"relation",
+				"relationship"
+			],
+			[
+				"stat",
+				"stationCoordinates"
+			],
+			[
+				"res",
+				"result"
+			],
+			[
+				"vale",
+				"value"
+			],
+			[
+				"resu",
+				"result"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/C/www/economia-blog/_posts/2013-07-29-stavime-si-vlastni-mapy.md",
+			"settings":
+			{
+				"buffer_size": 2278,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 66.0,
+		"selected_items":
+		[
+			[
+				"gipusbra",
+				"Git: Push Current Branch"
+			],
+			[
+				"gipub",
+				"Git: Push Current Branch"
+			],
+			[
+				"caniu",
+				"Can I Switch To Sublime Text 3?"
+			],
+			[
+				"instapa",
+				"Package Control: Install Package"
+			],
+			[
+				"remopa",
+				"Package Control: Remove Package"
+			],
+			[
+				"gilo",
+				"Git: Log All"
+			],
+			[
+				"gipubra",
+				"Git: Push Current Branch"
+			],
+			[
+				"usta",
+				"Git: Reset (unstage) All"
+			],
+			[
+				"gireseth",
+				"Git: Reset (hard) HEAD"
+			],
+			[
+				"gitpuhbra",
+				"Git: Push Current Branch"
+			],
+			[
+				"ame",
+				"Git: Amend Commit"
+			],
+			[
+				"gipulbra",
+				"Git: Pull Current Branch"
+			],
+			[
+				"gipu",
+				"Git: Push Current Branch"
+			],
+			[
+				"ameco",
+				"Git: Amend Commit"
+			],
+			[
+				"gipushbra",
+				"Git: Push Current Branch"
+			],
+			[
+				"ahu",
+				"Git: Add Selected Hunk"
+			],
+			[
+				"ahun",
+				"Git: Add Selected Hunk"
+			],
+			[
+				"ahunk",
+				"Git: Add Selected Hunk"
+			],
+			[
+				"ustage",
+				"Git: Reset (unstage) All"
+			],
+			[
+				"menu",
+				"View: Toggle Menu"
+			],
+			[
+				"wow",
+				"Word Wrap: Toggle"
+			],
+			[
+				"wor",
+				"Word Wrap: Toggle"
+			],
+			[
+				"unstage",
+				"Git: Reset (unstage) All"
+			],
+			[
+				"unsta",
+				"Git: Reset (unstage) All"
+			],
+			[
+				"cohu",
+				"Git: Commit Selected Hunk"
+			],
+			[
+				"unstag",
+				"Git: Reset (unstage) All"
+			],
+			[
+				"hunk",
+				"Git: Add Selected Hunk"
+			],
+			[
+				"upper",
+				"Convert Case: Upper Case"
+			],
+			[
+				"amec",
+				"Git: Amend Commit"
+			],
+			[
+				"gii",
+				"Git: Init"
+			],
+			[
+				"inspa",
+				"Package Control: Install Package"
+			],
+			[
+				"ustag",
+				"Git: Reset (unstage) All"
+			],
+			[
+				"tome",
+				"View: Toggle Menu"
+			],
+			[
+				"gitfl",
+				"Git Flow: Feature Start"
+			],
+			[
+				"giflo",
+				"Git Flow: Feature Start"
+			],
+			[
+				"gitini",
+				"Git: Init"
+			],
+			[
+				"uns",
+				"Git: Reset (unstage) All"
+			],
+			[
+				"giti",
+				"Git: Init"
+			],
+			[
+				"gipull",
+				"Git: Pull Current Branch"
+			],
+			[
+				"branch",
+				"Git: Change Branch"
+			],
+			[
+				"gipush",
+				"Git: Push"
+			],
+			[
+				"gitps",
+				"Git: Push"
+			],
+			[
+				"diff",
+				"Git: Diff All"
+			],
+			[
+				"html",
+				"Set Syntax: HTML"
+			],
+			[
+				"gibra",
+				"Git: Change Branch"
+			],
+			[
+				"gibran",
+				"Git: New Branch"
+			],
+			[
+				"togmen",
+				"View: Toggle Menu"
+			]
+		],
+		"width": 514.0
+	},
+	"console":
+	{
+		"height": 0.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/www/economia-blog/_posts/2013-07-29-Stavime-si-vlastni-mapy.md",
+		"/C/www/mapa-moci-viz/www/ls/base.ls",
+		"/C/www/mapa-moci-viz/www/js/mapamoci/base.js",
+		"/C/Users/sulek/AppData/Roaming/Sublime Text 2/Packages/User/Default (Windows).sublime-keymap",
+		"/C/www/mapa-moci-viz/www/includes2_num/000000_mapamoci.inc",
+		"/C/www/mapa-moci-viz/www/.htaccess",
+		"/C/www/mapa-moci-viz/www/index.html",
+		"/C/www/mapa-moci-viz/www/styl/colors.styl",
+		"/C/www/mapa-moci-viz/www/includes2_num/000000_zemanovavlada.inc",
+		"/C/www/mapa-moci-viz/www/js/mapamoci",
+		"/C/www/mapa-moci-viz/www/styl/Tooltip.styl",
+		"/C/www/mapa-moci-viz/www/ls/Tooltip.ls",
+		"/C/www/mapa-moci-viz/mapa-moci-vizualizace.sublime-project",
+		"/C/www/mhd_dojezdy/.git/config",
+		"/C/www/mapa-moci-viz/.git/config",
+		"/C/Users/sulek/.ssh/id_rsa",
+		"/C/www/mapa-moci-viz/www/ls/Tooltipls",
+		"/C/www/mapa-moci-viz/mapa-moci.sublime-project",
+		"/C/www/mapa-moci/www/ls/NodeManager.ls",
+		"/C/www/mapa-moci/src/NodeManager.ls",
+		"/C/www/mapa-moci/mapa-moci.sublime-project",
+		"/C/www/mapa-moci/package.json",
+		"/C/www/mapa-moci/www/ls/TagSelector.ls",
+		"/C/www/mapa-moci/www/ls/base.ls",
+		"/C/www/mapa-moci/www/ls/Node.ls",
+		"/C/www/mapa-moci/www/index.html",
+		"/C/www/mapa-moci/www/ls/RelationshipManager.ls",
+		"/C/www/mapa-moci/www/ls/relationshipTypes.ls",
+		"/C/Users/sulek/AppData/Roaming/Sublime Text 2/Packages/Default/Default (Windows).sublime-keymap",
+		"/C/www/mapa-moci/www/ls/RelationshipTypes.ls",
+		"/C/www/mapa-moci/www/styl/screen.styl",
+		"/C/www/mapa-moci/src/server.ls",
+		"/C/www/mapa-moci/test.ls",
+		"/C/www/mapa-moci/server.ls",
+		"/C/Users/sulek/AppData/Roaming/Sublime Text 2/Packages/LiveReload/LiveReload.sublime-settings",
+		"/C/Users/sulek/AppData/Roaming/Sublime Text 2/Packages/User/LiveReload.sublime-settings",
+		"/C/www/mapa-moci/static/index.html",
+		"/C/www/mapa-moci/node_modules/socket.io/lib/socket.io.js",
+		"/C/www/mapa-moci/node_modules/socket.io/index.js",
+		"/C/Users/sulek/AppData/Roaming/Sublime Text 2/Packages/Git/Git.sublime-settings",
+		"/C/Users/sulek/AppData/Roaming/Sublime Text 2/Packages/User/Git.sublime-settings",
+		"/C/www/mapa-moci/.git/config",
+		"/C/Program Files (x86)/Git/bin/git-flow",
+		"/C/www/mapnik-styler/mapnik-styler.sublime-project",
+		"/C/www/mhd_dojezdy/www/ls/StopDisplayer.ls",
+		"/C/Users/sulek/Dropbox/Ales Krejci/leaftmap/index3.html",
+		"/C/www/mhd_dojezdy/srv/filler.ls",
+		"/C/www/mhd_dojezdy/srv/config.ls",
+		"/C/www/mhd_dojezdy/srv/interStopDistances.ls",
+		"/C/www/mhd_dojezdy/www/index.html",
+		"/C/www/mhd_dojezdy/www/ls/script.ls",
+		"/C/www/mhd_dojezdy/srv/stopCoordinatesExtractor.ls",
+		"/C/www/mhd_dojezdy/mhd_dojezdy.sublime-project",
+		"/C/www/mhd_dojezdy/srv/finalizer.ls",
+		"/C/www/mhd_dojezdy/www/js/stopDisplayer.js",
+		"/C/www/mhd_dojezdy/docs/stationCoordinates.json",
+		"/C/www/mhd_dojezdy/data/Google_20120319/stops.txt",
+		"/C/www/mhd_dojezdy/sftp-config.json",
+		"/C/Users/sulek/AppData/Roaming/GHISLER/wcx_ftp.ini",
+		"/C/www/mhd_dojezdy/srv/distanceComputer.ls",
+		"/C/www/mhd_dojezdy/srv/combinator.ls",
+		"/C/Users/sulek/AppData/Roaming/Sublime Text 2/Packages/SublimeOnSaveBuild/SublimeOnSaveBuild.sublime-settings",
+		"/C/Users/sulek/AppData/Roaming/Sublime Text 2/Packages/User/SublimeOnSaveBuild.sublime-settings",
+		"/C/www/oposmlouva/www/js/oposmlouva/base.js",
+		"/C/www/oposmlouva/www/js/oposmlouva/base-vlada.js",
+		"/C/www/oposmlouva/www/includes2_num/000000_oposmlouva.html",
+		"/C/www/oposmlouva/www/css/oposmlouva/screen.css",
+		"/C/www/oposmlouva/.git/config",
+		"/C/Users/sulek/Documents/AutoHotkey.ahk",
+		"/C/www/oposmlouva/www/js/oposmlouva/Tooltip.js",
+		"/C/www/oposmlouva/www/includes2_num/000000_oposmlouva.inc",
+		"/C/www/oposmlouva/www/includes2_num/index.html",
+		"/C/www/oposmlouva/.gitignore"
+	],
+	"find":
+	{
+		"height": 36.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"osm",
+			"1.5",
+			"fromString",
+			"mouseOverTooltip",
+			"importance",
+			"drawyaxis",
+			"bindact",
+			"div",
+			"id=\"fallback\">",
+			"Absolutní",
+			"Normalizované",
+			".next",
+			"zemanovavla",
+			"zemanovavlada",
+			"10",
+			"mapa moci",
+			"Nastupce",
+			"mapamoci",
+			".js",
+			".css",
+			"js",
+			"optimizeSpeed",
+			"width",
+			"sortSelector",
+			"displaySelector",
+			"sortSelector",
+			"div",
+			"originalIndex",
+			"sort",
+			"sortChanged",
+			"isChanged",
+			"person.16",
+			".16",
+			"17",
+			"6b486b",
+			"98abc5",
+			"newColor",
+			"-",
+			"Index",
+			"index",
+			"Math.round",
+			".5",
+			"#",
+			"Nástupce",
+			"h2",
+			"span",
+			"person",
+			"person.",
+			"title",
+			"normalized",
+			"log",
+			"color",
+			"log",
+			"&",
+			"\"",
+			", ",
+			"&",
+			"updatePolyline",
+			"nodemanager",
+			", ",
+			"node",
+			"relationship",
+			"nodeManager",
+			"relationshipManager",
+			"node",
+			"pause",
+			"goto_tab",
+			"stripNodeToMessage",
+			"data",
+			"_location",
+			"lat",
+			"_location",
+			"upChange",
+			"savePosition",
+			"updatePosition",
+			"addTo",
+			"key",
+			"1",
+			";",
+			"50px",
+			"#6",
+			"stopdisplaye",
+			"background",
+			"s-",
+			"currentOnly",
+			"addClass",
+			"rok2012",
+			"checkbox\"",
+			"from",
+			"totalTime",
+			"1450",
+			"check_radio_sheet",
+			"ui",
+			"json",
+			"intermingleLayers",
+			" @intermingleLayers",
+			"layers",
+			"intermingleLayers",
+			"body",
+			"..append ",
+			"..append",
+			"..append $",
+			"-> $ \"body\"",
+			"$ \"body\"",
+			"..append ",
+			"on",
+			"..addClass",
+			"past",
+			"old",
+			"new",
+			"2px",
+			"body",
+			"log",
+			"intermingleLayers",
+			"redrawWalkingCircles",
+			"maxWalkTime",
+			"1387",
+			"u447",
+			"recomputeWalkingCircles",
+			"fromId",
+			"value",
+			"u711",
+			"async",
+			"Kovářova",
+			"u78",
+			"u113",
+			"979",
+			"2012_peak"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/C/www/economia-blog/_posts/2013-07-29-stavime-si-vlastni-mapy.md",
+					"settings":
+					{
+						"buffer_size": 2278,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1327,
+								1327
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/Markdown/Markdown.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 486.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 36.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": false,
+	"output.exec":
+	{
+		"height": 90.0
+	},
+	"output.git":
+	{
+		"height": 116.0
+	},
+	"output.sftp":
+	{
+		"height": 116.0
+	},
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"colo",
+				"www/styl/colors.styl"
+			],
+			[
+				"bal",
+				"www/ls/base.ls"
+			],
+			[
+				"inc",
+				"www/includes2_num/000000_mapamoci.inc"
+			],
+			[
+				"ihr",
+				"www/styl/ihnedWrap.styl"
+			],
+			[
+				"proje",
+				"mapa-moci-vizualizace.sublime-project"
+			],
+			[
+				"color",
+				"www/styl/colors.styl"
+			],
+			[
+				"nols",
+				"www/ls/Node.ls"
+			],
+			[
+				"nodemana",
+				"www/ls/NodeManager.ls"
+			],
+			[
+				"relsmana",
+				"src/RelationshipManager.ls"
+			],
+			[
+				"html",
+				"www/index.html"
+			],
+			[
+				"nodels",
+				"www/ls/Node.ls"
+			],
+			[
+				"nomanage",
+				"www/ls/NodeManager.ls"
+			],
+			[
+				"tesl",
+				"test.ls"
+			],
+			[
+				"bas",
+				"www/ls/base.ls"
+			],
+			[
+				"pa",
+				"package.json"
+			],
+			[
+				"relati",
+				"www/ls/RelationshipManager.ls"
+			],
+			[
+				"nodeme",
+				"www/ls/NodeManager.ls"
+			],
+			[
+				"pro",
+				"mapa-moci.sublime-project"
+			],
+			[
+				"pproje",
+				"mapa-moci.sublime-project"
+			],
+			[
+				"eltypes",
+				"www/ls/relationshipTypes.ls"
+			],
+			[
+				"nodemanagels",
+				"www/ls/NodeManager.ls"
+			],
+			[
+				"nomanals",
+				"src/NodeManager.ls"
+			],
+			[
+				"tags",
+				"www/ls/TagSelector.ls"
+			],
+			[
+				"styl",
+				"www/styl/screen.styl"
+			],
+			[
+				"sub",
+				"mapa-moci.sublime-project"
+			],
+			[
+				"stod",
+				"www/ls/StopDisplayer.ls"
+			],
+			[
+				"filler",
+				"srv/filler.ls"
+			],
+			[
+				"conls",
+				"srv/config.ls"
+			],
+			[
+				"stodisls",
+				"www/ls/StopDisplayer.ls"
+			],
+			[
+				"stodispl",
+				"www/js/stopDisplayer.js"
+			],
+			[
+				"projec",
+				"mhd_dojezdy.sublime-project"
+			],
+			[
+				"coord",
+				"docs/stationCoordinates.json"
+			],
+			[
+				"stops",
+				"data/Google_20120319/stops.txt"
+			],
+			[
+				"stols",
+				"www/ls/StopDisplayer.ls"
+			],
+			[
+				"stopdispl",
+				"www/js/stopDisplayer.js"
+			],
+			[
+				"basjs",
+				"www/js/oposmlouva/base.js"
+			],
+			[
+				"css",
+				"www/css/oposmlouva/screen.css"
+			],
+			[
+				"to",
+				"www/js/oposmlouva/Tooltip.js"
+			],
+			[
+				"scs",
+				"www/css/oposmlouva/screen.css"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"zeman",
+				"/C/www/zemanova-slunecni-soustava/zemanova-slunecni-soustava.sublime-project"
+			],
+			[
+				"mapamo",
+				"/C/www/mapa-moci/mapa-moci.sublime-project"
+			],
+			[
+				"mhd",
+				"/C/www/mhd_dojezdy/mhd_dojezdy.sublime-project"
+			],
+			[
+				"",
+				"/C/www/moje-vlada/mojevlada.sublime-project"
+			],
+			[
+				"slun",
+				"/C/www/zemanova-slunecni-soustava/zemanova-slunecni-soustava.sublime-project"
+			],
+			[
+				"slunec",
+				"/C/www/zemanova-slunecni-soustava/zemanova-slunecni-soustava.sublime-project"
+			],
+			[
+				"opos",
+				"/C/www/oposmlouva/oposmlouva.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true
+}

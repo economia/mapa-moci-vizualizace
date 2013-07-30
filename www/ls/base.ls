@@ -14,8 +14,6 @@ window.init = (data) ->
     height = 500 - margin.top - margin.bottom
     x = d3.scale.ordinal!rangeRoundBands [0, width], 0.01
 
-    color = d3.scale.ordinal!range ['#98abc5' '#8a89a6' '#7b6888' '#6b486b' '#a05d56' '#d0743c' '#ff8c00' ] * 2
-
     svg = d3.select '#content' .append "svg"
         ..attr \width width + margin.left + margin.right
         ..attr \height height + margin.top + margin.bottom
@@ -23,8 +21,11 @@ window.init = (data) ->
         ..attr \transform "translate(#{margin.left}, #{margin.top})"
 
     data = for department, staff of data
+        if "Pl%E1n" is escape department or department is ''
+            continue
         size = staff.length
         staff.forEach annotatePerson
+        staff.forEach -> normalizePerson it, department
         {department, staff, size}
 
     maxSize = Math.max ...data.map (.size)
@@ -32,7 +33,6 @@ window.init = (data) ->
     y = d3.scale.linear!rangeRound [0 height]
 
     departments = data.map (.department)
-    color.domain departments
     x.domain departments
     drawing.append "rect"
         ..attr \class \rasterBackground
