@@ -48,7 +48,7 @@
                     <a href="http://ihned.cz/">Zavøít vizualizaci a vrátit se zpìt</a>
                 </div>
                 <h1>Státní firmy - Mapa moci II</h1>
-                <p>Server IHNED.cz pøipravil pøehlednou mapu zmìn, které provedli ministøi nové vlády Jiøího Rusnoka za 14 dní od svého jmenování. Zahrnuje každou pozici od námìstkù po vedoucí jednotlivých odborù napøíè resorty, na tøech z nich ještì ministøi nikoho nevymìnili. Vizualizace zobrazuje údaje platné 23. èervence v 16 hodin. S dalšími obmìnami ji budeme prùbìžnì aktualizovat.</p>
+                <p>Server IHNED.cz po <a href="/mapamoci">Mapì moci</a>, která obsahuje veškeré informace o zmìnách klíèových postù jednotlivých ministerstev, pøipravil i mapu zmìn ve státních a polostátních firmách. Obsahuje informace o postech generálních øeditelù, èlenù pøedstavenstva, èlenù dozorèích rad a jiných dùležitých postech. Nejvíce zmìn zatím probìhlo ve vedení Èeských drah. S dalšími obmìnami ji budeme prùbìžnì aktualizovat.</p>
 
                 <div id="fallback" class="incapable">
                     <p>Váš prohlížeè je bohužel zastaralý a nepodporuje interaktivní vizualizace. Doporuèujeme jej aktualizovat, <a href="http://www.browserchoice.eu/">stáhnout jiný</a> nebo použít <a href="http://www.google.com/chromeframe">Google Chrome Frame</a>. Mezitím bude aplikace pracovat pouze v omezeném režimu.</p>
@@ -57,9 +57,9 @@
 
                 <div id='content' class="incapable">
                     <ul id="sortSelector" class="selector">
-                        <li data-tooltip="Pod touto záložkou pøehlednì zjistíte, na kterém ministerstvu se vymìnilo nejvíce lidí. Èím vyšší je tmavý sloupec, tím více zmìn na postech námìstkù, øeditelù a vedoucích probìhlo. Kurzorem ve sloupcích najdete konkrétní jména." data-content="changed" class="active">Podle poètu výmìn</li>
-                        <li data-tooltip="Graf ukazuje, v jak vysokých patrech svých úøadù už ministøi sáhli ke zmìnám. Èím výše jsou tmavá pole, tím jsou novì obsazené posty významnìjší – od námìstkù, pøes øeditele celých sekcí, po vedoucí jednotlivých odborù." data-content="importance">Podle významu pozic</li>
-                        <li data-tooltip="Tento graf je seøazen podle jednotlivých sekcí firem. Podle tmavých polí zjistíte, ve kterých sekcích a pod nì spadajících odborech se událo nejvíce zmìn." data-content="original">Podle odborù</li>
+                        <li data-tooltip="Pod touto záložkou pøehlednì zjistíte, ve které státní firmì se vymìnilo nejvíce lidí. Èím vyšší je tmavý sloupec, tím více zmìn na postech vedení a v dozorèích radách probìhlo. Kurzorem ve sloupcích najdete konkrétní jména." data-content="changed" class="active">Podle poètu výmìn</li>
+                        <li data-tooltip="Graf ukazuje, v jak vysokých patrech státních firem už ministøi sáhli ke zmìnám. Èím výše jsou tmavá pole, tím jsou novì obsazené posty významnìjší." data-content="importance">Podle významu pozic</li>
+                        <li data-tooltip="Tento graf je seøazen podle jednotlivých sekcí firem. Podle tmavých polí zjistíte, ve kterých sekcích a pod nì spadajících firemních orgánech se událo nejvíce zmìn." data-content="original">Podle sekcí</li>
                     </ul>
                     <dl id="legend">
                         <dt class="old">svìtle modrá</dt>
