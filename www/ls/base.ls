@@ -34,7 +34,7 @@ window.init = (data) ->
                 else
                     currentTitles[i] = title
                     break
-            annotatePerson person
+            annotatePerson person, index
             normalizePerson person, escaped
         {department, staff, size}
 
