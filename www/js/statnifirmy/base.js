@@ -8,7 +8,7 @@
     $('#content, #fallback').removeClass('incapable');
   }
   window.init = function(data){
-    var margin, width, height, x, x$, svg, y$, drawing, res$, department, staff, escaped, size, maxSize, notNormalizedPersonHeight, y, departments, z$, z1$, background, z2$, departmentBar, z3$, rectangles, xAxis, z4$, z5$, yAxis, drawYAxis, hideYAxis;
+    var margin, width, height, x, x$, svg, y$, drawing, res$, department, staff, escaped, size, currentTitles, i$, len$, person, j$, ref$, len1$, i, title, maxSize, notNormalizedPersonHeight, y, departments, z$, z1$, background, z2$, departmentBar, z3$, rectangles, xAxis, z4$, z5$, yAxis, drawYAxis, hideYAxis;
     if (!capableBrowser) {
       return;
     }
@@ -34,8 +34,22 @@
         continue;
       }
       size = staff.length;
-      staff.forEach(annotatePerson);
-      staff.forEach(fn$);
+      currentTitles = [];
+      for (i$ = 0, len$ = staff.length; i$ < len$; ++i$) {
+        person = staff[i$];
+        for (j$ = 0, len1$ = (ref$ = [0, 1, 2, 3, 4, 5]).length; j$ < len1$; ++j$) {
+          i = ref$[j$];
+          title = person[i];
+          if (!title) {
+            person[i] = currentTitles[i];
+          } else {
+            currentTitles[i] = title;
+            break;
+          }
+        }
+        annotatePerson(person);
+        normalizePerson(person, escaped);
+      }
       res$.push({
         department: department,
         staff: staff,
@@ -86,7 +100,7 @@
           if (person[20]) {
             toString += " (" + person[20] + ")";
           }
-          return "<h3>Pùvodnì: </h3>\n<p class='from'>" + fromString + "</p>\n<h3>Nástupce: </h3>\n<p class='to'>" + toString + "</p>";
+          return "<h3>PÅ¯vodnÄ›: </h3>\n<p class='from'>" + fromString + "</p>\n<h3>NÃ¡stupce: </h3>\n<p class='to'>" + toString + "</p>";
         default:
           return "<span class='only'>" + person[7] + " " + person[8] + " " + person[9] + " " + person[10] + "</span>";
         }
@@ -187,9 +201,9 @@
         if (sortMethod === 'importance') {
           switch (it) {
           case 0:
-            return "Ministøi";
+            return "MinistÅ™i";
           case 0.2:
-            return "Námìstci";
+            return "NÃ¡mÄ›stci";
           case 0.4:
             return "Odbory";
           default:
@@ -210,9 +224,6 @@
     };
     redraw(false, 'changed');
     return bindActions();
-    function fn$(it){
-      return normalizePerson(it, escaped);
-    }
   };
   normalizePerson = function(person, department){
     var shift, i$, x$, ref$, len$;

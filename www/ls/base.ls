@@ -25,8 +25,17 @@ window.init = (data) ->
         if "Pl%E1n" is escaped or department is ''
             continue
         size = staff.length
-        staff.forEach annotatePerson
-        staff.forEach -> normalizePerson it, escaped
+        currentTitles = []
+        for person in staff
+            for i in [0 to 5]
+                title = person[i]
+                if not title
+                    person[i] = currentTitles[i]
+                else
+                    currentTitles[i] = title
+                    break
+            annotatePerson person
+            normalizePerson person, escaped
         {department, staff, size}
 
     maxSize = Math.max ...data.map (.size)
