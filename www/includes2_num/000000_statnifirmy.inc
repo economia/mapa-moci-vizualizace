@@ -47,7 +47,7 @@
                     <div class="closebtn"></div>
                     <a href="http://ihned.cz/">Zavøít vizualizaci a vrátit se zpìt</a>
                 </div>
-                <h1>Mapa moci</h1>
+                <h1>Státní firmy - Mapa moci II</h1>
                 <p>Server IHNED.cz pøipravil pøehlednou mapu zmìn, které provedli ministøi nové vlády Jiøího Rusnoka za 14 dní od svého jmenování. Zahrnuje každou pozici od námìstkù po vedoucí jednotlivých odborù napøíè resorty, na tøech z nich ještì ministøi nikoho nevymìnili. Vizualizace zobrazuje údaje platné 23. èervence v 16 hodin. S dalšími obmìnami ji budeme prùbìžnì aktualizovat.</p>
 
                 <div id="fallback" class="incapable">
@@ -68,8 +68,8 @@
                         <dd class="new">Vymìnìní pracovníci</dd>
                     </dl>
                 </div>
-                <p>Zapomnìli jsme na nìjakého námìstka èi vedoucího odboru? <a href="https://docs.google.com/a/economia.cz/forms/d/1ZnDynmfyh__TZZqMMzT1jHwDdCt4cnaQdgO1IYTfeu8/viewform">Napište nám</a>, my údaje aktualizujeme.</p>
-                <p id="autori"><em>Autoøi: Jakub Wittka, Lucie Kuèerová, Jan Koudela</em></p>
+                <!--p>Zapomnìli jsme na nìjakého námìstka èi vedoucího odboru? <a href="https://docs.google.com/a/economia.cz/forms/d/1ZnDynmfyh__TZZqMMzT1jHwDdCt4cnaQdgO1IYTfeu8/viewform">Napište nám</a>, my údaje aktualizujeme.</p-->
+                <p id="autori"><em>Autoøi: Jakub Wittka, Lucie Kuèerová, Jan Koudela, Kateøina Špièáková</em></p>
                 <div class="social-bottom-detail">
                     <div class="fb-bottom"><div id="fb-root"></div><script src="http://connect.facebook.net/cs_CZ/all.js#appId=218617268163634&amp;xfbml=1"></script><fb:like href="http://ihned.cz/statnifirmy" send="false" layout="box_count" width="90" show_faces="false" action="recommend" font="arial"></fb:like></div>
                     <div class="tw-bottom"><a href="http://twitter.com/share" class="twitter-share-button" data-count="vertical" data-via="iHNed_zpravy" data-url="http://ihned.cz/statnifirmy">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
