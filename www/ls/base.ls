@@ -206,7 +206,7 @@ annotatePerson = (person, index) ->
 
 
 isPersonChanged = (person) ->
-    !!person.16
+    !!person.17
 
 getPersonPosition = (person) ->
     position = null

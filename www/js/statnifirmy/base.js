@@ -100,7 +100,7 @@
           if (person[20]) {
             toString += " (" + person[20] + ")";
           }
-          return "<h3>PÅ¯vodnÄ›: </h3>\n<p class='from'>" + fromString + "</p>\n<h3>NÃ¡stupce: </h3>\n<p class='to'>" + toString + "</p>";
+          return "<h3>Pùvodnì: </h3>\n<p class='from'>" + fromString + "</p>\n<h3>Nástupce: </h3>\n<p class='to'>" + toString + "</p>";
         default:
           return "<span class='only'>" + person[7] + " " + person[8] + " " + person[9] + " " + person[10] + "</span>";
         }
@@ -201,9 +201,9 @@
         if (sortMethod === 'importance') {
           switch (it) {
           case 0:
-            return "MinistÅ™i";
+            return "Ministøi";
           case 0.2:
-            return "NÃ¡mÄ›stci";
+            return "Námìstci";
           case 0.4:
             return "Odbory";
           default:
@@ -292,7 +292,7 @@
     }());
   };
   isPersonChanged = function(person){
-    return !!person[16];
+    return !!person[17];
   };
   getPersonPosition = function(person){
     var position, i$, ref$, len$, i, that;
