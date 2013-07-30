@@ -78,17 +78,17 @@
       content += (function(){
         switch (false) {
         case !isPersonChanged(person):
-          fromString = person[6] + " " + person[7] + " " + person[8] + " " + person[9];
-          if (person[11]) {
-            fromString += "(" + person[11] + ")";
+          fromString = person[7] + " " + person[8] + " " + person[9] + " " + person[10];
+          if (person[12]) {
+            fromString += " (" + person[12] + ")";
           }
-          toString = person[14] + " " + person[15] + " " + person[16] + " " + person[17];
-          if (person[19]) {
-            toString += "(" + person[19] + ")";
+          toString = person[15] + " " + person[16] + " " + person[17] + " " + person[18];
+          if (person[20]) {
+            toString += " (" + person[20] + ")";
           }
           return "<h3>Původně: </h3>\n<p class='from'>" + fromString + "</p>\n<h3>Nástupce: </h3>\n<p class='to'>" + toString + "</p>";
         default:
-          return "<span class='only'>" + person[6] + " " + person[7] + " " + person[8] + " " + person[9] + "</span>";
+          return "<span class='only'>" + person[7] + " " + person[8] + " " + person[9] + " " + person[10] + "</span>";
         }
       }());
       return tooltip.display(content);

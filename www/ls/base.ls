@@ -63,10 +63,10 @@ window.init = (data) ->
                 content = "<h2>#{getPersonPosition person}</h2>"
                 content +=
                     | isPersonChanged person
-                        fromString = "#{person.6} #{person.7} #{person.8} #{person.9}"
-                        if person.11 then fromString += "(#{person.11})"
-                        toString = "#{person.14} #{person.15} #{person.16} #{person.17}"
-                        if person.19 then toString += "(#{person.19})"
+                        fromString = "#{person.7} #{person.8} #{person.9} #{person.10}"
+                        if person.12 then fromString += " (#{person.12})"
+                        toString = "#{person.15} #{person.16} #{person.17} #{person.18}"
+                        if person.20 then toString += " (#{person.20})"
                         """
                         <h3>Původně: </h3>
                         <p class='from'>#fromString</p>
@@ -74,7 +74,7 @@ window.init = (data) ->
                         <p class='to'>#toString</p>
                         """
                     | otherwise
-                        "<span class='only'>#{person.6} #{person.7} #{person.8} #{person.9}</span>"
+                        "<span class='only'>#{person.7} #{person.8} #{person.9} #{person.10}</span>"
                 tooltip.display content
             ..on \mouseout ->
                 tooltip.hide!
