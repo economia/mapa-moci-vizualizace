@@ -86,6 +86,9 @@
 svg .rasterBackground {
   fill: #fff;
 }
+svg rect.departmentBackground {
+  fill: #9dcbeb;
+}
 svg .department rect.old {
   fill: #aad1ee;
 }

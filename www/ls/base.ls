@@ -40,6 +40,15 @@ window.init = (data) ->
         ..attr \x 4
         ..attr \width width - 9
         ..attr \height height
+
+    background = drawing.selectAll ".departmentBackground"
+        .data data
+        .enter!
+        .append "rect"
+            ..attr \class \departmentBackground
+            ..attr \width x.rangeBand!
+            ..attr \x -> x it.department
+
     departmentBar = drawing.selectAll ".department"
         .data data
         .enter!append "g"
@@ -118,6 +127,9 @@ window.init = (data) ->
                     | person.next => that.y
                     | otherwise   => height
                 nextPersonY - person.y - 0.5
+        background
+            ..attr \y (department) -> department.staff.0.y
+            ..attr \height (department) -> height - department.staff.0.y
     yAxis = drawing.append "g"
         ..attr \transform "translate(#{width}, 0)"
         ..attr \class \yAxis

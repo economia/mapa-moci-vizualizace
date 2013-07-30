@@ -8,7 +8,7 @@
     $('#content, #fallback').removeClass('incapable');
   }
   window.init = function(data){
-    var margin, width, height, x, x$, svg, y$, drawing, res$, department, staff, escaped, size, maxSize, notNormalizedPersonHeight, y, departments, z$, z1$, departmentBar, z2$, rectangles, xAxis, z3$, z4$, yAxis, drawYAxis, hideYAxis;
+    var margin, width, height, x, x$, svg, y$, drawing, res$, department, staff, escaped, size, maxSize, notNormalizedPersonHeight, y, departments, z$, z1$, background, z2$, departmentBar, z3$, rectangles, xAxis, z4$, z5$, yAxis, drawYAxis, hideYAxis;
     if (!capableBrowser) {
       return;
     }
@@ -57,16 +57,22 @@
     z$.attr('x', 4);
     z$.attr('width', width - 9);
     z$.attr('height', height);
-    z1$ = departmentBar = drawing.selectAll(".department").data(data).enter().append("g");
-    z1$.attr('class', 'department');
-    z1$.attr('transform', function(it){
+    z1$ = background = drawing.selectAll(".departmentBackground").data(data).enter().append("rect");
+    z1$.attr('class', 'departmentBackground');
+    z1$.attr('width', x.rangeBand());
+    z1$.attr('x', function(it){
+      return x(it.department);
+    });
+    z2$ = departmentBar = drawing.selectAll(".department").data(data).enter().append("g");
+    z2$.attr('class', 'department');
+    z2$.attr('transform', function(it){
       return "translate(" + x(it.department) + ", 0)";
     });
-    z2$ = rectangles = departmentBar.selectAll("rect").data(function(it){
+    z3$ = rectangles = departmentBar.selectAll("rect").data(function(it){
       return it.staff;
     }).enter().append("rect");
-    z2$.attr('width', x.rangeBand());
-    z2$.on('mouseover', function(person){
+    z3$.attr('width', x.rangeBand());
+    z3$.on('mouseover', function(person){
       var content, fromString, toString;
       content = "<h2>" + getPersonPosition(person) + "</h2>";
       content += (function(){
@@ -87,10 +93,10 @@
       }());
       return tooltip.display(content);
     });
-    z2$.on('mouseout', function(){
+    z3$.on('mouseout', function(){
       return tooltip.hide();
     });
-    z2$.attr('class', function(person){
+    z3$.attr('class', function(person){
       switch (false) {
       case !isPersonChanged(person):
         return "new";
@@ -99,15 +105,16 @@
       }
     });
     xAxis = drawing.append("g");
-    z3$ = departmentBar = xAxis.selectAll("text").data(data).enter().append("text");
-    z3$.text(function(it){
+    z4$ = departmentBar = xAxis.selectAll("text").data(data).enter().append("text");
+    z4$.text(function(it){
       return it.department;
     });
-    z3$.attr('transform', function(it){
+    z4$.attr('transform', function(it){
       return "translate(" + (x(it.department) + x.rangeBand() / 2) + ", " + (height + 15) + "),rotate(-45)";
     });
-    z3$.attr('text-anchor', 'end');
+    z4$.attr('text-anchor', 'end');
     window.redraw = function(normalized, sortMethod){
+      var x$;
       if (normalized) {
         y.domain([0, 1]);
       } else {
@@ -135,7 +142,7 @@
           return person.next = it.staff[index + 1];
         });
       });
-      return rectangles.each(function(person, index, parentIndex){
+      rectangles.each(function(person, index, parentIndex){
         index = data[parentIndex].staff.indexOf(person);
         return person.y = (function(){
           switch (normalized) {
@@ -161,10 +168,18 @@
         }());
         return nextPersonY - person.y - 0.5;
       });
+      x$ = background;
+      x$.attr('y', function(department){
+        return department.staff[0].y;
+      });
+      x$.attr('height', function(department){
+        return height - department.staff[0].y;
+      });
+      return x$;
     };
-    z4$ = yAxis = drawing.append("g");
-    z4$.attr('transform', "translate(" + width + ", 0)");
-    z4$.attr('class', 'yAxis');
+    z5$ = yAxis = drawing.append("g");
+    z5$.attr('transform', "translate(" + width + ", 0)");
+    z5$.attr('class', 'yAxis');
     drawYAxis = function(normalized, sortMethod){
       var yAxisTicks;
       yAxis.transition().duration(500).attr('opacity', 1);
