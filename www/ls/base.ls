@@ -28,7 +28,7 @@ window.init = (data) ->
         currentTitles = []
         for person, index in staff
             person.fulltitles = []
-            for i in [0 to 5]
+            for i in [0 to 6]
                 title = person[i]
                 if not title
                     person.fulltitles[i] = currentTitles[i]
@@ -211,7 +211,7 @@ isPersonChanged = (person) ->
 
 getPersonPosition = (person) ->
     position = null
-    for i in [0 to 5]
+    for i in [0 to 6]
         if person[i] then position = that
     if position isnt person[0] and person.fulltitles[0]
         position = "#{person.fulltitles[0]}, #position"

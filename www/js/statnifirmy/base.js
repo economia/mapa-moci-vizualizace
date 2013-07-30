@@ -39,7 +39,7 @@
         index = i$;
         person = staff[i$];
         person.fulltitles = [];
-        for (j$ = 0, len1$ = (ref$ = [0, 1, 2, 3, 4, 5]).length; j$ < len1$; ++j$) {
+        for (j$ = 0, len1$ = (ref$ = [0, 1, 2, 3, 4, 5, 6]).length; j$ < len1$; ++j$) {
           i = ref$[j$];
           title = person[i];
           if (!title) {
@@ -299,7 +299,7 @@
   getPersonPosition = function(person){
     var position, i$, ref$, len$, i, that;
     position = null;
-    for (i$ = 0, len$ = (ref$ = [0, 1, 2, 3, 4, 5]).length; i$ < len$; ++i$) {
+    for (i$ = 0, len$ = (ref$ = [0, 1, 2, 3, 4, 5, 6]).length; i$ < len$; ++i$) {
       i = ref$[i$];
       if (that = person[i]) {
         position = that;
