@@ -113,7 +113,7 @@
       } else {
         y.domain([0, maxSize]);
       }
-      if (sortMethod == 'changed' || sortMethod == 'importance') {
+      if (sortMethod === 'changed') {
         drawYAxis(normalized, sortMethod);
       } else {
         hideYAxis();

@@ -90,7 +90,7 @@ window.init = (data) ->
             y.domain [0 1]
         else
             y.domain [0 maxSize]
-        if sortMethod in <[ changed importance ]>
+        if sortMethod is \changed
             drawYAxis normalized, sortMethod
         else
             hideYAxis!
