@@ -21,11 +21,12 @@ window.init = (data) ->
         ..attr \transform "translate(#{margin.left}, #{margin.top})"
 
     data = for department, staff of data
-        if "Pl%E1n" is escape department or department is ''
+        escaped = escape department
+        if "Pl%E1n" is escaped or department is ''
             continue
         size = staff.length
         staff.forEach annotatePerson
-        staff.forEach -> normalizePerson it, department
+        staff.forEach -> normalizePerson it, escaped
         {department, staff, size}
 
     maxSize = Math.max ...data.map (.size)
@@ -150,6 +151,26 @@ window.init = (data) ->
 
     redraw yes \changed
     bindActions!
+
+normalizePerson = (person, department) ->
+    shift = switch department
+    | '%u0160kolstv%ED' => 2
+    | 'Kultura' => 2
+    | '%u017Divotn%ED%20prost%u0159ed%ED' => 2
+    | 'M%EDstn%ED%20rozvoj' => 2
+    | 'Spravedlnost' => 3
+    | 'Obrana' => 3
+    | 'Zem%u011Bd%u011Blstv%ED' => 3
+    | 'Doprava' => 0
+    | 'Vl%E1da%20+%20Premi%E9r' => 3
+    | 'Pr%u016Fmysl%20a%20obchod' => 2
+    | 'Finance' => 2
+    | 'Vnitro' => 1
+    | otherwise => 0
+    for [0 til shift]
+        person.unshift ""
+    person
+    # console.log "#department: #{person.9}"
 
 annotatePerson = (person, index) ->
     person.originalIndex = index

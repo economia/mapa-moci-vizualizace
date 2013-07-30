@@ -1,5 +1,5 @@
 (function(){
-  var tooltip, x$, perElementTooltip, capableBrowser, annotatePerson, isPersonChanged, getPersonPosition, orderByChanged, orderByOriginal, orderByImportance, bindActions, onSelectionChanged;
+  var tooltip, x$, perElementTooltip, capableBrowser, normalizePerson, annotatePerson, isPersonChanged, getPersonPosition, orderByChanged, orderByOriginal, orderByImportance, bindActions, onSelectionChanged;
   tooltip = new Tooltip();
   x$ = perElementTooltip = new Tooltip;
   x$.watchElements();
@@ -8,7 +8,7 @@
     $('#content, #fallback').removeClass('incapable');
   }
   window.init = function(data){
-    var margin, width, height, x, x$, svg, y$, drawing, res$, department, staff, size, maxSize, notNormalizedPersonHeight, y, departments, z$, z1$, departmentBar, z2$, rectangles, xAxis, z3$, z4$, yAxis, drawYAxis, hideYAxis;
+    var margin, width, height, x, x$, svg, y$, drawing, res$, department, staff, escaped, size, maxSize, notNormalizedPersonHeight, y, departments, z$, z1$, departmentBar, z2$, rectangles, xAxis, z3$, z4$, yAxis, drawYAxis, hideYAxis;
     if (!capableBrowser) {
       return;
     }
@@ -29,7 +29,8 @@
     res$ = [];
     for (department in data) {
       staff = data[department];
-      if ("Pl%E1n" === escape(department) || department === '') {
+      escaped = escape(department);
+      if ("Pl%E1n" === escaped || department === '') {
         continue;
       }
       size = staff.length;
@@ -195,7 +196,52 @@
     redraw(true, 'changed');
     return bindActions();
     function fn$(it){
-      return normalizePerson(it, department);
+      return normalizePerson(it, escaped);
+    }
+  };
+  normalizePerson = function(person, department){
+    var shift, i$, x$, ref$, len$;
+    shift = (function(){
+      switch (department) {
+      case '%u0160kolstv%ED':
+        return 2;
+      case 'Kultura':
+        return 2;
+      case '%u017Divotn%ED%20prost%u0159ed%ED':
+        return 2;
+      case 'M%EDstn%ED%20rozvoj':
+        return 2;
+      case 'Spravedlnost':
+        return 3;
+      case 'Obrana':
+        return 3;
+      case 'Zem%u011Bd%u011Blstv%ED':
+        return 3;
+      case 'Doprava':
+        return 0;
+      case 'Vl%E1da%20+%20Premi%E9r':
+        return 3;
+      case 'Pr%u016Fmysl%20a%20obchod':
+        return 2;
+      case 'Finance':
+        return 2;
+      case 'Vnitro':
+        return 1;
+      default:
+        return 0;
+      }
+    }());
+    for (i$ = 0, len$ = (ref$ = (fn$())).length; i$ < len$; ++i$) {
+      x$ = ref$[i$];
+      person.unshift("");
+    }
+    return person;
+    function fn$(){
+      var i$, to$, results$ = [];
+      for (i$ = 0, to$ = shift; i$ < to$; ++i$) {
+        results$.push(i$);
+      }
+      return results$;
     }
   };
   annotatePerson = function(person, index){
