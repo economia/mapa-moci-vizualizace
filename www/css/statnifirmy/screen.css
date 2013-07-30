@@ -1,0 +1,182 @@
+#head {
+  height: 100px;
+}
+#head #logo {
+  top: 38px;
+}
+#head #search-box,
+#head #menu1 {
+  top: 98px;
+}
+#foot {
+  margin-left: 0px;
+  width: 1000px;
+}
+#main {
+  border-bottom: 0px none;
+  padding-bottom: 140px;
+}
+#logo {
+  display: block;
+}
+.backFromGallery {
+  position: absolute;
+  right: 1px;
+  width: 220px;
+  height: 24px;
+  text-align: center;
+  top: 121px;
+}
+.backFromGallery .closebtn {
+  position: absolute;
+  top: 0px;
+  left: 3px;
+  width: 23px;
+  height: 23px;
+  background: url("http://ihned.cz/img/11_0/galerie.png") no-repeat -104px -9px;
+}
+.backFromGallery a {
+  position: absolute;
+  top: 4px;
+  right: 0px;
+  color: #2c6999;
+  display: inline-block;
+}
+.backFromGallery:hover {
+  cursor: pointer;
+}
+.backFromGallery:hover .closebtn {
+  background: url("http://ihned.cz/img/11_0/galerie.png") no-repeat -9px -9px;
+}
+.backFromGallery:hover a {
+  text-decoration: underline;
+}
+#main a {
+  color: #2c6999;
+  text-decoration: underline;
+}
+#main a:hover {
+  text-decoration: none;
+}
+.tooltip {
+  position: absolute;
+  border: 1px solid #000;
+  border-radius: 3px;
+  max-width: 270px;
+  background-color: #fff;
+  padding: 5px 10px;
+  margin-top: -20px;
+  margin-left: -12px;
+  box-shadow: #444 0px 0px 5px;
+}
+.tooltip p:only-child {
+  margin: 0px;
+}
+.tooltip h2 {
+  font-size: 1.2em;
+  margin: 4px 0px 5px 0px;
+}
+.tooltip h3 {
+  font-size: 1.1em;
+  margin: 0px;
+}
+.tooltip p {
+  margin: 0px;
+}
+svg .rasterBackground {
+  fill: #9dcbeb;
+}
+svg .department rect.old {
+  fill: #aad1ee;
+}
+svg .department rect.old:hover {
+  fill: #66ace0;
+}
+svg .department rect.new {
+  fill: #1f6597;
+}
+svg .department rect.new:hover {
+  fill: #2a89cd;
+}
+svg .yAxis .domain {
+  display: none;
+}
+#main > h1,
+#main > p {
+  margin-left: 13px;
+}
+#fallback {
+  display: none;
+}
+#fallback.incapable {
+  display: block;
+}
+#fallback img {
+  margin-left: 7px;
+  margin-top: 7px;
+}
+#fallback p {
+  margin-left: 13px;
+}
+#content {
+  margin-top: 30px;
+  margin-bottom: 5px;
+  position: relative;
+  padding-top: 50px;
+}
+#content.incapable {
+  display: none;
+}
+#content .selector {
+  position: absolute;
+  top: 0px;
+  left: -9px;
+  list-style: none;
+}
+#content .selector#displaySelector {
+  left: auto;
+  right: 104px;
+}
+#content .selector li {
+  cursor: pointer;
+  float: left;
+  border: 1px solid #eee;
+  padding: 7px 12px;
+  background: #fff;
+  color: #000;
+}
+#content .selector li.active {
+  background: #85bee6;
+  color: #fff;
+}
+#content #legend {
+  position: absolute;
+  top: 0px;
+  right: 135px;
+  margin: 0px;
+}
+#content #legend dt {
+  float: right;
+  clear: right;
+  overflow: hidden;
+  height: 15px;
+  width: 60px;
+  border: 1px solid #115;
+  margin-bottom: 10px;
+}
+#content #legend dt.old {
+  background: #aad1ee;
+  color: #aad1ee;
+}
+#content #legend dt.new {
+  background: #1f6597;
+  color: #1f6597;
+}
+#content #legend dd {
+  float: right;
+  margin-left: 0px;
+  margin-right: 10px;
+}
+#autori {
+  margin-top: 8px;
+}

@@ -12,7 +12,7 @@
         {
             "name": "LiveScripts",
             // "cmd": ["lsc.cmd", "$file"],
-            "cmd": ["lsc.cmd", "-o", "../js/mapamoci", "-c", "$file"],
+            "cmd": ["lsc.cmd", "-o", "../js/statnifirmy", "-c", "$file"],
             "file_regex": "^(...*?):([0-9]*):?([0-9]*)",
             "selector": "source.livescript",
             "variants": [
@@ -23,7 +23,7 @@
             ]
         }, {
             "name": "Stylus",
-            "cmd": ["stylus.cmd", "-o", "../css/mapamoci", "./screen.styl"],
+            "cmd": ["stylus.cmd", "-o", "../css/statnifirmy", "./screen.styl"],
             "file_regex": "^(...*?):([0-9]*):?([0-9]*)",
             "selector": "source.stylus"
         }
