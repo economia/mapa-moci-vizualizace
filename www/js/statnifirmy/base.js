@@ -330,7 +330,8 @@
       evt.preventDefault();
       $ele = $(this);
       $.scrollTo($ele, {
-        duration: 200
+        duration: 200,
+        axis: 'y'
       });
       if ($ele.hasClass('active')) {
         return;

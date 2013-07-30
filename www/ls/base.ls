@@ -236,7 +236,7 @@ bindActions = ->
     $ document .on \click '.selector li' (evt) ->
         evt.preventDefault!
         $ele = $ @
-        $.scrollTo $ele, duration:200
+        $.scrollTo $ele, duration:200 axis: \y
         return if $ele.hasClass \active
         $ele.parent!.find "li" .removeClass 'active'
         $ele.addClass 'active'
