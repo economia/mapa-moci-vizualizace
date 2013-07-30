@@ -212,6 +212,10 @@ getPersonPosition = (person) ->
     position = null
     for i in [0 to 5]
         if person[i] then position = that
+    if position isnt person[0] and person[0]
+        position = "#{person[0]}, #position"
+    position
+
 
 orderByChanged = (personA, personB) ->
     a = if isPersonChanged personA then 1 else 0

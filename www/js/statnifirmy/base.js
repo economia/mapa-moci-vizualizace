@@ -295,15 +295,18 @@
     return !!person[16];
   };
   getPersonPosition = function(person){
-    var position, i$, ref$, len$, i, that, results$ = [];
+    var position, i$, ref$, len$, i, that;
     position = null;
     for (i$ = 0, len$ = (ref$ = [0, 1, 2, 3, 4, 5]).length; i$ < len$; ++i$) {
       i = ref$[i$];
       if (that = person[i]) {
-        results$.push(position = that);
+        position = that;
       }
     }
-    return results$;
+    if (position !== person[0] && person[0]) {
+      position = person[0] + ", " + position;
+    }
+    return position;
   };
   orderByChanged = function(personA, personB){
     var a, b, that;
