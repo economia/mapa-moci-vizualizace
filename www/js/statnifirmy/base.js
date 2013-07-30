@@ -193,7 +193,7 @@
     hideYAxis = function(){
       return yAxis.transition().duration(500).attr('opacity', 0);
     };
-    redraw(true, 'changed');
+    redraw(false, 'changed');
     return bindActions();
     function fn$(it){
       return normalizePerson(it, escaped);
@@ -326,7 +326,7 @@
   onSelectionChanged = function(){
     var sort, normalized;
     sort = $('#sortSelector li.active').data('content');
-    normalized = true;
+    normalized = false;
     return redraw(normalized, sort);
   };
 }).call(this);

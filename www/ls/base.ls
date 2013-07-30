@@ -149,7 +149,7 @@ window.init = (data) ->
             .duration 500
             .attr \opacity 0
 
-    redraw yes \changed
+    redraw no \changed
     bindActions!
 
 normalizePerson = (person, department) ->
@@ -227,6 +227,6 @@ bindActions = ->
 
 onSelectionChanged = ->
     sort = $ '#sortSelector li.active' .data \content
-    normalized = yes
+    normalized = no
     redraw normalized, sort
 
