@@ -26,11 +26,12 @@ window.init = (data) ->
             continue
         size = staff.length
         currentTitles = []
-        for person in staff
+        for person, index in staff
+            person.fulltitles = []
             for i in [0 to 5]
                 title = person[i]
                 if not title
-                    person[i] = currentTitles[i]
+                    person.fulltitles[i] = currentTitles[i]
                 else
                     currentTitles[i] = title
                     break
@@ -212,8 +213,8 @@ getPersonPosition = (person) ->
     position = null
     for i in [0 to 5]
         if person[i] then position = that
-    if position isnt person[0] and person[0]
-        position = "#{person[0]}, #position"
+    if position isnt person[0] and person.fulltitles[0]
+        position = "#{person.fulltitles[0]}, #position"
     position
 
 

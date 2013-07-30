@@ -8,7 +8,7 @@
     $('#content, #fallback').removeClass('incapable');
   }
   window.init = function(data){
-    var margin, width, height, x, x$, svg, y$, drawing, res$, department, staff, escaped, size, currentTitles, i$, len$, person, j$, ref$, len1$, i, title, maxSize, notNormalizedPersonHeight, y, departments, z$, z1$, background, z2$, departmentBar, z3$, rectangles, xAxis, z4$, z5$, yAxis, drawYAxis, hideYAxis;
+    var margin, width, height, x, x$, svg, y$, drawing, res$, department, staff, escaped, size, currentTitles, i$, len$, index, person, j$, ref$, len1$, i, title, maxSize, notNormalizedPersonHeight, y, departments, z$, z1$, background, z2$, departmentBar, z3$, rectangles, xAxis, z4$, z5$, yAxis, drawYAxis, hideYAxis;
     if (!capableBrowser) {
       return;
     }
@@ -36,18 +36,20 @@
       size = staff.length;
       currentTitles = [];
       for (i$ = 0, len$ = staff.length; i$ < len$; ++i$) {
+        index = i$;
         person = staff[i$];
+        person.fulltitles = [];
         for (j$ = 0, len1$ = (ref$ = [0, 1, 2, 3, 4, 5]).length; j$ < len1$; ++j$) {
           i = ref$[j$];
           title = person[i];
           if (!title) {
-            person[i] = currentTitles[i];
+            person.fulltitles[i] = currentTitles[i];
           } else {
             currentTitles[i] = title;
             break;
           }
         }
-        annotatePerson(person);
+        annotatePerson(person, index);
         normalizePerson(person, escaped);
       }
       res$.push({
@@ -303,8 +305,8 @@
         position = that;
       }
     }
-    if (position !== person[0] && person[0]) {
-      position = person[0] + ", " + position;
+    if (position !== person[0] && person.fulltitles[0]) {
+      position = person.fulltitles[0] + ", " + position;
     }
     return position;
   };
