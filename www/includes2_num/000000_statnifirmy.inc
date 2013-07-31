@@ -52,7 +52,8 @@
 
                 <div class="fallback incapable">
                     <p>Váš prohlížeè je bohužel zastaralý a nepodporuje interaktivní vizualizace. Doporuèujeme jej aktualizovat, <a href="http://www.browserchoice.eu/">stáhnout jiný</a> nebo použít <a href="http://www.google.com/chromeframe">Google Chrome Frame</a>. Mezitím bude aplikace pracovat pouze v omezeném režimu.</p>
-                    <img src="/img/statnifirmy/fallback.png" alt="Vizualizace množství lidí, kteøí byli vymìnìni na jednotlivých ministerstvech" />
+                    <img src="/img/mapamoci/fallback2.png" alt="Vizualizace množství lidí, kteøí byli vymìnìni na jednotlivých ministerstvech" />
+                    <img src="/img/statnifirmy/fallback.png" alt="Vizualizace množství lidí, kteøí byli vymìnìni v jednotlivých stáních firmách" />
                 </div>
 
                 <div id='ministerstva' class="graph incapable">
