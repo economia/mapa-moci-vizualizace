@@ -213,8 +213,8 @@ getPersonPosition = (person) ->
     position = null
     for i in [0 to 6]
         if person[i] then position = that
-    if position isnt person[0] and person.fulltitles[0]
-        position = "#{person.fulltitles[0]}, #position"
+    if position isnt person[0] and (person.fulltitles[0] or person[0])
+        position = "#{person.fulltitles[0] || person[0]}, #position"
     position
 
 

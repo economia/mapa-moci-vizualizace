@@ -305,8 +305,8 @@
         position = that;
       }
     }
-    if (position !== person[0] && person.fulltitles[0]) {
-      position = person.fulltitles[0] + ", " + position;
+    if (position !== person[0] && (person.fulltitles[0] || person[0])) {
+      position = (person.fulltitles[0] || person[0]) + ", " + position;
     }
     return position;
   };
