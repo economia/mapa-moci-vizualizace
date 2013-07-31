@@ -29,7 +29,7 @@
     margin = {
       top: 10,
       right: 90,
-      bottom: 100,
+      bottom: 110,
       left: 10
     };
     baseHeight = parentSelector === '#ministerstva' ? 500 : 300;
