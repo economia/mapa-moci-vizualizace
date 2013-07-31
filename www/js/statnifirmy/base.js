@@ -25,15 +25,16 @@
     return drawGraph(data_firmy, '#firmy');
   };
   drawGraph = function(data, parentSelector){
-    var margin, width, height, x, x$, svg, y$, drawing, res$, department, staff, escaped, size, currentTitles, i$, len$, index, person, j$, ref$, len1$, i, title, maxSize, notNormalizedPersonHeight, y, departments, z$, z1$, background, z2$, departmentBar, z3$, rectangles, xAxis, z4$, redraw, z5$, yAxis, drawYAxis, hideYAxis, bindActions, onSelectionChanged;
+    var margin, baseHeight, width, height, x, x$, svg, y$, drawing, res$, department, staff, escaped, size, currentTitles, i$, len$, index, person, j$, ref$, len1$, i, title, maxSize, notNormalizedPersonHeight, y, departments, z$, z1$, background, z2$, departmentBar, z3$, rectangles, xAxis, z4$, redraw, z5$, yAxis, drawYAxis, hideYAxis, bindActions, onSelectionChanged;
     margin = {
       top: 10,
       right: 90,
-      bottom: 90,
+      bottom: 100,
       left: 10
     };
+    baseHeight = parentSelector === '#ministerstva' ? 500 : 300;
     width = 960 - margin.left - margin.right;
-    height = 500 - margin.top - margin.bottom;
+    height = baseHeight - margin.top - margin.bottom;
     x = d3.scale.ordinal().rangeRoundBands([0, width], 0.02);
     x$ = svg = d3.select(parentSelector).append("svg");
     x$.attr('width', width + margin.left + margin.right);

@@ -18,10 +18,11 @@ drawGraph = (data, parentSelector) ->
     margin =
         top: 10
         right: 90
-        bottom: 90
+        bottom: 100
         left: 10
+    baseHeight = if parentSelector is '#ministerstva' then 500 else 300
     width = 960 - margin.left - margin.right
-    height = 500 - margin.top - margin.bottom
+    height = baseHeight - margin.top - margin.bottom
     x = d3.scale.ordinal!rangeRoundBands [0, width], 0.02
 
     svg = d3.select parentSelector .append "svg"
