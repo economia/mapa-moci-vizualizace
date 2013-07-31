@@ -186,7 +186,7 @@ drawGraph = (data, parentSelector) ->
         $ parentSelector .on \click '.selector li' (evt) ->
             evt.preventDefault!
             $ele = $ @
-            $.scrollTo $ele, duration:200 axis: \y
+            $.scrollTo $ele, duration:200 axis: \y offset: top: -65
             return if $ele.hasClass \active
             $ele.parent!.find "li" .removeClass 'active'
             $ele.addClass 'active'

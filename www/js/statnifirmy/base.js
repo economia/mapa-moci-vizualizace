@@ -245,7 +245,10 @@
         $ele = $(this);
         $.scrollTo($ele, {
           duration: 200,
-          axis: 'y'
+          axis: 'y',
+          offset: {
+            top: -65
+          }
         });
         if ($ele.hasClass('active')) {
           return;
