@@ -48,7 +48,7 @@
                     <a href="http://ihned.cz/">Zavøít vizualizaci a vrátit se zpìt</a>
                 </div>
                 <h1>Mapa moci</h1>
-                <p>Server IHNED.cz pøipravil Mapu moci, která obsahuje veškeré informace o zmìnách klíèových postù jednotlivých ministerstev i ve státních a polostátních firmách. Obsahuje informace o postech generálních øeditelù, èlenù pøedstavenstva, èlenù dozorèích rad a jiných dùležitých postech. Nejvíce zmìn zatím probìhlo ve vedení Èeských drah. S dalšími obmìnami ji budeme prùbìžnì aktualizovat.</p>
+                <p>Server IHNED.cz pøipravil Mapu moci, která obsahuje veškeré informace o zmìnách klíèových postù jednotlivých ministerstev i ve státních a polostátních firmách, kter provedli ministøi nové vlády Jiøího Rusnoka. Obsahuje u státní správy každou pozici od námìstkù po vedoucí jednotlivých odborù napøíè resorty. U státních firem pak informace o postech generálních øeditelù, èlenù pøedstavenstva, èlenù dozorèích rad a jiných dùležitých postech. Nejvíce zmìn zatím probìhlo ve vedení Èeských drah. S dalšími obmìnami ji budeme prùbìžnì aktualizovat.</p>
                 <h2>Ministerstva</h2>
                 <div class="fallback incapable">
                     <p>Váš prohlížeè je bohužel zastaralý a nepodporuje interaktivní vizualizace. Doporuèujeme jej aktualizovat, <a href="http://www.browserchoice.eu/">stáhnout jiný</a> nebo použít <a href="http://www.google.com/chromeframe">Google Chrome Frame</a>. Mezitím bude aplikace pracovat pouze v omezeném režimu.</p>
