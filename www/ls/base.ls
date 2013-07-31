@@ -191,14 +191,6 @@ drawGraph = (data, parentSelector) ->
             $ele.parent!.find "li" .removeClass 'active'
             $ele.addClass 'active'
             onSelectionChanged!
-        $ parentSelector .on \click \.backFromGallery (evt) ->
-            if history.length > 1
-                history.back!
-            else
-                window.location = $ @ .find \a .attr \href
-            evt
-                ..preventDefault!
-                ..stopPropagation!
 
     onSelectionChanged = ->
         selector = parentSelector + ' .selector li.active'
@@ -269,3 +261,12 @@ orderByOriginal = (personA, personB) ->
 
 orderByImportance = (personA, personB) ->
     personA.positionImportance - personB.positionImportance
+
+$ document .on \click \.backFromGallery (evt) ->
+    if history.length > 1
+        history.back!
+    else
+        window.location = $ @ .find \a .attr \href
+    evt
+        ..preventDefault!
+        ..stopPropagation!

@@ -239,7 +239,7 @@
       return yAxis.transition().duration(500).attr('opacity', 0);
     };
     bindActions = function(){
-      $(parentSelector).on('click', '.selector li', function(evt){
+      return $(parentSelector).on('click', '.selector li', function(evt){
         var $ele;
         evt.preventDefault();
         $ele = $(this);
@@ -253,18 +253,6 @@
         $ele.parent().find("li").removeClass('active');
         $ele.addClass('active');
         return onSelectionChanged();
-      });
-      return $(parentSelector).on('click', '.backFromGallery', function(evt){
-        var x$;
-        if (history.length > 1) {
-          history.back();
-        } else {
-          window.location = $(this).find('a').attr('href');
-        }
-        x$ = evt;
-        x$.preventDefault();
-        x$.stopPropagation();
-        return x$;
       });
     };
     onSelectionChanged = function(){
@@ -376,4 +364,16 @@
   orderByImportance = function(personA, personB){
     return personA.positionImportance - personB.positionImportance;
   };
+  $(document).on('click', '.backFromGallery', function(evt){
+    var x$;
+    if (history.length > 1) {
+      history.back();
+    } else {
+      window.location = $(this).find('a').attr('href');
+    }
+    x$ = evt;
+    x$.preventDefault();
+    x$.stopPropagation();
+    return x$;
+  });
 }).call(this);
