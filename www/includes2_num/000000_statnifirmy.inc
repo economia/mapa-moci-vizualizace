@@ -55,7 +55,20 @@
                     <img src="/img/statnifirmy/fallback.png" alt="Vizualizace množství lidí, kteøí byli vymìnìni na jednotlivých ministerstvech" />
                 </div>
 
-                <div id='content' class="incapable">
+                <div id='ministerstva' class="graph incapable">
+                    <ul class="selector">
+                        <li data-tooltip="Pod touto záložkou pøehlednì zjistíte, ve které státní firmì se vymìnilo nejvíce lidí. Èím vyšší je tmavý sloupec, tím více zmìn na postech vedení a v dozorèích radách probìhlo. Kurzorem ve sloupcích najdete konkrétní jména." data-content="changed" class="active">Podle poètu výmìn</li>
+                        <li data-tooltip="Graf ukazuje, v jak vysokých patrech státních firem už ministøi sáhli ke zmìnám. Èím výše jsou tmavá pole, tím jsou novì obsazené posty významnìjší." data-content="importance">Podle významu pozic</li>
+                        <li data-tooltip="Tento graf je seøazen podle jednotlivých sekcí firem. Podle tmavých polí zjistíte, ve kterých sekcích a pod nì spadajících firemních orgánech se událo nejvíce zmìn." data-content="original">Podle sekcí</li>
+                    </ul>
+                    <dl class="legend">
+                        <dt class="old">svìtle modrá</dt>
+                        <dd class="old">Pùvodní pracovníci</dd>
+                        <dt class="new">tmavì modrá</dt>
+                        <dd class="new">Vymìnìní pracovníci</dd>
+                    </dl>
+                </div>
+                <div id='firmy' class="graph incapable">
                     <ul class="selector">
                         <li data-tooltip="Pod touto záložkou pøehlednì zjistíte, ve které státní firmì se vymìnilo nejvíce lidí. Èím vyšší je tmavý sloupec, tím více zmìn na postech vedení a v dozorèích radách probìhlo. Kurzorem ve sloupcích najdete konkrétní jména." data-content="changed" class="active">Podle poètu výmìn</li>
                         <li data-tooltip="Graf ukazuje, v jak vysokých patrech státních firem už ministøi sáhli ke zmìnám. Èím výše jsou tmavá pole, tím jsou novì obsazené posty významnìjší." data-content="importance">Podle významu pozic</li>
@@ -192,7 +205,7 @@
         <script src="http://service.ihned.cz/js/jquery.scrollTo.js"></script>
         <script src="/js/statnifirmy/Tooltip.js" type="text/javascript"></script>
         <script src="/js/statnifirmy/base.js" type="text/javascript"></script>
-        <script src="http://service.ihned.cz/spreadsheet/bigfilter.php?key=0AtY6fMYiLLJNdFhXa01BLWc0RUpuQUpiZEVfblBGaWc&amp;numsheets=24&amp;nocols=1&amp;cb=init&amp;forcecache=1"></script>
+        <script src="http://service.ihned.cz/spreadsheet/bigfilter.php?key=0AtY6fMYiLLJNdFhXa01BLWc0RUpuQUpiZEVfblBGaWc&amp;numsheets=25&amp;nocols=1&amp;cb=init&amp;forcecache=1"></script>
         <!-- (C)2000-2013 Gemius SA - gemiusAudience / ihned.cz / Politika-ostatni -->
         <script type="text/javascript">
         <!--//--><![CDATA[//><!--

@@ -4,9 +4,16 @@ perElementTooltip = new Tooltip
 capableBrowser = Modernizr.inlinesvg
 if capableBrowser then $ '.incapable' .removeClass 'incapable'
 window.init = (data) ->
-    parentSelector = '#content'
     return if not capableBrowser
-    drawGraph data, parentSelector
+    index = 0
+    data_ministerstva = {}
+    data_firmy = {}
+    for name, content of data
+        target = if index < 11 then data_firmy else data_ministerstva
+        target[name] = content
+        index++
+    drawGraph data_ministerstva, '#ministerstva'
+    drawGraph data_firmy, '#firmy'
 drawGraph = (data, parentSelector) ->
     margin =
         top: 10
@@ -107,7 +114,7 @@ drawGraph = (data, parentSelector) ->
 
 
 
-    window.redraw = (normalized, sortMethod) ->
+    redraw = (normalized, sortMethod) ->
         if normalized
             y.domain [0 1]
         else

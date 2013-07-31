@@ -8,15 +8,24 @@
     $('.incapable').removeClass('incapable');
   }
   window.init = function(data){
-    var parentSelector;
-    parentSelector = '#content';
+    var index, data_ministerstva, data_firmy, name, content, target;
     if (!capableBrowser) {
       return;
     }
-    return drawGraph(data, parentSelector);
+    index = 0;
+    data_ministerstva = {};
+    data_firmy = {};
+    for (name in data) {
+      content = data[name];
+      target = index < 11 ? data_firmy : data_ministerstva;
+      target[name] = content;
+      index++;
+    }
+    drawGraph(data_ministerstva, '#ministerstva');
+    return drawGraph(data_firmy, '#firmy');
   };
   drawGraph = function(data, parentSelector){
-    var margin, width, height, x, x$, svg, y$, drawing, res$, department, staff, escaped, size, currentTitles, i$, len$, index, person, j$, ref$, len1$, i, title, maxSize, notNormalizedPersonHeight, y, departments, z$, z1$, background, z2$, departmentBar, z3$, rectangles, xAxis, z4$, z5$, yAxis, drawYAxis, hideYAxis, bindActions, onSelectionChanged;
+    var margin, width, height, x, x$, svg, y$, drawing, res$, department, staff, escaped, size, currentTitles, i$, len$, index, person, j$, ref$, len1$, i, title, maxSize, notNormalizedPersonHeight, y, departments, z$, z1$, background, z2$, departmentBar, z3$, rectangles, xAxis, z4$, redraw, z5$, yAxis, drawYAxis, hideYAxis, bindActions, onSelectionChanged;
     margin = {
       top: 10,
       right: 90,
@@ -133,7 +142,7 @@
       return "translate(" + (x(it.department) + x.rangeBand() / 2) + ", " + (height + 15) + "),rotate(-45)";
     });
     z4$.attr('text-anchor', 'end');
-    window.redraw = function(normalized, sortMethod){
+    redraw = function(normalized, sortMethod){
       var x$;
       if (normalized) {
         y.domain([0, 1]);

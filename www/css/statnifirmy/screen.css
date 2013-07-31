@@ -121,22 +121,22 @@ svg .yAxis .domain {
 .fallback p {
   margin-left: 13px;
 }
-#content {
+.graph {
   margin-top: 30px;
   margin-bottom: 5px;
   position: relative;
   padding-top: 50px;
 }
-#content.incapable {
+.graph.incapable {
   display: none;
 }
-#content .selector {
+.graph .selector {
   position: absolute;
   top: 0px;
   left: -9px;
   list-style: none;
 }
-#content .selector li {
+.graph .selector li {
   cursor: pointer;
   float: left;
   border: 1px solid #eee;
@@ -144,17 +144,17 @@ svg .yAxis .domain {
   background: #fff;
   color: #000;
 }
-#content .selector li.active {
+.graph .selector li.active {
   background: #85bee6;
   color: #fff;
 }
-#content .legend {
+.graph .legend {
   position: absolute;
   top: 0px;
   right: 135px;
   margin: 0px;
 }
-#content .legend dt {
+.graph .legend dt {
   float: right;
   clear: right;
   overflow: hidden;
@@ -163,15 +163,15 @@ svg .yAxis .domain {
   border: 1px solid #115;
   margin-bottom: 10px;
 }
-#content .legend dt.old {
+.graph .legend dt.old {
   background: #aad1ee;
   color: #aad1ee;
 }
-#content .legend dt.new {
+.graph .legend dt.new {
   background: #1f6597;
   color: #1f6597;
 }
-#content .legend dd {
+.graph .legend dd {
   float: right;
   margin-left: 0px;
   margin-right: 10px;
