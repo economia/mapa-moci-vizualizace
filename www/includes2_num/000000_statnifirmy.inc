@@ -58,9 +58,9 @@
 
                 <div id='ministerstva' class="graph incapable">
                     <ul class="selector">
-                        <li data-tooltip="Pod touto záložkou pøehlednì zjistíte, ve které státní firmì se vymìnilo nejvíce lidí. Èím vyšší je tmavý sloupec, tím více zmìn na postech vedení a v dozorèích radách probìhlo. Kurzorem ve sloupcích najdete konkrétní jména." data-content="changed" class="active">Podle poètu výmìn</li>
-                        <li data-tooltip="Graf ukazuje, v jak vysokých patrech státních firem už ministøi sáhli ke zmìnám. Èím výše jsou tmavá pole, tím jsou novì obsazené posty významnìjší." data-content="importance">Podle významu pozic</li>
-                        <li data-tooltip="Tento graf je seøazen podle jednotlivých sekcí firem. Podle tmavých polí zjistíte, ve kterých sekcích a pod nì spadajících firemních orgánech se událo nejvíce zmìn." data-content="original">Podle sekcí</li>
+                        <li data-tooltip="Pod touto záložkou pøehlednì zjistíte, na kterém ministerstvu se vymìnilo nejvíce lidí. Èím vyšší je tmavý sloupec, tím více zmìn na postech námìstkù, øeditelù a vedoucích probìhlo. Kurzorem ve sloupcích najdete konkrétní jména." data-content="changed" class="active">Podle poètu výmìn</li>
+                        <li data-tooltip="Graf ukazuje, v jak vysokých patrech svých úøadù už ministøi sáhli ke zmìnám. Èím výše jsou tmavá pole, tím jsou novì obsazené posty významnìjší – od námìstkù, pøes øeditele celých sekcí, po vedoucí jednotlivých odborù." data-content="importance">Podle významu pozic</li>
+                        <li data-tooltip="Tento graf je seøazen podle jednotlivých sekcí ministerstev. Podle tmavých polí zjistíte, ve kterých sekcích a pod nì spadajících odborech se událo nejvíce zmìn." data-content="original">Podle sekcí</li>
                     </ul>
                     <dl class="legend">
                         <dt class="old">svìtle modrá</dt>
