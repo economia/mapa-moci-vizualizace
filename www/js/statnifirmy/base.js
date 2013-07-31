@@ -20,7 +20,7 @@
     };
     width = 960 - margin.left - margin.right;
     height = 600 - margin.top - margin.bottom;
-    x = d3.scale.ordinal().rangeRoundBands([0, width], 0.01);
+    x = d3.scale.ordinal().rangeRoundBands([0, width], 0.02);
     x$ = svg = d3.select('#content').append("svg");
     x$.attr('width', width + margin.left + margin.right);
     x$.attr('height', height + margin.top + margin.bottom);
@@ -39,7 +39,7 @@
         index = i$;
         person = staff[i$];
         person.fulltitles = [];
-        for (j$ = 0, len1$ = (ref$ = [0, 1, 2, 3, 4, 5, 6]).length; j$ < len1$; ++j$) {
+        for (j$ = 0, len1$ = (ref$ = [0, 1, 2, 3, 4, 5]).length; j$ < len1$; ++j$) {
           i = ref$[j$];
           title = person[i];
           if (!title) {
@@ -50,7 +50,6 @@
           }
         }
         annotatePerson(person, index);
-        normalizePerson(person, escaped);
       }
       res$.push({
         department: department,
@@ -94,17 +93,17 @@
       content += (function(){
         switch (false) {
         case !isPersonChanged(person):
-          fromString = person[7] + " " + person[8] + " " + person[9] + " " + person[10];
-          if (person[12]) {
-            fromString += " (" + person[12] + ")";
+          fromString = person[6] + " " + person[7] + " " + person[8] + " " + person[9];
+          if (person[11]) {
+            fromString += " (" + person[11] + ")";
           }
-          toString = person[15] + " " + person[16] + " " + person[17] + " " + person[18];
-          if (person[20]) {
-            toString += " (" + person[20] + ")";
+          toString = person[14] + " " + person[15] + " " + person[16] + " " + person[17];
+          if (person[19]) {
+            toString += " (" + person[19] + ")";
           }
-          return "<h3>Pùvodnì: </h3>\n<p class='from'>" + fromString + "</p>\n<h3>Nástupce: </h3>\n<p class='to'>" + toString + "</p>";
+          return "<h3>PÅ¯vodnÄ›: </h3>\n<p class='from'>" + fromString + "</p>\n<h3>NÃ¡stupce: </h3>\n<p class='to'>" + toString + "</p>";
         default:
-          return "<span class='only'>" + person[7] + " " + person[8] + " " + person[9] + " " + person[10] + "</span>";
+          return "<span class='only'>" + person[6] + " " + person[7] + " " + person[8] + " " + person[9] + "</span>";
         }
       }());
       return tooltip.display(content);
@@ -203,9 +202,9 @@
         if (sortMethod === 'importance') {
           switch (it) {
           case 0:
-            return "Ministøi";
+            return "MinistÅ™i";
           case 0.2:
-            return "Námìstci";
+            return "NÃ¡mÄ›stci";
           case 0.4:
             return "Odbory";
           default:
@@ -294,19 +293,16 @@
     }());
   };
   isPersonChanged = function(person){
-    return !!person[17];
+    return !!person[16];
   };
   getPersonPosition = function(person){
     var position, i$, ref$, len$, i, that;
     position = null;
-    for (i$ = 0, len$ = (ref$ = [0, 1, 2, 3, 4, 5, 6]).length; i$ < len$; ++i$) {
+    for (i$ = 0, len$ = (ref$ = [0, 1, 2, 3, 4, 5]).length; i$ < len$; ++i$) {
       i = ref$[i$];
       if (that = person[i]) {
         position = that;
       }
-    }
-    if (position !== person[0] && (person.fulltitles[0] || person[0])) {
-      position = (person.fulltitles[0] || person[0]) + ", " + position;
     }
     return position;
   };

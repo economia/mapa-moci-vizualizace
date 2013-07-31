@@ -12,7 +12,7 @@ window.init = (data) ->
         left: 10
     width = 960 - margin.left - margin.right
     height = 600 - margin.top - margin.bottom
-    x = d3.scale.ordinal!rangeRoundBands [0, width], 0.01
+    x = d3.scale.ordinal!rangeRoundBands [0, width], 0.02
 
     svg = d3.select '#content' .append "svg"
         ..attr \width width + margin.left + margin.right
@@ -28,7 +28,7 @@ window.init = (data) ->
         currentTitles = []
         for person, index in staff
             person.fulltitles = []
-            for i in [0 to 6]
+            for i in [0 to 5]
                 title = person[i]
                 if not title
                     person.fulltitles[i] = currentTitles[i]
@@ -36,7 +36,7 @@ window.init = (data) ->
                     currentTitles[i] = title
                     break
             annotatePerson person, index
-            normalizePerson person, escaped
+            # normalizePerson person, escaped
         {department, staff, size}
 
     maxSize = Math.max ...data.map (.size)
@@ -73,10 +73,10 @@ window.init = (data) ->
                 content = "<h2>#{getPersonPosition person}</h2>"
                 content +=
                     | isPersonChanged person
-                        fromString = "#{person.7} #{person.8} #{person.9} #{person.10}"
-                        if person.12 then fromString += " (#{person.12})"
-                        toString = "#{person.15} #{person.16} #{person.17} #{person.18}"
-                        if person.20 then toString += " (#{person.20})"
+                        fromString = "#{person.6} #{person.7} #{person.8} #{person.9}"
+                        if person.11 then fromString += " (#{person.11})"
+                        toString = "#{person.14} #{person.15} #{person.16} #{person.17}"
+                        if person.19 then toString += " (#{person.19})"
                         """
                         <h3>Původně: </h3>
                         <p class='from'>#fromString</p>
@@ -84,7 +84,7 @@ window.init = (data) ->
                         <p class='to'>#toString</p>
                         """
                     | otherwise
-                        "<span class='only'>#{person.7} #{person.8} #{person.9} #{person.10}</span>"
+                        "<span class='only'>#{person.6} #{person.7} #{person.8} #{person.9}</span>"
                 tooltip.display content
             ..on \mouseout ->
                 tooltip.hide!
@@ -207,14 +207,12 @@ annotatePerson = (person, index) ->
 
 
 isPersonChanged = (person) ->
-    !!person.17
+    !!person.16
 
 getPersonPosition = (person) ->
     position = null
-    for i in [0 to 6]
+    for i in [0 to 5]
         if person[i] then position = that
-    if position isnt person[0] and (person.fulltitles[0] or person[0])
-        position = "#{person.fulltitles[0] || person[0]}, #position"
     position
 
 
