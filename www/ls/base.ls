@@ -2,19 +2,22 @@ tooltip = new Tooltip!
 perElementTooltip = new Tooltip
     ..watchElements!
 capableBrowser = Modernizr.inlinesvg
-if capableBrowser then $ '#content, #fallback' .removeClass 'incapable'
+if capableBrowser then $ '.incapable' .removeClass 'incapable'
 window.init = (data) ->
+    parentSelector = '#content'
     return if not capableBrowser
+    drawGraph data, parentSelector
+drawGraph = (data, parentSelector) ->
     margin =
         top: 10
         right: 90
         bottom: 90
         left: 10
     width = 960 - margin.left - margin.right
-    height = 600 - margin.top - margin.bottom
+    height = 500 - margin.top - margin.bottom
     x = d3.scale.ordinal!rangeRoundBands [0, width], 0.02
 
-    svg = d3.select '#content' .append "svg"
+    svg = d3.select parentSelector .append "svg"
         ..attr \width width + margin.left + margin.right
         ..attr \height height + margin.top + margin.bottom
     drawing = svg.append "g"
@@ -171,6 +174,32 @@ window.init = (data) ->
             .duration 500
             .attr \opacity 0
 
+    bindActions = ->
+        $ parentSelector .on \click '.selector li' (evt) ->
+            evt.preventDefault!
+            $ele = $ @
+            $.scrollTo $ele, duration:200 axis: \y
+            return if $ele.hasClass \active
+            $ele.parent!.find "li" .removeClass 'active'
+            $ele.addClass 'active'
+            onSelectionChanged!
+        $ parentSelector .on \click \.backFromGallery (evt) ->
+            if history.length > 1
+                history.back!
+            else
+                window.location = $ @ .find \a .attr \href
+            evt
+                ..preventDefault!
+                ..stopPropagation!
+
+    onSelectionChanged = ->
+        selector = parentSelector + ' .selector li.active'
+        sort = $ selector .data \content
+        normalized = no
+        redraw normalized, sort
+
+
+
     redraw no \changed
     bindActions!
 
@@ -230,27 +259,3 @@ orderByOriginal = (personA, personB) ->
 
 orderByImportance = (personA, personB) ->
     personA.positionImportance - personB.positionImportance
-
-bindActions = ->
-    $ document .on \click '.selector li' (evt) ->
-        evt.preventDefault!
-        $ele = $ @
-        $.scrollTo $ele, duration:200 axis: \y
-        return if $ele.hasClass \active
-        $ele.parent!.find "li" .removeClass 'active'
-        $ele.addClass 'active'
-        onSelectionChanged!
-    $ document .on \click \.backFromGallery (evt) ->
-        if history.length > 1
-            history.back!
-        else
-            window.location = $ @ .find \a .attr \href
-        evt
-            ..preventDefault!
-            ..stopPropagation!
-
-onSelectionChanged = ->
-    sort = $ '#sortSelector li.active' .data \content
-    normalized = no
-    redraw normalized, sort
-

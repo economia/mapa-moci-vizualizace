@@ -1,17 +1,22 @@
 (function(){
-  var tooltip, x$, perElementTooltip, capableBrowser, normalizePerson, annotatePerson, isPersonChanged, getPersonPosition, orderByChanged, orderByOriginal, orderByImportance, bindActions, onSelectionChanged;
+  var tooltip, x$, perElementTooltip, capableBrowser, drawGraph, normalizePerson, annotatePerson, isPersonChanged, getPersonPosition, orderByChanged, orderByOriginal, orderByImportance;
   tooltip = new Tooltip();
   x$ = perElementTooltip = new Tooltip;
   x$.watchElements();
   capableBrowser = Modernizr.inlinesvg;
   if (capableBrowser) {
-    $('#content, #fallback').removeClass('incapable');
+    $('.incapable').removeClass('incapable');
   }
   window.init = function(data){
-    var margin, width, height, x, x$, svg, y$, drawing, res$, department, staff, escaped, size, currentTitles, i$, len$, index, person, j$, ref$, len1$, i, title, maxSize, notNormalizedPersonHeight, y, departments, z$, z1$, background, z2$, departmentBar, z3$, rectangles, xAxis, z4$, z5$, yAxis, drawYAxis, hideYAxis;
+    var parentSelector;
+    parentSelector = '#content';
     if (!capableBrowser) {
       return;
     }
+    return drawGraph(data, parentSelector);
+  };
+  drawGraph = function(data, parentSelector){
+    var margin, width, height, x, x$, svg, y$, drawing, res$, department, staff, escaped, size, currentTitles, i$, len$, index, person, j$, ref$, len1$, i, title, maxSize, notNormalizedPersonHeight, y, departments, z$, z1$, background, z2$, departmentBar, z3$, rectangles, xAxis, z4$, z5$, yAxis, drawYAxis, hideYAxis, bindActions, onSelectionChanged;
     margin = {
       top: 10,
       right: 90,
@@ -19,9 +24,9 @@
       left: 10
     };
     width = 960 - margin.left - margin.right;
-    height = 600 - margin.top - margin.bottom;
+    height = 500 - margin.top - margin.bottom;
     x = d3.scale.ordinal().rangeRoundBands([0, width], 0.02);
-    x$ = svg = d3.select('#content').append("svg");
+    x$ = svg = d3.select(parentSelector).append("svg");
     x$.attr('width', width + margin.left + margin.right);
     x$.attr('height', height + margin.top + margin.bottom);
     y$ = drawing = svg.append("g");
@@ -223,6 +228,42 @@
     hideYAxis = function(){
       return yAxis.transition().duration(500).attr('opacity', 0);
     };
+    bindActions = function(){
+      $(parentSelector).on('click', '.selector li', function(evt){
+        var $ele;
+        evt.preventDefault();
+        $ele = $(this);
+        $.scrollTo($ele, {
+          duration: 200,
+          axis: 'y'
+        });
+        if ($ele.hasClass('active')) {
+          return;
+        }
+        $ele.parent().find("li").removeClass('active');
+        $ele.addClass('active');
+        return onSelectionChanged();
+      });
+      return $(parentSelector).on('click', '.backFromGallery', function(evt){
+        var x$;
+        if (history.length > 1) {
+          history.back();
+        } else {
+          window.location = $(this).find('a').attr('href');
+        }
+        x$ = evt;
+        x$.preventDefault();
+        x$.stopPropagation();
+        return x$;
+      });
+    };
+    onSelectionChanged = function(){
+      var selector, sort, normalized;
+      selector = parentSelector + ' .selector li.active';
+      sort = $(selector).data('content');
+      normalized = false;
+      return redraw(normalized, sort);
+    };
     redraw(false, 'changed');
     return bindActions();
   };
@@ -321,40 +362,5 @@
   };
   orderByImportance = function(personA, personB){
     return personA.positionImportance - personB.positionImportance;
-  };
-  bindActions = function(){
-    $(document).on('click', '.selector li', function(evt){
-      var $ele;
-      evt.preventDefault();
-      $ele = $(this);
-      $.scrollTo($ele, {
-        duration: 200,
-        axis: 'y'
-      });
-      if ($ele.hasClass('active')) {
-        return;
-      }
-      $ele.parent().find("li").removeClass('active');
-      $ele.addClass('active');
-      return onSelectionChanged();
-    });
-    return $(document).on('click', '.backFromGallery', function(evt){
-      var x$;
-      if (history.length > 1) {
-        history.back();
-      } else {
-        window.location = $(this).find('a').attr('href');
-      }
-      x$ = evt;
-      x$.preventDefault();
-      x$.stopPropagation();
-      return x$;
-    });
-  };
-  onSelectionChanged = function(){
-    var sort, normalized;
-    sort = $('#sortSelector li.active').data('content');
-    normalized = false;
-    return redraw(normalized, sort);
   };
 }).call(this);

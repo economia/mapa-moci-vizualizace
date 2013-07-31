@@ -50,18 +50,18 @@
                 <h1>Státní firmy - Mapa moci II</h1>
                 <p>Server IHNED.cz po <a href="/mapamoci">Mapì moci</a>, která obsahuje veškeré informace o zmìnách klíèových postù jednotlivých ministerstev, pøipravil i mapu zmìn ve státních a polostátních firmách. Obsahuje informace o postech generálních øeditelù, èlenù pøedstavenstva, èlenù dozorèích rad a jiných dùležitých postech. Nejvíce zmìn zatím probìhlo ve vedení Èeských drah. S dalšími obmìnami ji budeme prùbìžnì aktualizovat.</p>
 
-                <div id="fallback" class="incapable">
+                <div class="fallback incapable">
                     <p>Váš prohlížeè je bohužel zastaralý a nepodporuje interaktivní vizualizace. Doporuèujeme jej aktualizovat, <a href="http://www.browserchoice.eu/">stáhnout jiný</a> nebo použít <a href="http://www.google.com/chromeframe">Google Chrome Frame</a>. Mezitím bude aplikace pracovat pouze v omezeném režimu.</p>
                     <img src="/img/statnifirmy/fallback.png" alt="Vizualizace množství lidí, kteøí byli vymìnìni na jednotlivých ministerstvech" />
                 </div>
 
                 <div id='content' class="incapable">
-                    <ul id="sortSelector" class="selector">
+                    <ul class="selector">
                         <li data-tooltip="Pod touto záložkou pøehlednì zjistíte, ve které státní firmì se vymìnilo nejvíce lidí. Èím vyšší je tmavý sloupec, tím více zmìn na postech vedení a v dozorèích radách probìhlo. Kurzorem ve sloupcích najdete konkrétní jména." data-content="changed" class="active">Podle poètu výmìn</li>
                         <li data-tooltip="Graf ukazuje, v jak vysokých patrech státních firem už ministøi sáhli ke zmìnám. Èím výše jsou tmavá pole, tím jsou novì obsazené posty významnìjší." data-content="importance">Podle významu pozic</li>
                         <li data-tooltip="Tento graf je seøazen podle jednotlivých sekcí firem. Podle tmavých polí zjistíte, ve kterých sekcích a pod nì spadajících firemních orgánech se událo nejvíce zmìn." data-content="original">Podle sekcí</li>
                     </ul>
-                    <dl id="legend">
+                    <dl class="legend">
                         <dt class="old">svìtle modrá</dt>
                         <dd class="old">Pùvodní pracovníci</dd>
                         <dt class="new">tmavì modrá</dt>
