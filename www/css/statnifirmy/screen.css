@@ -105,6 +105,7 @@ svg .yAxis .domain {
   display: none;
 }
 #main > h1,
+#main > h2,
 #main > p {
   margin-left: 13px;
 }
