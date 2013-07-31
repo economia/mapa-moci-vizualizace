@@ -80,8 +80,8 @@ drawGraph = (data, parentSelector) ->
         .data -> it.staff
         .enter!append "rect"
             ..attr \width x.rangeBand!
-            ..on \mouseover (person) ->
-                content = "<h2>#{getPersonPosition person}</h2>"
+            ..on \mouseover (person, index, parentIndex) ->
+                content = "<h2>#{getPersonPosition person, parentSelector, parentIndex}</h2>"
                 content +=
                     | isPersonChanged person
                         fromString = "#{person.6} #{person.7} #{person.8} #{person.9}"
@@ -246,10 +246,12 @@ annotatePerson = (person, index) ->
 isPersonChanged = (person) ->
     !!person.16
 
-getPersonPosition = (person) ->
+getPersonPosition = (person, parentSelector, parentIndex) ->
     position = null
     for i in [0 to 5]
         if person[i] then position = that
+    if parentSelector == '#firmy' and parentIndex == 10
+        position = (person.fulltitles[0] || person[0]) + ", " + position
     position
 
 

@@ -102,9 +102,9 @@
       return it.staff;
     }).enter().append("rect");
     z3$.attr('width', x.rangeBand());
-    z3$.on('mouseover', function(person){
+    z3$.on('mouseover', function(person, index, parentIndex){
       var content, fromString, toString;
-      content = "<h2>" + getPersonPosition(person) + "</h2>";
+      content = "<h2>" + getPersonPosition(person, parentSelector, parentIndex) + "</h2>";
       content += (function(){
         switch (false) {
         case !isPersonChanged(person):
@@ -346,7 +346,7 @@
   isPersonChanged = function(person){
     return !!person[16];
   };
-  getPersonPosition = function(person){
+  getPersonPosition = function(person, parentSelector, parentIndex){
     var position, i$, ref$, len$, i, that;
     position = null;
     for (i$ = 0, len$ = (ref$ = [0, 1, 2, 3, 4, 5]).length; i$ < len$; ++i$) {
@@ -354,6 +354,9 @@
       if (that = person[i]) {
         position = that;
       }
+    }
+    if (parentSelector === '#firmy' && parentIndex === 10) {
+      position = (person.fulltitles[0] || person[0]) + ", " + position;
     }
     return position;
   };
