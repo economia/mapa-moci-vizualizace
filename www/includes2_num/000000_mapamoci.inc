@@ -47,7 +47,7 @@
                     <div class="closebtn"></div>
                     <a href="http://ihned.cz/">Zavøít vizualizaci a vrátit se zpìt</a>
                 </div>
-                <h1>Státní firmy - Mapa moci II</h1>
+                <h1>Mapa moci</h1>
                 <p>Server IHNED.cz pøipravil Mapu moci, která obsahuje veškeré informace o zmìnách klíèových postù jednotlivých ministerstev i ve státních a polostátních firmách. Obsahuje informace o postech generálních øeditelù, èlenù pøedstavenstva, èlenù dozorèích rad a jiných dùležitých postech. Nejvíce zmìn zatím probìhlo ve vedení Èeských drah. S dalšími obmìnami ji budeme prùbìžnì aktualizovat.</p>
                 <h2>Ministerstva</h2>
                 <div class="fallback incapable">
