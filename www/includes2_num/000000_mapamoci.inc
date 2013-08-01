@@ -48,8 +48,9 @@
                     <a href="http://ihned.cz/">Zavøít vizualizaci a vrátit se zpìt</a>
                 </div>
                 <h1>Mapa moci</h1>
+                <h2>Podívejte se, jak se mìnilo obsazení køesel na <a href="#h-ministerstva">ministerstvech</a> a ve <a href="#h-firmy">státních firmách</a>.</h2>
                 <p>Server IHNED.cz pøipravil Mapu moci, která obsahuje veškeré informace o zmìnách klíèových postù jednotlivých ministerstev i ve státních a polostátních firmách, které provedli ministøi nové vlády Jiøího Rusnoka. Obsahuje u státní správy každou pozici od námìstkù po vedoucí jednotlivých odborù napøíè resorty. U státních firem pak informace o postech generálních øeditelù, èlenù pøedstavenstva, èlenù dozorèích rad a jiných dùležitých postech. Nejvíce zmìn zatím probìhlo ve vedení Èeských drah. S dalšími obmìnami ji budeme prùbìžnì aktualizovat.</p>
-                <h2>Ministerstva</h2>
+                <h2 id='h-ministerstva'>Ministerstva</h2>
                 <div class="fallback incapable">
                     <p>Váš prohlížeè je bohužel zastaralý a nepodporuje interaktivní vizualizace. Doporuèujeme jej aktualizovat, <a href="http://www.browserchoice.eu/">stáhnout jiný</a> nebo použít <a href="http://www.google.com/chromeframe">Google Chrome Frame</a>. Mezitím bude aplikace pracovat pouze v omezeném režimu.</p>
                     <img src="/img/mapamoci/fallback2.png" alt="Vizualizace množství lidí, kteøí byli vymìnìni na jednotlivých ministerstvech" />
@@ -72,7 +73,7 @@
                 <p>Zapomnìli jsme na nìjakého námìstka èi vedoucího odboru? <a href="https://docs.google.com/a/economia.cz/forms/d/1ZnDynmfyh__TZZqMMzT1jHwDdCt4cnaQdgO1IYTfeu8/viewform">Napište nám</a>, my údaje aktualizujeme.</p>
 
 
-                <h2>Firmy</h2>
+                <h2 id='h-firmy'>Firmy</h2>
                 <div class="fallback incapable">
                     <img src="/img/statnifirmy/fallback.png" alt="Vizualizace množství lidí, kteøí byli vymìnìni v jednotlivých stáních firmách" />
                 </div>
