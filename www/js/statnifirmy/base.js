@@ -32,7 +32,7 @@
       bottom: 110,
       left: 10
     };
-    baseHeight = parentSelector === '#ministerstva' ? 500 : 300;
+    baseHeight = 500;
     width = 960 - margin.left - margin.right;
     height = baseHeight - margin.top - margin.bottom;
     x = d3.scale.ordinal().rangeRoundBands([0, width], 0.02);
